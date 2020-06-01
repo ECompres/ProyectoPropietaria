@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a778d3d874e04cd69c186e11da835774" Name="Diagram1">
+        <EntityTypeShape EntityType="RentCarModel.CLIENTE" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.COMBUSTIBLE_VEHICULO" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.EMPLEADO" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.INSPECCION" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.INSPECCION_GOMAS" Width="1.5" PointX="9.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.MARCA_VEHICULO" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.MODELO_VEHICULO" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.RENTA" Width="1.5" PointX="12.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.TIPO_VEHICULO" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentCarModel.VEHICULO" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="RentCarModel.FK__INSPECCIO__CLIEN__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__INSPECCIO__CLIEN__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__CLIENTE__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__CLIENTE__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__CLIENTE__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__VEHICULO__COMBUS__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__VEHICULO__COMBUS__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__INSPECCIO__EMPLE__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__INSPECCIO__EMPLE__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__EMPLEADO__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__EMPLEADO__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__EMPLEADO__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__INSPECCIO__INSPE__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__INSPECCIO__INSPE__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__INSPECCIO__VEHIC__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__INSPECCIO__VEHIC__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__INSPECCIO__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__INSPECCIO__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__INSPECCIO__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__MODELO_VE__MARCA__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__MODELO_VE__MARCA__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__MODELO_VE__MARCA__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__VEHICULO__MARCA__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__VEHICULO__MARCA__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__VEHICULO__MODELO__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__VEHICULO__MODELO__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__VEHICULO__123EB7A3" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__VEHICULO__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__RENTA__VEHICULO__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__VEHICULO__TIPO_V__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__VEHICULO__TIPO_V__534D60F1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

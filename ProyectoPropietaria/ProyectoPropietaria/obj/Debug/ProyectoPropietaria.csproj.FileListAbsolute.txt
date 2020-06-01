@@ -7,6 +7,12 @@ C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropiet
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.exe
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.pdb
-C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.CrearVehiculo.resources
-C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.CrearTipoVehiculo.resources
-C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.AgregarVehiculo.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\EntityFramework.dll
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\EntityFramework.xml
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.GestionVehiculo.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.GestionEmpleado.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.GestionTipoVehiculo.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Inicio.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.csproj.CopyComplete

@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,35 +55,103 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarVehiculo.cs">
+    <Compile Include="GestionVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarVehiculo.Designer.cs">
-      <DependentUpon>AgregarVehiculo.cs</DependentUpon>
+    <Compile Include="GestionVehiculo.Designer.cs">
+      <DependentUpon>GestionVehiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas.cs" />
-    <Compile Include="CrearVehiculo.cs">
+    <Compile Include="CANTIDAD_COMBUSTIBLE.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMBUSTIBLE_VEHICULO.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearVehiculo.Designer.cs">
-      <DependentUpon>CrearVehiculo.cs</DependentUpon>
+    <Compile Include="GestionEmpleado.Designer.cs">
+      <DependentUpon>GestionEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearTipoVehiculo.cs">
+    <Compile Include="GestionTipoVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearTipoVehiculo.Designer.cs">
-      <DependentUpon>CrearTipoVehiculo.cs</DependentUpon>
+    <Compile Include="GestionTipoVehiculo.Designer.cs">
+      <DependentUpon>GestionTipoVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLEADO.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESTADO_INSPECCION.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INSPECCION.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INSPECCION_GOMAS.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MARCA_VEHICULO.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODELO_VEHICULO.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AgregarVehiculo.resx">
-      <DependentUpon>AgregarVehiculo.cs</DependentUpon>
+    <Compile Include="RENTA.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RentaCar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentaCar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RentaCar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RentaCar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentaCar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TANDA.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_CLIENTE.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_EMPLEADO.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_VEHICULO.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VEHICULO.cs">
+      <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GestionVehiculo.resx">
+      <DependentUpon>GestionVehiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearVehiculo.resx">
-      <DependentUpon>CrearVehiculo.cs</DependentUpon>
+    <EmbeddedResource Include="GestionEmpleado.resx">
+      <DependentUpon>GestionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearTipoVehiculo.resx">
-      <DependentUpon>CrearTipoVehiculo.cs</DependentUpon>
+    <EmbeddedResource Include="GestionTipoVehiculo.resx">
+      <DependentUpon>GestionTipoVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +162,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\MODELO_VEHICULO.datasource" />
+    <None Include="Properties\DataSources\TIPO_VEHICULO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,9 +174,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="RentaCar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RentaCar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RentaCar.edmx.diagram">
+      <DependentUpon>RentaCar.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RentaCar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RentaCar.edmx</DependentUpon>
+      <LastGenOutput>RentaCar.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RentaCar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RentaCar.edmx</DependentUpon>
+      <LastGenOutput>RentaCar.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

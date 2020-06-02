@@ -13,10 +13,10 @@ namespace ProyectoPropietaria
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RentCarEntities : DbContext
+    public partial class RentaCarEntities : DbContext
     {
-        public RentCarEntities()
-            : base("name=RentCarEntities")
+        public RentaCarEntities()
+            : base("name=RentaCarEntities")
         {
         }
     

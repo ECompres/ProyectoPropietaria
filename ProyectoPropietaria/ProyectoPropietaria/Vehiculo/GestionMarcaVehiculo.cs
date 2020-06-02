@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace ProyectoPropietaria
 {
-    public partial class GestionTipoVehiculo : Form
+    public partial class GestionMarcaVehiculo : Form
     {
-        TIPO_VEHICULO model = new TIPO_VEHICULO();
-        public GestionTipoVehiculo()
+        MARCA_VEHICULO model = new MARCA_VEHICULO();
+        public GestionMarcaVehiculo()
         {
             InitializeComponent();
         }
@@ -31,48 +31,48 @@ namespace ProyectoPropietaria
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            model.NOMBRE = txtTipoVehiculo.Text.Trim();
+            model.NOMBRE = txtMarcaVehiculo.Text.Trim();
             model.ESTADO = cbEstado.Checked;
-            using (RentCarEntities db = new RentCarEntities())
+            using (RentaCarEntities db = new RentaCarEntities())
             {
                 if (model.ID == 0)
                 {
-                    db.TIPO_VEHICULO.Add(model);
-                    MessageBox.Show("Tipo de vehiculo agregado.");
+                    db.MARCA_VEHICULO.Add(model);
+                    MessageBox.Show("Marca de vehículo agregada.");
 
                 }
                 else
                 {
                     db.Entry(model).State = EntityState.Modified;
-                    MessageBox.Show("Tipo de vehiculo modificado.");
+                    MessageBox.Show("Marca de vehículo actualizada.");
 
                 }
                 db.SaveChanges();
             }
             LimpiarCampos();
-            getTipoVehiculos();
+            getMarcaVehiculos();
         }
         private void LimpiarCampos()
         {
-            txtTipoVehiculo.Text = "";
+            txtMarcaVehiculo.Text = "";
             cbEstado.Checked = true;
             btnCrear.Text = "Crear";
             btnBorrar.Enabled = false;
             model.ID = 0;
         }
 
-        private void getTipoVehiculos()
+        private void getMarcaVehiculos()
         {
-            dgwTipoVehiculo.AutoGenerateColumns = false;
-            using (RentCarEntities db = new RentCarEntities())
+            dgwMarcaVehiculo.AutoGenerateColumns = false;
+            using (RentaCarEntities db = new RentaCarEntities())
             {
 
-                var data = db.TIPO_VEHICULO.Select(x=> new { 
+                var data = db.MARCA_VEHICULO.Select(x=> new { 
                 x.ID,
                 x.NOMBRE,
                 ESTADO = x.ESTADO == true ? "Disponible" : "No disponible"
                 }).ToList();
-                dgwTipoVehiculo.DataSource = data;
+                dgwMarcaVehiculo.DataSource = data;
             }
         }
         
@@ -91,13 +91,13 @@ namespace ProyectoPropietaria
 
         private void GestionTipoVehiculo_Load(object sender, EventArgs e)
         {
-            getTipoVehiculos();
+            getMarcaVehiculos();
             LimpiarCampos();
         }
 
         private void GestionTipoVehiculo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Inicio frm = new Inicio();
+            formularioVehiculo frm = new formularioVehiculo();
             frm.Show();
         }
 
@@ -105,16 +105,16 @@ namespace ProyectoPropietaria
         {
             if(MessageBox.Show("¿Desea borrar este tipo de vehículo?", "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                using (RentCarEntities db = new RentCarEntities())
+                using (RentaCarEntities db = new RentaCarEntities())
                 {
                     var entry = db.Entry(model);
                     if(entry.State == EntityState.Detached)
                     {
-                        db.TIPO_VEHICULO.Attach(model);
+                        db.MARCA_VEHICULO.Attach(model);
                     }
-                    db.TIPO_VEHICULO.Remove(model);
+                    db.MARCA_VEHICULO.Remove(model);
                     db.SaveChanges();
-                    getTipoVehiculos();
+                    getMarcaVehiculos();
                     LimpiarCampos();
                     MessageBox.Show("Tipo de vehículo eliminado");
                 }
@@ -123,13 +123,13 @@ namespace ProyectoPropietaria
 
         private void dgwTipoVehiculo_DoubleClick(object sender, EventArgs e)
         {
-            if (dgwTipoVehiculo.CurrentRow.Index != -1)
+            if (dgwMarcaVehiculo.CurrentRow.Index != -1)
             {
-                model.ID = Convert.ToInt32(dgwTipoVehiculo.CurrentRow.Cells["ID"].Value);
-                using (RentCarEntities db = new RentCarEntities())
+                model.ID = Convert.ToInt32(dgwMarcaVehiculo.CurrentRow.Cells["ID"].Value);
+                using (RentaCarEntities  db = new RentaCarEntities ())
                 {
-                    model = db.TIPO_VEHICULO.Where(x => x.ID == model.ID).FirstOrDefault();
-                    txtTipoVehiculo.Text = model.NOMBRE;
+                    model = db.MARCA_VEHICULO.Where(x => x.ID == model.ID).FirstOrDefault();
+                    txtMarcaVehiculo.Text = model.NOMBRE;
                     cbEstado.Checked = Convert.ToBoolean(model.ESTADO);
                 }
                 btnCrear.Text = "Actualizar";

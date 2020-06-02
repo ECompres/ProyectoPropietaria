@@ -46,18 +46,19 @@
             this.cmbMarcaVehiculo = new System.Windows.Forms.ComboBox();
             this.cmbModeloVehiculo = new System.Windows.Forms.ComboBox();
             this.cmbCombustible = new System.Windows.Forms.ComboBox();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.lblFechaValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgwVehiculos = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(12, 46);
+            this.lblDescripcion.Location = new System.Drawing.Point(20, 85);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(116, 24);
             this.lblDescripcion.TabIndex = 0;
@@ -67,18 +68,19 @@
             // 
             this.lblNumeroChasis.AutoSize = true;
             this.lblNumeroChasis.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroChasis.Location = new System.Drawing.Point(12, 84);
+            this.lblNumeroChasis.Location = new System.Drawing.Point(20, 155);
+            this.lblNumeroChasis.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNumeroChasis.Name = "lblNumeroChasis";
             this.lblNumeroChasis.Size = new System.Drawing.Size(167, 24);
             this.lblNumeroChasis.TabIndex = 1;
             this.lblNumeroChasis.Text = "Número de chasis: ";
-            this.lblNumeroChasis.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblNumeroMotor
             // 
             this.lblNumeroMotor.AutoSize = true;
             this.lblNumeroMotor.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroMotor.Location = new System.Drawing.Point(12, 123);
+            this.lblNumeroMotor.Location = new System.Drawing.Point(20, 227);
+            this.lblNumeroMotor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNumeroMotor.Name = "lblNumeroMotor";
             this.lblNumeroMotor.Size = new System.Drawing.Size(159, 24);
             this.lblNumeroMotor.TabIndex = 2;
@@ -88,7 +90,8 @@
             // 
             this.lblNumeroPlaca.AutoSize = true;
             this.lblNumeroPlaca.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroPlaca.Location = new System.Drawing.Point(12, 163);
+            this.lblNumeroPlaca.Location = new System.Drawing.Point(20, 301);
+            this.lblNumeroPlaca.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNumeroPlaca.Name = "lblNumeroPlaca";
             this.lblNumeroPlaca.Size = new System.Drawing.Size(154, 24);
             this.lblNumeroPlaca.TabIndex = 3;
@@ -98,7 +101,8 @@
             // 
             this.lblTipoVehiculo.AutoSize = true;
             this.lblTipoVehiculo.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoVehiculo.Location = new System.Drawing.Point(400, 46);
+            this.lblTipoVehiculo.Location = new System.Drawing.Point(574, 86);
+            this.lblTipoVehiculo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
             this.lblTipoVehiculo.Size = new System.Drawing.Size(121, 24);
             this.lblTipoVehiculo.TabIndex = 4;
@@ -108,18 +112,19 @@
             // 
             this.lblModeloVehiculo.AutoSize = true;
             this.lblModeloVehiculo.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModeloVehiculo.Location = new System.Drawing.Point(400, 123);
+            this.lblModeloVehiculo.Location = new System.Drawing.Point(574, 228);
+            this.lblModeloVehiculo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblModeloVehiculo.Name = "lblModeloVehiculo";
             this.lblModeloVehiculo.Size = new System.Drawing.Size(152, 24);
             this.lblModeloVehiculo.TabIndex = 5;
             this.lblModeloVehiculo.Text = "Modelo vehículo: ";
-            this.lblModeloVehiculo.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(738, 50);
+            this.label7.Location = new System.Drawing.Point(1030, 81);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 24);
             this.label7.TabIndex = 6;
@@ -129,7 +134,8 @@
             // 
             this.lblCombustible.AutoSize = true;
             this.lblCombustible.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCombustible.Location = new System.Drawing.Point(400, 163);
+            this.lblCombustible.Location = new System.Drawing.Point(574, 302);
+            this.lblCombustible.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblCombustible.Name = "lblCombustible";
             this.lblCombustible.Size = new System.Drawing.Size(112, 24);
             this.lblCombustible.TabIndex = 7;
@@ -139,50 +145,55 @@
             // 
             this.lblMarcaVehiculo.AutoSize = true;
             this.lblMarcaVehiculo.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcaVehiculo.Location = new System.Drawing.Point(400, 84);
+            this.lblMarcaVehiculo.Location = new System.Drawing.Point(574, 156);
+            this.lblMarcaVehiculo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblMarcaVehiculo.Name = "lblMarcaVehiculo";
             this.lblMarcaVehiculo.Size = new System.Drawing.Size(138, 24);
             this.lblMarcaVehiculo.TabIndex = 8;
             this.lblMarcaVehiculo.Text = "Marca vehículo:";
-            this.lblMarcaVehiculo.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(194, 46);
+            this.txtDescripcion.Location = new System.Drawing.Point(235, 85);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(160, 29);
+            this.txtDescripcion.Size = new System.Drawing.Size(264, 29);
             this.txtDescripcion.TabIndex = 9;
             // 
             // txtNumeroChasis
             // 
             this.txtNumeroChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroChasis.Location = new System.Drawing.Point(194, 83);
+            this.txtNumeroChasis.Location = new System.Drawing.Point(235, 153);
+            this.txtNumeroChasis.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNumeroChasis.Name = "txtNumeroChasis";
-            this.txtNumeroChasis.Size = new System.Drawing.Size(160, 29);
+            this.txtNumeroChasis.Size = new System.Drawing.Size(264, 29);
             this.txtNumeroChasis.TabIndex = 10;
             // 
             // txtNumeroMotor
             // 
             this.txtNumeroMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroMotor.Location = new System.Drawing.Point(194, 122);
+            this.txtNumeroMotor.Location = new System.Drawing.Point(235, 225);
+            this.txtNumeroMotor.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNumeroMotor.Name = "txtNumeroMotor";
-            this.txtNumeroMotor.Size = new System.Drawing.Size(160, 29);
+            this.txtNumeroMotor.Size = new System.Drawing.Size(264, 29);
             this.txtNumeroMotor.TabIndex = 11;
             // 
             // txtNumeroPlaca
             // 
             this.txtNumeroPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroPlaca.Location = new System.Drawing.Point(194, 162);
+            this.txtNumeroPlaca.Location = new System.Drawing.Point(235, 299);
+            this.txtNumeroPlaca.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNumeroPlaca.Name = "txtNumeroPlaca";
-            this.txtNumeroPlaca.Size = new System.Drawing.Size(160, 29);
+            this.txtNumeroPlaca.Size = new System.Drawing.Size(264, 29);
             this.txtNumeroPlaca.TabIndex = 12;
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(738, 88);
+            this.lblFecha.Location = new System.Drawing.Point(1030, 151);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(63, 24);
             this.lblFecha.TabIndex = 13;
@@ -192,87 +203,94 @@
             // 
             this.cmbTipoVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoVehiculo.FormattingEnabled = true;
-            this.cmbTipoVehiculo.Location = new System.Drawing.Point(562, 42);
+            this.cmbTipoVehiculo.Location = new System.Drawing.Point(743, 81);
+            this.cmbTipoVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbTipoVehiculo.Name = "cmbTipoVehiculo";
-            this.cmbTipoVehiculo.Size = new System.Drawing.Size(139, 32);
+            this.cmbTipoVehiculo.Size = new System.Drawing.Size(229, 32);
             this.cmbTipoVehiculo.TabIndex = 14;
             // 
             // cmbMarcaVehiculo
             // 
             this.cmbMarcaVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMarcaVehiculo.FormattingEnabled = true;
-            this.cmbMarcaVehiculo.Location = new System.Drawing.Point(562, 80);
+            this.cmbMarcaVehiculo.Location = new System.Drawing.Point(743, 151);
+            this.cmbMarcaVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbMarcaVehiculo.Name = "cmbMarcaVehiculo";
-            this.cmbMarcaVehiculo.Size = new System.Drawing.Size(139, 32);
+            this.cmbMarcaVehiculo.Size = new System.Drawing.Size(229, 32);
             this.cmbMarcaVehiculo.TabIndex = 15;
-            this.cmbMarcaVehiculo.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // cmbModeloVehiculo
             // 
             this.cmbModeloVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbModeloVehiculo.FormattingEnabled = true;
-            this.cmbModeloVehiculo.Location = new System.Drawing.Point(562, 119);
+            this.cmbModeloVehiculo.Location = new System.Drawing.Point(743, 223);
+            this.cmbModeloVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbModeloVehiculo.Name = "cmbModeloVehiculo";
-            this.cmbModeloVehiculo.Size = new System.Drawing.Size(139, 32);
+            this.cmbModeloVehiculo.Size = new System.Drawing.Size(229, 32);
             this.cmbModeloVehiculo.TabIndex = 16;
             // 
             // cmbCombustible
             // 
             this.cmbCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCombustible.FormattingEnabled = true;
-            this.cmbCombustible.Location = new System.Drawing.Point(562, 159);
+            this.cmbCombustible.Location = new System.Drawing.Point(743, 297);
+            this.cmbCombustible.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbCombustible.Name = "cmbCombustible";
-            this.cmbCombustible.Size = new System.Drawing.Size(139, 32);
+            this.cmbCombustible.Size = new System.Drawing.Size(229, 32);
             this.cmbCombustible.TabIndex = 17;
-            // 
-            // cmbEstado
-            // 
-            this.cmbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(814, 43);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(95, 32);
-            this.cmbEstado.TabIndex = 18;
             // 
             // lblFechaValor
             // 
             this.lblFechaValor.AutoSize = true;
             this.lblFechaValor.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaValor.Location = new System.Drawing.Point(810, 88);
+            this.lblFechaValor.Location = new System.Drawing.Point(1106, 151);
+            this.lblFechaValor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblFechaValor.Name = "lblFechaValor";
             this.lblFechaValor.Size = new System.Drawing.Size(86, 24);
             this.lblFechaValor.TabIndex = 19;
             this.lblFechaValor.Text = "fechaHoy";
+            this.lblFechaValor.Click += new System.EventHandler(this.lblFechaValor_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(374, 9);
+            this.label1.Location = new System.Drawing.Point(623, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 24);
             this.label1.TabIndex = 20;
             this.label1.Text = "Gestión de vehículos";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // dataGridView1
+            // dgwVehiculos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 211);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(908, 227);
-            this.dataGridView1.TabIndex = 21;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgwVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwVehiculos.Location = new System.Drawing.Point(-167, 393);
+            this.dgwVehiculos.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.dgwVehiculos.Name = "dgwVehiculos";
+            this.dgwVehiculos.Size = new System.Drawing.Size(1352, 419);
+            this.dgwVehiculos.TabIndex = 21;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(1110, 81);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(133, 31);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // GestionVehiculo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1199, 749);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.dgwVehiculos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFechaValor);
-            this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.cmbCombustible);
             this.Controls.Add(this.cmbModeloVehiculo);
             this.Controls.Add(this.cmbMarcaVehiculo);
@@ -291,11 +309,13 @@
             this.Controls.Add(this.lblNumeroMotor);
             this.Controls.Add(this.lblNumeroChasis);
             this.Controls.Add(this.lblDescripcion);
+            this.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "GestionVehiculo";
             this.Text = "AgregarVehiculo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionVehiculo_FormClosed);
-            this.Load += new System.EventHandler(this.AgregarVehiculo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.GestionVehiculo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgwVehiculos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,9 +341,9 @@
         private System.Windows.Forms.ComboBox cmbMarcaVehiculo;
         private System.Windows.Forms.ComboBox cmbModeloVehiculo;
         private System.Windows.Forms.ComboBox cmbCombustible;
-        private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label lblFechaValor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgwVehiculos;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

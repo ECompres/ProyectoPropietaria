@@ -16,3 +16,6 @@ C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropiet
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.GestionTipoVehiculo.resources
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Inicio.resources
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.csproj.CopyComplete
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.GestionMarcaVehiculo.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.formularioVehiculo.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Vehiculo.GestionModeloVehiculo.resources

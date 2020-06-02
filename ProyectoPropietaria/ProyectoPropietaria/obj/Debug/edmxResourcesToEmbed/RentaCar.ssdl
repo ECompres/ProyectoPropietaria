@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="RentCarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="RentaCarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CANTIDAD_COMBUSTIBLE">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DESCRIPCION" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ESTADO" Type="bit" />
   </EntityType>
   <EntityType Name="CLIENTE">
     <Key>
@@ -74,6 +75,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CODE" Type="varchar" MaxLength="6" />
     <Property Name="ID_INSPECCION" Type="int" />
     <Property Name="GOMA_TRASERA_DERECHA" Type="bit" />
     <Property Name="GOMA_TRASERA_IZQUIERDA" Type="bit" />
@@ -119,6 +121,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DESCRIPCION" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ESTADO" Type="bit" />
   </EntityType>
   <EntityType Name="TIPO_CLIENTE">
     <Key>
@@ -155,8 +158,9 @@
     <Property Name="ID_MODELO_VEHICULO" Type="int" />
     <Property Name="ID_TIPO_COMBUSTIBLE" Type="int" />
     <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+    <Property Name="ESTADO" Type="bit" />
   </EntityType>
-  <Association Name="FK__CLIENTE__ID_TIPO__6D0D32F4">
+  <Association Name="FK__CLIENTE__ID_TIPO__73BA3083">
     <End Role="TIPO_CLIENTE" Type="Self.TIPO_CLIENTE" Multiplicity="0..1" />
     <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
     <ReferentialConstraint>
@@ -168,7 +172,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__EMPLEADO__ID_TAN__6E01572D">
+  <Association Name="FK__EMPLEADO__ID_TAN__74AE54BC">
     <End Role="TANDA" Type="Self.TANDA" Multiplicity="0..1" />
     <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -180,7 +184,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__EMPLEADO__ID_TIP__6EF57B66">
+  <Association Name="FK__EMPLEADO__ID_TIP__75A278F5">
     <End Role="TIPO_EMPLEADO" Type="Self.TIPO_EMPLEADO" Multiplicity="0..1" />
     <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -192,7 +196,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__INSPECCIO__ID_CA__6FE99F9F">
+  <Association Name="FK__INSPECCIO__ID_CA__797309D9">
     <End Role="CANTIDAD_COMBUSTIBLE" Type="Self.CANTIDAD_COMBUSTIBLE" Multiplicity="0..1" />
     <End Role="INSPECCION" Type="Self.INSPECCION" Multiplicity="*" />
     <ReferentialConstraint>
@@ -204,7 +208,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__INSPECCIO__ID_CL__70DDC3D8">
+  <Association Name="FK__INSPECCIO__ID_CL__778AC167">
     <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
     <End Role="INSPECCION" Type="Self.INSPECCION" Multiplicity="*" />
     <ReferentialConstraint>
@@ -216,7 +220,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__INSPECCIO__ID_EM__71D1E811">
+  <Association Name="FK__INSPECCIO__ID_EM__787EE5A0">
     <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
     <End Role="INSPECCION" Type="Self.INSPECCION" Multiplicity="*" />
     <ReferentialConstraint>
@@ -228,7 +232,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__INSPECCIO__ID_ES__72C60C4A">
+  <Association Name="FK__INSPECCIO__ID_ES__7A672E12">
     <End Role="ESTADO_INSPECCION" Type="Self.ESTADO_INSPECCION" Multiplicity="0..1" />
     <End Role="INSPECCION" Type="Self.INSPECCION" Multiplicity="*" />
     <ReferentialConstraint>
@@ -240,7 +244,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__INSPECCIO__ID_IN__74AE54BC">
+  <Association Name="FK__INSPECCIO__ID_IN__7B5B524B">
     <End Role="INSPECCION" Type="Self.INSPECCION" Multiplicity="0..1" />
     <End Role="INSPECCION_GOMAS" Type="Self.INSPECCION_GOMAS" Multiplicity="*" />
     <ReferentialConstraint>
@@ -252,7 +256,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__INSPECCIO__ID_VE__73BA3083">
+  <Association Name="FK__INSPECCIO__ID_VE__76969D2E">
     <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="0..1" />
     <End Role="INSPECCION" Type="Self.INSPECCION" Multiplicity="*" />
     <ReferentialConstraint>
@@ -264,7 +268,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MODELO_VE__ID_MA__75A278F5">
+  <Association Name="FK__MODELO_VE__ID_MA__6FE99F9F">
     <End Role="MARCA_VEHICULO" Type="Self.MARCA_VEHICULO" Multiplicity="0..1" />
     <End Role="MODELO_VEHICULO" Type="Self.MODELO_VEHICULO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -276,7 +280,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__RENTA__ID_CLIENT__76969D2E">
+  <Association Name="FK__RENTA__ID_CLIENT__7E37BEF6">
     <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
     <End Role="RENTA" Type="Self.RENTA" Multiplicity="*" />
     <ReferentialConstraint>
@@ -288,7 +292,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__RENTA__ID_EMPLEA__778AC167">
+  <Association Name="FK__RENTA__ID_EMPLEA__7C4F7684">
     <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
     <End Role="RENTA" Type="Self.RENTA" Multiplicity="*" />
     <ReferentialConstraint>
@@ -300,7 +304,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__RENTA__ID_INSPEC__787EE5A0">
+  <Association Name="FK__RENTA__ID_INSPEC__7F2BE32F">
     <End Role="INSPECCION" Type="Self.INSPECCION" Multiplicity="0..1" />
     <End Role="RENTA" Type="Self.RENTA" Multiplicity="*" />
     <ReferentialConstraint>
@@ -312,7 +316,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__RENTA__ID_VEHICU__797309D9">
+  <Association Name="FK__RENTA__ID_VEHICU__7D439ABD">
     <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="0..1" />
     <End Role="RENTA" Type="Self.RENTA" Multiplicity="*" />
     <ReferentialConstraint>
@@ -324,7 +328,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__VEHICULO__ID_MOD__7A672E12">
+  <Association Name="FK__VEHICULO__ID_MOD__71D1E811">
     <End Role="MODELO_VEHICULO" Type="Self.MODELO_VEHICULO" Multiplicity="0..1" />
     <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -336,7 +340,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__VEHICULO__ID_TIP__7B5B524B">
+  <Association Name="FK__VEHICULO__ID_TIP__70DDC3D8">
     <End Role="TIPO_VEHICULO" Type="Self.TIPO_VEHICULO" Multiplicity="0..1" />
     <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -348,7 +352,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__VEHICULO__ID_TIP__7C4F7684">
+  <Association Name="FK__VEHICULO__ID_TIP__72C60C4A">
     <End Role="COMBUSTIBLE_VEHICULO" Type="Self.COMBUSTIBLE_VEHICULO" Multiplicity="0..1" />
     <End Role="VEHICULO" Type="Self.VEHICULO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -360,7 +364,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="RentCarModelStoreContainer">
+  <EntityContainer Name="RentaCarModelStoreContainer">
     <EntitySet Name="CANTIDAD_COMBUSTIBLE" EntityType="Self.CANTIDAD_COMBUSTIBLE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="COMBUSTIBLE_VEHICULO" EntityType="Self.COMBUSTIBLE_VEHICULO" Schema="dbo" store:Type="Tables" />
@@ -376,71 +380,71 @@
     <EntitySet Name="TIPO_EMPLEADO" EntityType="Self.TIPO_EMPLEADO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TIPO_VEHICULO" EntityType="Self.TIPO_VEHICULO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VEHICULO" EntityType="Self.VEHICULO" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__CLIENTE__ID_TIPO__6D0D32F4" Association="Self.FK__CLIENTE__ID_TIPO__6D0D32F4">
+    <AssociationSet Name="FK__CLIENTE__ID_TIPO__73BA3083" Association="Self.FK__CLIENTE__ID_TIPO__73BA3083">
       <End Role="TIPO_CLIENTE" EntitySet="TIPO_CLIENTE" />
       <End Role="CLIENTE" EntitySet="CLIENTE" />
     </AssociationSet>
-    <AssociationSet Name="FK__EMPLEADO__ID_TAN__6E01572D" Association="Self.FK__EMPLEADO__ID_TAN__6E01572D">
+    <AssociationSet Name="FK__EMPLEADO__ID_TAN__74AE54BC" Association="Self.FK__EMPLEADO__ID_TAN__74AE54BC">
       <End Role="TANDA" EntitySet="TANDA" />
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
     </AssociationSet>
-    <AssociationSet Name="FK__EMPLEADO__ID_TIP__6EF57B66" Association="Self.FK__EMPLEADO__ID_TIP__6EF57B66">
+    <AssociationSet Name="FK__EMPLEADO__ID_TIP__75A278F5" Association="Self.FK__EMPLEADO__ID_TIP__75A278F5">
       <End Role="TIPO_EMPLEADO" EntitySet="TIPO_EMPLEADO" />
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
     </AssociationSet>
-    <AssociationSet Name="FK__INSPECCIO__ID_CA__6FE99F9F" Association="Self.FK__INSPECCIO__ID_CA__6FE99F9F">
+    <AssociationSet Name="FK__INSPECCIO__ID_CA__797309D9" Association="Self.FK__INSPECCIO__ID_CA__797309D9">
       <End Role="CANTIDAD_COMBUSTIBLE" EntitySet="CANTIDAD_COMBUSTIBLE" />
       <End Role="INSPECCION" EntitySet="INSPECCION" />
     </AssociationSet>
-    <AssociationSet Name="FK__INSPECCIO__ID_CL__70DDC3D8" Association="Self.FK__INSPECCIO__ID_CL__70DDC3D8">
+    <AssociationSet Name="FK__INSPECCIO__ID_CL__778AC167" Association="Self.FK__INSPECCIO__ID_CL__778AC167">
       <End Role="CLIENTE" EntitySet="CLIENTE" />
       <End Role="INSPECCION" EntitySet="INSPECCION" />
     </AssociationSet>
-    <AssociationSet Name="FK__INSPECCIO__ID_EM__71D1E811" Association="Self.FK__INSPECCIO__ID_EM__71D1E811">
+    <AssociationSet Name="FK__INSPECCIO__ID_EM__787EE5A0" Association="Self.FK__INSPECCIO__ID_EM__787EE5A0">
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
       <End Role="INSPECCION" EntitySet="INSPECCION" />
     </AssociationSet>
-    <AssociationSet Name="FK__INSPECCIO__ID_ES__72C60C4A" Association="Self.FK__INSPECCIO__ID_ES__72C60C4A">
+    <AssociationSet Name="FK__INSPECCIO__ID_ES__7A672E12" Association="Self.FK__INSPECCIO__ID_ES__7A672E12">
       <End Role="ESTADO_INSPECCION" EntitySet="ESTADO_INSPECCION" />
       <End Role="INSPECCION" EntitySet="INSPECCION" />
     </AssociationSet>
-    <AssociationSet Name="FK__INSPECCIO__ID_IN__74AE54BC" Association="Self.FK__INSPECCIO__ID_IN__74AE54BC">
+    <AssociationSet Name="FK__INSPECCIO__ID_IN__7B5B524B" Association="Self.FK__INSPECCIO__ID_IN__7B5B524B">
       <End Role="INSPECCION" EntitySet="INSPECCION" />
       <End Role="INSPECCION_GOMAS" EntitySet="INSPECCION_GOMAS" />
     </AssociationSet>
-    <AssociationSet Name="FK__INSPECCIO__ID_VE__73BA3083" Association="Self.FK__INSPECCIO__ID_VE__73BA3083">
+    <AssociationSet Name="FK__INSPECCIO__ID_VE__76969D2E" Association="Self.FK__INSPECCIO__ID_VE__76969D2E">
       <End Role="VEHICULO" EntitySet="VEHICULO" />
       <End Role="INSPECCION" EntitySet="INSPECCION" />
     </AssociationSet>
-    <AssociationSet Name="FK__MODELO_VE__ID_MA__75A278F5" Association="Self.FK__MODELO_VE__ID_MA__75A278F5">
+    <AssociationSet Name="FK__MODELO_VE__ID_MA__6FE99F9F" Association="Self.FK__MODELO_VE__ID_MA__6FE99F9F">
       <End Role="MARCA_VEHICULO" EntitySet="MARCA_VEHICULO" />
       <End Role="MODELO_VEHICULO" EntitySet="MODELO_VEHICULO" />
     </AssociationSet>
-    <AssociationSet Name="FK__RENTA__ID_CLIENT__76969D2E" Association="Self.FK__RENTA__ID_CLIENT__76969D2E">
+    <AssociationSet Name="FK__RENTA__ID_CLIENT__7E37BEF6" Association="Self.FK__RENTA__ID_CLIENT__7E37BEF6">
       <End Role="CLIENTE" EntitySet="CLIENTE" />
       <End Role="RENTA" EntitySet="RENTA" />
     </AssociationSet>
-    <AssociationSet Name="FK__RENTA__ID_EMPLEA__778AC167" Association="Self.FK__RENTA__ID_EMPLEA__778AC167">
+    <AssociationSet Name="FK__RENTA__ID_EMPLEA__7C4F7684" Association="Self.FK__RENTA__ID_EMPLEA__7C4F7684">
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
       <End Role="RENTA" EntitySet="RENTA" />
     </AssociationSet>
-    <AssociationSet Name="FK__RENTA__ID_INSPEC__787EE5A0" Association="Self.FK__RENTA__ID_INSPEC__787EE5A0">
+    <AssociationSet Name="FK__RENTA__ID_INSPEC__7F2BE32F" Association="Self.FK__RENTA__ID_INSPEC__7F2BE32F">
       <End Role="INSPECCION" EntitySet="INSPECCION" />
       <End Role="RENTA" EntitySet="RENTA" />
     </AssociationSet>
-    <AssociationSet Name="FK__RENTA__ID_VEHICU__797309D9" Association="Self.FK__RENTA__ID_VEHICU__797309D9">
+    <AssociationSet Name="FK__RENTA__ID_VEHICU__7D439ABD" Association="Self.FK__RENTA__ID_VEHICU__7D439ABD">
       <End Role="VEHICULO" EntitySet="VEHICULO" />
       <End Role="RENTA" EntitySet="RENTA" />
     </AssociationSet>
-    <AssociationSet Name="FK__VEHICULO__ID_MOD__7A672E12" Association="Self.FK__VEHICULO__ID_MOD__7A672E12">
+    <AssociationSet Name="FK__VEHICULO__ID_MOD__71D1E811" Association="Self.FK__VEHICULO__ID_MOD__71D1E811">
       <End Role="MODELO_VEHICULO" EntitySet="MODELO_VEHICULO" />
       <End Role="VEHICULO" EntitySet="VEHICULO" />
     </AssociationSet>
-    <AssociationSet Name="FK__VEHICULO__ID_TIP__7B5B524B" Association="Self.FK__VEHICULO__ID_TIP__7B5B524B">
+    <AssociationSet Name="FK__VEHICULO__ID_TIP__70DDC3D8" Association="Self.FK__VEHICULO__ID_TIP__70DDC3D8">
       <End Role="TIPO_VEHICULO" EntitySet="TIPO_VEHICULO" />
       <End Role="VEHICULO" EntitySet="VEHICULO" />
     </AssociationSet>
-    <AssociationSet Name="FK__VEHICULO__ID_TIP__7C4F7684" Association="Self.FK__VEHICULO__ID_TIP__7C4F7684">
+    <AssociationSet Name="FK__VEHICULO__ID_TIP__72C60C4A" Association="Self.FK__VEHICULO__ID_TIP__72C60C4A">
       <End Role="COMBUSTIBLE_VEHICULO" EntitySet="COMBUSTIBLE_VEHICULO" />
       <End Role="VEHICULO" EntitySet="VEHICULO" />
     </AssociationSet>

@@ -15,6 +15,7 @@ namespace ProyectoPropietaria
     public partial class INSPECCION_GOMAS
     {
         public int ID { get; set; }
+        public string CODE { get; set; }
         public Nullable<int> ID_INSPECCION { get; set; }
         public Nullable<bool> GOMA_TRASERA_DERECHA { get; set; }
         public Nullable<bool> GOMA_TRASERA_IZQUIERDA { get; set; }

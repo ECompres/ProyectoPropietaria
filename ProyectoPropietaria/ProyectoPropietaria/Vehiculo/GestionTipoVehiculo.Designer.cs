@@ -147,7 +147,7 @@
             // ESTADO
             // 
             this.ESTADO.DataPropertyName = "ESTADO";
-            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.HeaderText = "Disponibilidad";
             this.ESTADO.Name = "ESTADO";
             this.ESTADO.ReadOnly = true;
             // 

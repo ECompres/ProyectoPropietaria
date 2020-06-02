@@ -27,6 +27,7 @@ namespace ProyectoPropietaria
 
         private void GestionVehiculo_Load(object sender, EventArgs e)
         {
+            lblFechaValor.Text = DateTime.Today.ToString().Replace(" 12:00:00 a. m.","");
             getVehiculos();
             comboBoxes();
         }
@@ -77,11 +78,6 @@ namespace ProyectoPropietaria
             }
         }
 
-        private void lblFechaValor_Click(object sender, EventArgs e)
-        {
-            lblFechaValor.Text = DateTime.Now.ToString();
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -94,6 +90,11 @@ namespace ProyectoPropietaria
 
 
             }
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

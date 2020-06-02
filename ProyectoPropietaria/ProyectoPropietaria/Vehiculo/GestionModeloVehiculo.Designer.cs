@@ -36,12 +36,12 @@
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.dgwModeloVehiculo = new System.Windows.Forms.DataGridView();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MARCA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwModeloVehiculo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@
             this.label1.Size = new System.Drawing.Size(291, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Gestión de modelos de vehículos";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -77,6 +78,7 @@
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Modelo:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -87,6 +89,7 @@
             this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Estado:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cmbMarca
             // 
@@ -103,6 +106,7 @@
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(121, 20);
             this.txtModelo.TabIndex = 7;
+            this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
             // 
             // cbEstado
             // 
@@ -132,35 +136,6 @@
             this.dgwModeloVehiculo.TabIndex = 9;
             this.dgwModeloVehiculo.DoubleClick += new System.EventHandler(this.dgwModeloVehiculo_DoubleClick);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // MARCA
-            // 
-            this.MARCA.DataPropertyName = "MARCA";
-            this.MARCA.HeaderText = "MARCA";
-            this.MARCA.Name = "MARCA";
-            this.MARCA.ReadOnly = true;
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.DataPropertyName = "NOMBRE";
-            this.NOMBRE.HeaderText = "MODELO";
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.DataPropertyName = "ESTADO";
-            this.ESTADO.HeaderText = "ESTADO";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
-            // 
             // btnCrear
             // 
             this.btnCrear.Location = new System.Drawing.Point(443, 140);
@@ -180,6 +155,35 @@
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // MARCA
+            // 
+            this.MARCA.DataPropertyName = "MARCA";
+            this.MARCA.HeaderText = "Marca";
+            this.MARCA.Name = "MARCA";
+            this.MARCA.ReadOnly = true;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "NOMBRE";
+            this.NOMBRE.HeaderText = "Modelo";
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "ESTADO";
+            this.ESTADO.HeaderText = "Disponibilidad";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
             // 
             // GestionModeloVehiculo
             // 

@@ -100,7 +100,7 @@ namespace ProyectoPropietaria.Vehiculo
                     MARCA = x.MARCA_VEHICULO.NOMBRE,
                     x.NOMBRE,
                     ESTADO = x.ESTADO == true ? "Disponible" : "No disponible"
-
+                        
                 }).ToList();
                 dgwModeloVehiculo.DataSource = data;
             }
@@ -155,6 +155,26 @@ namespace ProyectoPropietaria.Vehiculo
                 cbEstado.Text = "No disponible";
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtModelo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

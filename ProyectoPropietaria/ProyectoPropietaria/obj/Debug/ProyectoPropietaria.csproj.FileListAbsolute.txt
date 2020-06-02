@@ -19,3 +19,4 @@ C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropiet
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.GestionMarcaVehiculo.resources
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.formularioVehiculo.resources
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Vehiculo.GestionModeloVehiculo.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Vehiculo.GestionCombustible.resources

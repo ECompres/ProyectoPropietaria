@@ -140,14 +140,14 @@
             // NOMBRE
             // 
             this.NOMBRE.DataPropertyName = "NOMBRE";
-            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.HeaderText = "Marca";
             this.NOMBRE.Name = "NOMBRE";
             this.NOMBRE.ReadOnly = true;
             // 
             // ESTADO
             // 
             this.ESTADO.DataPropertyName = "ESTADO";
-            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.HeaderText = "Disponibilidad";
             this.ESTADO.Name = "ESTADO";
             this.ESTADO.ReadOnly = true;
             // 

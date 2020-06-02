@@ -52,5 +52,12 @@ namespace ProyectoPropietaria
             frm.Show();
             this.Hide();
         }
+
+        private void btnCombustible_Click(object sender, EventArgs e)
+        {
+            GestionCombustible frm = new GestionCombustible();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

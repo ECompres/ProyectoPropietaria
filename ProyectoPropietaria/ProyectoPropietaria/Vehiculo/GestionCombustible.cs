@@ -109,5 +109,25 @@ namespace ProyectoPropietaria.Vehiculo
             formularioVehiculo frm = new formularioVehiculo();
             frm.Show();
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("¿Desea borrar este tipo de combustible?","Mensaje",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    var entry = db.Entry(model);
+                    if(entry.State == EntityState.Detached)
+                    {
+                        db.COMBUSTIBLE_VEHICULO.Attach(model);
+                    }
+                    db.COMBUSTIBLE_VEHICULO.Remove(model);
+                    db.SaveChanges();
+                    MessageBox.Show("Tipo de combustible eliminado");
+                    Limpiar();
+                    getCombustibles();
+                }
+            }
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace ProyectoPropietaria
                     TIPOVEHICULO = x.TIPO_VEHICULO.NOMBRE,
                     MODELO = x.MODELO_VEHICULO.NOMBRE,
                     COMBUSTIBLE = x.COMBUSTIBLE_VEHICULO.NOMBRE,
-                    x.ESTADO,
+                    ESTADO = x.ESTADO == true ? "Disponible" : "No disponible",
                     x.FECHA_CREACION
                 }).ToList();
                 dgwVehiculos.DataSource = data;
@@ -58,6 +58,8 @@ namespace ProyectoPropietaria
             txtNumeroChasis.Text = "";
             txtNumeroMotor.Text = "";
             cbEstado.Checked = false;
+            btnBorrar.Enabled = false;
+            model.ID = 0;
         }
         //Traer el valor de los ID de cada uno de los comboBoxes
         private void comboBoxes()
@@ -75,7 +77,7 @@ namespace ProyectoPropietaria
                 cmbMarcaVehiculo.ValueMember = "ID";
 
                 //Datos Modelo Vehiculo
-                cmbModeloVehiculo.DataSource = db.MODELO_VEHICULO.Where(x => x.ESTADO == true).ToList();
+                cmbModeloVehiculo.DataSource = db.MODELO_VEHICULO.Where(x => x.ID_MARCA_VEHICULO == x.MARCA_VEHICULO.ID).ToList();
                 cmbModeloVehiculo.DisplayMember = "NOMBRE";
                 cmbModeloVehiculo.ValueMember = "ID";
 
@@ -102,14 +104,14 @@ namespace ProyectoPropietaria
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            model.DESCRIPCION = txtDescripcion.Text;
-            model.NUMERO_CHASIS = txtNumeroChasis.Text;
-            model.NUMERO_MOTOR = txtNumeroMotor.Text;
-            model.NUMERO_PLACA = txtNumeroPlaca.Text;
+            model.DESCRIPCION = txtDescripcion.Text.Trim();
+            model.NUMERO_CHASIS = txtNumeroChasis.Text.Trim();
+            model.NUMERO_MOTOR = txtNumeroMotor.Text.Trim();
+            model.NUMERO_PLACA = txtNumeroPlaca.Text.Trim();
             model.ID_TIPO_VEHICULO = Convert.ToInt32(cmbTipoVehiculo.SelectedValue);
             model.ID_MODELO_VEHICULO = Convert.ToInt32(cmbModeloVehiculo.SelectedValue);
             model.ID_TIPO_COMBUSTIBLE = Convert.ToInt32(cmbCombustible.SelectedValue);
-            model.ESTADO = cbEstado.Checked;
+            model.ESTADO = Convert.ToBoolean(cbEstado.Checked);
             model.FECHA_CREACION = DateTime.Now;
             using (RentaCarEntities db = new RentaCarEntities())
             {
@@ -123,6 +125,7 @@ namespace ProyectoPropietaria
                     db.Entry(model).State = EntityState.Modified;
                     MessageBox.Show("Vehiculo modificado exitosamente");
                 }
+                db.SaveChanges();
             }
             getVehiculos();
             Limpiar();
@@ -141,6 +144,47 @@ namespace ProyectoPropietaria
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgwVehiculos_DoubleClick(object sender, EventArgs e)
+        {
+            if(dgwVehiculos.CurrentRow.Index != -1)
+            {
+                model.ID = Convert.ToInt32(dgwVehiculos.CurrentRow.Cells["ID"].Value);
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    model = db.VEHICULO.Where(x => x.ID == model.ID).FirstOrDefault();
+                    txtDescripcion.Text = model.DESCRIPCION;
+                    txtNumeroChasis.Text = model.NUMERO_CHASIS;
+                    txtNumeroMotor.Text = model.NUMERO_MOTOR;
+                    txtNumeroPlaca.Text = model.NUMERO_PLACA;
+                    cmbTipoVehiculo.SelectedValue = model.ID_TIPO_VEHICULO;
+                    cmbModeloVehiculo.SelectedValue = model.ID_MODELO_VEHICULO;
+                    cmbCombustible.SelectedValue = model.ID_TIPO_COMBUSTIBLE;
+                    cbEstado.Checked = Convert.ToBoolean(model.ESTADO);
+                }
+                btnCrear.Text = "Actualizar";
+                btnBorrar.Enabled = true;
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Desea borrar este vehículo?","Mensaje",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    var entry = db.Entry(model);
+                    if(entry.State == EntityState.Detached)
+                    {
+                        db.VEHICULO.Attach(model);
+                    }
+                    db.VEHICULO.Remove(model);
+                    db.SaveChanges();
+                    Limpiar();
+                    getVehiculos();
+                }
+            }
         }
     }
 }

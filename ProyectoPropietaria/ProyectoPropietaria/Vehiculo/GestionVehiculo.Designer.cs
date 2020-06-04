@@ -61,6 +61,7 @@
             this.MODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COMBUSTIBLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHA_CREACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgwVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -289,13 +290,15 @@
             this.TIPOVEHICULO,
             this.MODELO,
             this.COMBUSTIBLE,
-            this.FECHA_CREACION});
+            this.FECHA_CREACION,
+            this.ESTADO});
             this.dgwVehiculos.Location = new System.Drawing.Point(8, 315);
             this.dgwVehiculos.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dgwVehiculos.Name = "dgwVehiculos";
             this.dgwVehiculos.ReadOnly = true;
             this.dgwVehiculos.Size = new System.Drawing.Size(1059, 322);
             this.dgwVehiculos.TabIndex = 21;
+            this.dgwVehiculos.DoubleClick += new System.EventHandler(this.dgwVehiculos_DoubleClick);
             // 
             // cbEstado
             // 
@@ -325,10 +328,11 @@
             this.btnBorrar.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
             this.btnBorrar.Location = new System.Drawing.Point(936, 646);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(121, 25);
+            this.btnBorrar.Size = new System.Drawing.Size(121, 30);
             this.btnBorrar.TabIndex = 24;
-            this.btnBorrar.Text = "Crear";
+            this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // ID
             // 
@@ -393,6 +397,13 @@
             this.FECHA_CREACION.HeaderText = "Fecha de creacion";
             this.FECHA_CREACION.Name = "FECHA_CREACION";
             this.FECHA_CREACION.ReadOnly = true;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "ESTADO";
+            this.ESTADO.HeaderText = "Disponibilidad";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
             // 
             // GestionVehiculo
             // 
@@ -470,5 +481,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MODELO;
         private System.Windows.Forms.DataGridViewTextBoxColumn COMBUSTIBLE;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_CREACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
     }
 }

@@ -36,8 +36,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "GestionEmpleado";
-            this.Text = "CrearVehiculo";
+            this.Text = "Gestion tipo cliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionEmpleado_FormClosed);
+            this.Load += new System.EventHandler(this.GestionEmpleado_Load);
             this.ResumeLayout(false);
 
         }

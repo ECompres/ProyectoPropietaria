@@ -22,5 +22,10 @@ namespace ProyectoPropietaria
             Inicio frm = new Inicio();
             frm.Show();
         }
+
+        private void GestionEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,22 +36,17 @@
             this.lblModeloVehiculo = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblCombustible = new System.Windows.Forms.Label();
-            this.lblMarcaVehiculo = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNumeroChasis = new System.Windows.Forms.TextBox();
             this.txtNumeroMotor = new System.Windows.Forms.TextBox();
             this.txtNumeroPlaca = new System.Windows.Forms.TextBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.cmbTipoVehiculo = new System.Windows.Forms.ComboBox();
-            this.cmbMarcaVehiculo = new System.Windows.Forms.ComboBox();
             this.cmbModeloVehiculo = new System.Windows.Forms.ComboBox();
             this.cmbCombustible = new System.Windows.Forms.ComboBox();
             this.lblFechaValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgwVehiculos = new System.Windows.Forms.DataGridView();
-            this.cbEstado = new System.Windows.Forms.CheckBox();
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUMERO_CHASIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +57,9 @@
             this.COMBUSTIBLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHA_CREACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbEstado = new System.Windows.Forms.CheckBox();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,7 +122,7 @@
             // 
             this.lblModeloVehiculo.AutoSize = true;
             this.lblModeloVehiculo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
-            this.lblModeloVehiculo.Location = new System.Drawing.Point(487, 208);
+            this.lblModeloVehiculo.Location = new System.Drawing.Point(487, 129);
             this.lblModeloVehiculo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblModeloVehiculo.Name = "lblModeloVehiculo";
             this.lblModeloVehiculo.Size = new System.Drawing.Size(136, 21);
@@ -147,23 +145,12 @@
             // 
             this.lblCombustible.AutoSize = true;
             this.lblCombustible.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
-            this.lblCombustible.Location = new System.Drawing.Point(487, 282);
+            this.lblCombustible.Location = new System.Drawing.Point(487, 203);
             this.lblCombustible.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblCombustible.Name = "lblCombustible";
             this.lblCombustible.Size = new System.Drawing.Size(100, 21);
             this.lblCombustible.TabIndex = 7;
             this.lblCombustible.Text = "Combustible";
-            // 
-            // lblMarcaVehiculo
-            // 
-            this.lblMarcaVehiculo.AutoSize = true;
-            this.lblMarcaVehiculo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
-            this.lblMarcaVehiculo.Location = new System.Drawing.Point(487, 136);
-            this.lblMarcaVehiculo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblMarcaVehiculo.Name = "lblMarcaVehiculo";
-            this.lblMarcaVehiculo.Size = new System.Drawing.Size(124, 21);
-            this.lblMarcaVehiculo.TabIndex = 8;
-            this.lblMarcaVehiculo.Text = "Marca vehículo:";
             // 
             // txtDescripcion
             // 
@@ -223,21 +210,11 @@
             this.cmbTipoVehiculo.Size = new System.Drawing.Size(190, 28);
             this.cmbTipoVehiculo.TabIndex = 14;
             // 
-            // cmbMarcaVehiculo
-            // 
-            this.cmbMarcaVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cmbMarcaVehiculo.FormattingEnabled = true;
-            this.cmbMarcaVehiculo.Location = new System.Drawing.Point(617, 128);
-            this.cmbMarcaVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.cmbMarcaVehiculo.Name = "cmbMarcaVehiculo";
-            this.cmbMarcaVehiculo.Size = new System.Drawing.Size(190, 28);
-            this.cmbMarcaVehiculo.TabIndex = 15;
-            // 
             // cmbModeloVehiculo
             // 
             this.cmbModeloVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cmbModeloVehiculo.FormattingEnabled = true;
-            this.cmbModeloVehiculo.Location = new System.Drawing.Point(617, 200);
+            this.cmbModeloVehiculo.Location = new System.Drawing.Point(617, 121);
             this.cmbModeloVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbModeloVehiculo.Name = "cmbModeloVehiculo";
             this.cmbModeloVehiculo.Size = new System.Drawing.Size(190, 28);
@@ -247,7 +224,7 @@
             // 
             this.cmbCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cmbCombustible.FormattingEnabled = true;
-            this.cmbCombustible.Location = new System.Drawing.Point(617, 274);
+            this.cmbCombustible.Location = new System.Drawing.Point(617, 195);
             this.cmbCombustible.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbCombustible.Name = "cmbCombustible";
             this.cmbCombustible.Size = new System.Drawing.Size(190, 28);
@@ -299,40 +276,6 @@
             this.dgwVehiculos.Size = new System.Drawing.Size(1059, 322);
             this.dgwVehiculos.TabIndex = 21;
             this.dgwVehiculos.DoubleClick += new System.EventHandler(this.dgwVehiculos_DoubleClick);
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
-            this.cbEstado.Location = new System.Drawing.Point(936, 58);
-            this.cbEstado.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(153, 31);
-            this.cbEstado.TabIndex = 0;
-            this.cbEstado.Text = "No disponible";
-            this.cbEstado.UseVisualStyleBackColor = true;
-            this.cbEstado.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // btnCrear
-            // 
-            this.btnCrear.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
-            this.btnCrear.Location = new System.Drawing.Point(936, 278);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(121, 28);
-            this.btnCrear.TabIndex = 22;
-            this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
-            this.btnBorrar.Location = new System.Drawing.Point(936, 646);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(121, 30);
-            this.btnBorrar.TabIndex = 24;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // ID
             // 
@@ -405,6 +348,40 @@
             this.ESTADO.Name = "ESTADO";
             this.ESTADO.ReadOnly = true;
             // 
+            // cbEstado
+            // 
+            this.cbEstado.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.cbEstado.Location = new System.Drawing.Point(936, 58);
+            this.cbEstado.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(153, 31);
+            this.cbEstado.TabIndex = 0;
+            this.cbEstado.Text = "No disponible";
+            this.cbEstado.UseVisualStyleBackColor = true;
+            this.cbEstado.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // btnCrear
+            // 
+            this.btnCrear.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.btnCrear.Location = new System.Drawing.Point(936, 278);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(121, 28);
+            this.btnCrear.TabIndex = 22;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.btnBorrar.Location = new System.Drawing.Point(936, 646);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(121, 30);
+            this.btnBorrar.TabIndex = 24;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
             // GestionVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -418,14 +395,12 @@
             this.Controls.Add(this.lblFechaValor);
             this.Controls.Add(this.cmbCombustible);
             this.Controls.Add(this.cmbModeloVehiculo);
-            this.Controls.Add(this.cmbMarcaVehiculo);
             this.Controls.Add(this.cmbTipoVehiculo);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.txtNumeroPlaca);
             this.Controls.Add(this.txtNumeroMotor);
             this.Controls.Add(this.txtNumeroChasis);
             this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.lblMarcaVehiculo);
             this.Controls.Add(this.lblCombustible);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblModeloVehiculo);
@@ -456,14 +431,12 @@
         private System.Windows.Forms.Label lblModeloVehiculo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblCombustible;
-        private System.Windows.Forms.Label lblMarcaVehiculo;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtNumeroChasis;
         private System.Windows.Forms.TextBox txtNumeroMotor;
         private System.Windows.Forms.TextBox txtNumeroPlaca;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.ComboBox cmbTipoVehiculo;
-        private System.Windows.Forms.ComboBox cmbMarcaVehiculo;
         private System.Windows.Forms.ComboBox cmbModeloVehiculo;
         private System.Windows.Forms.ComboBox cmbCombustible;
         private System.Windows.Forms.Label lblFechaValor;

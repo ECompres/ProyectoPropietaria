@@ -61,11 +61,35 @@
     <Compile Include="CLIENTE.cs">
       <DependentUpon>RentaCar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\GestionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\GestionCliente.Designer.cs">
+      <DependentUpon>GestionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\GestionTipoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\GestionTipoCliente.Designer.cs">
+      <DependentUpon>GestionTipoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="COMBUSTIBLE_VEHICULO.cs">
       <DependentUpon>RentaCar.tt</DependentUpon>
     </Compile>
     <Compile Include="EMPLEADO.cs">
       <DependentUpon>RentaCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado\GestionTanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\GestionTanda.Designer.cs">
+      <DependentUpon>GestionTanda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado\GestionTipoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\GestionTipoEmpleado.Designer.cs">
+      <DependentUpon>GestionTipoEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="ESTADO_INSPECCION.cs">
       <DependentUpon>RentaCar.tt</DependentUpon>
@@ -145,12 +169,6 @@
     <Compile Include="Vehiculo\GestionMarcaVehiculo.Designer.cs">
       <DependentUpon>GestionMarcaVehiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\GestionTipoCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente\GestionTipoCliente.Designer.cs">
-      <DependentUpon>GestionTipoCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vehiculo\GestionModeloVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +201,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cliente\GestionCliente.resx">
+      <DependentUpon>GestionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\GestionTipoCliente.resx">
+      <DependentUpon>GestionTipoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\GestionTanda.resx">
+      <DependentUpon>GestionTanda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\GestionTipoEmpleado.resx">
+      <DependentUpon>GestionTipoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularioCliente.resx">
+      <DependentUpon>formularioCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularioEmpleado.resx">
+      <DependentUpon>formularioEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularioVehiculo.resx">
       <DependentUpon>formularioVehiculo.cs</DependentUpon>
     </EmbeddedResource>

@@ -71,13 +71,14 @@ namespace ProyectoPropietaria
                 cmbTipoVehiculo.DisplayMember = "NOMBRE";
                 cmbTipoVehiculo.ValueMember = "ID";
 
-                //Datos de Marca Vehiculo
-                cmbMarcaVehiculo.DataSource = db.MARCA_VEHICULO.Where(x => x.ESTADO == true).ToList();
-                cmbMarcaVehiculo.DisplayMember = "NOMBRE";
-                cmbMarcaVehiculo.ValueMember = "ID";
 
                 //Datos Modelo Vehiculo
-                cmbModeloVehiculo.DataSource = db.MODELO_VEHICULO.Where(x => x.ID_MARCA_VEHICULO == x.MARCA_VEHICULO.ID).ToList();
+                cmbModeloVehiculo.DataSource = db.MODELO_VEHICULO.Where(x => x.ESTADO == true)
+                    .Select(x=>new
+                    {
+                        x.ID,
+                        NOMBRE = x.MARCA_VEHICULO.NOMBRE + " - " + x.NOMBRE
+                    }).ToList();
                 cmbModeloVehiculo.DisplayMember = "NOMBRE";
                 cmbModeloVehiculo.ValueMember = "ID";
 
@@ -112,7 +113,7 @@ namespace ProyectoPropietaria
             model.ID_MODELO_VEHICULO = Convert.ToInt32(cmbModeloVehiculo.SelectedValue);
             model.ID_TIPO_COMBUSTIBLE = Convert.ToInt32(cmbCombustible.SelectedValue);
             model.ESTADO = Convert.ToBoolean(cbEstado.Checked);
-            model.FECHA_CREACION = DateTime.Now;
+            model.FECHA_CREACION = Convert.ToDateTime(lblFechaValor.Text);
             using (RentaCarEntities db = new RentaCarEntities())
             {
                 if(model.ID == 0)
@@ -161,6 +162,7 @@ namespace ProyectoPropietaria
                     cmbTipoVehiculo.SelectedValue = model.ID_TIPO_VEHICULO;
                     cmbModeloVehiculo.SelectedValue = model.ID_MODELO_VEHICULO;
                     cmbCombustible.SelectedValue = model.ID_TIPO_COMBUSTIBLE;
+                    lblFechaValor.Text = model.FECHA_CREACION.ToString();
                     cbEstado.Checked = Convert.ToBoolean(model.ESTADO);
                 }
                 btnCrear.Text = "Actualizar";

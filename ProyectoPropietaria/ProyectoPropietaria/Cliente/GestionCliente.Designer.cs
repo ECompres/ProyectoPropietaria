@@ -44,14 +44,25 @@
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtLimiteCredito = new System.Windows.Forms.TextBox();
             this.txtTarjetaCredito = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.lblFechaHoy = new System.Windows.Forms.Label();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnCrear = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cmbTipoCliente = new System.Windows.Forms.ComboBox();
+            this.numericLimiteCredito = new System.Windows.Forms.NumericUpDown();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIPOCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LIMITE_CREDITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TARJETA_CREDITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEDULA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.numericLimiteCredito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.Location = new System.Drawing.Point(275, 9);
+            this.label1.Location = new System.Drawing.Point(340, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 24);
             this.label1.TabIndex = 27;
@@ -132,7 +143,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(600, 85);
+            this.label8.Location = new System.Drawing.Point(657, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(132, 20);
             this.label8.TabIndex = 34;
@@ -142,7 +153,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(600, 45);
+            this.label9.Location = new System.Drawing.Point(657, 45);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 20);
             this.label9.TabIndex = 35;
@@ -213,15 +224,6 @@
             this.txtTelefono.TabIndex = 41;
             this.txtTelefono.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // txtLimiteCredito
-            // 
-            this.txtLimiteCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLimiteCredito.Location = new System.Drawing.Point(416, 121);
-            this.txtLimiteCredito.Name = "txtLimiteCredito";
-            this.txtLimiteCredito.Size = new System.Drawing.Size(178, 26);
-            this.txtLimiteCredito.TabIndex = 43;
-            this.txtLimiteCredito.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
             // txtTarjetaCredito
             // 
             this.txtTarjetaCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,7 +237,7 @@
             // 
             this.cbEstado.AutoSize = true;
             this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstado.Location = new System.Drawing.Point(710, 41);
+            this.cbEstado.Location = new System.Drawing.Point(767, 41);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(136, 24);
             this.cbEstado.TabIndex = 45;
@@ -247,24 +249,15 @@
             // 
             this.lblFechaHoy.AutoSize = true;
             this.lblFechaHoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaHoy.Location = new System.Drawing.Point(738, 85);
+            this.lblFechaHoy.Location = new System.Drawing.Point(795, 85);
             this.lblFechaHoy.Name = "lblFechaHoy";
             this.lblFechaHoy.Size = new System.Drawing.Size(85, 20);
             this.lblFechaHoy.TabIndex = 46;
             this.lblFechaHoy.Text = "fechaHoy";
             // 
-            // dgvClientes
-            // 
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(14, 207);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(830, 209);
-            this.dgvClientes.TabIndex = 47;
-            this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
-            // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(769, 169);
+            this.btnCrear.Location = new System.Drawing.Point(826, 169);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 48;
@@ -291,11 +284,115 @@
             this.cmbTipoCliente.Size = new System.Drawing.Size(178, 28);
             this.cmbTipoCliente.TabIndex = 50;
             // 
+            // numericLimiteCredito
+            // 
+            this.numericLimiteCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.numericLimiteCredito.Location = new System.Drawing.Point(416, 127);
+            this.numericLimiteCredito.Name = "numericLimiteCredito";
+            this.numericLimiteCredito.Size = new System.Drawing.Size(178, 26);
+            this.numericLimiteCredito.TabIndex = 51;
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.NOMBRES,
+            this.APELLIDOS,
+            this.CEDULA,
+            this.EMAIL,
+            this.TELEFONO,
+            this.TARJETA_CREDITO,
+            this.LIMITE_CREDITO,
+            this.TIPOCLIENTE,
+            this.ESTADO});
+            this.dgvClientes.Location = new System.Drawing.Point(3, 207);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.Size = new System.Drawing.Size(927, 209);
+            this.dgvClientes.TabIndex = 47;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
+            this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "ESTADO";
+            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            // 
+            // TIPOCLIENTE
+            // 
+            this.TIPOCLIENTE.DataPropertyName = "TIPO_CLIENTE";
+            this.TIPOCLIENTE.HeaderText = "Tipo de cliente";
+            this.TIPOCLIENTE.Name = "TIPOCLIENTE";
+            this.TIPOCLIENTE.ReadOnly = true;
+            // 
+            // LIMITE_CREDITO
+            // 
+            this.LIMITE_CREDITO.DataPropertyName = "LIMITE_CREDITO";
+            this.LIMITE_CREDITO.HeaderText = "Limite de credito";
+            this.LIMITE_CREDITO.Name = "LIMITE_CREDITO";
+            this.LIMITE_CREDITO.ReadOnly = true;
+            // 
+            // TARJETA_CREDITO
+            // 
+            this.TARJETA_CREDITO.DataPropertyName = "TARJETA_CREDITO";
+            this.TARJETA_CREDITO.HeaderText = "Tarjeta de credito";
+            this.TARJETA_CREDITO.Name = "TARJETA_CREDITO";
+            this.TARJETA_CREDITO.ReadOnly = true;
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.DataPropertyName = "TELEFONO";
+            this.TELEFONO.HeaderText = "Telefono";
+            this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.DataPropertyName = "EMAIL";
+            this.EMAIL.HeaderText = "Email";
+            this.EMAIL.Name = "EMAIL";
+            this.EMAIL.ReadOnly = true;
+            // 
+            // CEDULA
+            // 
+            this.CEDULA.DataPropertyName = "CEDULA";
+            this.CEDULA.HeaderText = "Cedula";
+            this.CEDULA.Name = "CEDULA";
+            this.CEDULA.ReadOnly = true;
+            // 
+            // APELLIDOS
+            // 
+            this.APELLIDOS.DataPropertyName = "APELLIDOS";
+            this.APELLIDOS.HeaderText = "Apellidos";
+            this.APELLIDOS.Name = "APELLIDOS";
+            this.APELLIDOS.ReadOnly = true;
+            // 
+            // NOMBRES
+            // 
+            this.NOMBRES.DataPropertyName = "NOMBRES";
+            this.NOMBRES.HeaderText = "Nombres";
+            this.NOMBRES.Name = "NOMBRES";
+            this.NOMBRES.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // GestionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 450);
+            this.ClientSize = new System.Drawing.Size(932, 450);
+            this.Controls.Add(this.numericLimiteCredito);
             this.Controls.Add(this.cmbTipoCliente);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCrear);
@@ -303,7 +400,6 @@
             this.Controls.Add(this.lblFechaHoy);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.txtTarjetaCredito);
-            this.Controls.Add(this.txtLimiteCredito);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtCedula);
@@ -323,6 +419,7 @@
             this.Name = "GestionCliente";
             this.Text = "GestionCliente";
             this.Load += new System.EventHandler(this.GestionCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericLimiteCredito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -347,13 +444,23 @@
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtLimiteCredito;
         private System.Windows.Forms.TextBox txtTarjetaCredito;
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label lblFechaHoy;
-        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmbTipoCliente;
+        private System.Windows.Forms.NumericUpDown numericLimiteCredito;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDOS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CEDULA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TARJETA_CREDITO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LIMITE_CREDITO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TIPOCLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
     }
 }

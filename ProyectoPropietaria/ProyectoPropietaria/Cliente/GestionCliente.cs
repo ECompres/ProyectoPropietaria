@@ -24,6 +24,7 @@ namespace ProyectoPropietaria.Cliente
             getClientes();
             getTipoCliente();
             lblFechaHoy.Text = DateTime.Today.ToString().Replace(" 12:00:00 a. m.", "");
+            Limpiar();
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
@@ -68,8 +69,7 @@ namespace ProyectoPropietaria.Cliente
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if (txtNombres.Text == "" || txtApellidos.Text == "" || txtCedula.Text == "" || txtTelefono.Text == "" || txtTarjetaCredito.Text == ""
-                || txtLimiteCredito.Text == "")
+            if (txtNombres.Text == "" || txtApellidos.Text == "" || txtCedula.Text == "" || txtTelefono.Text == "" || txtTarjetaCredito.Text == "")
             {
                 MessageBox.Show("Rellene todos los campos");
             }
@@ -79,8 +79,9 @@ namespace ProyectoPropietaria.Cliente
                 model.APELLIDOS = txtApellidos.Text;
                 model.CEDULA = Convert.ToInt32(txtCedula.Text);
                 model.TELEFONO = txtTelefono.Text;
+                model.EMAIL = txtEmail.Text;
                 model.TARJETA_CREDITO = Convert.ToInt32(txtTarjetaCredito.Text);
-                model.LIMITE_CREDITO = Convert.ToDecimal(txtLimiteCredito.Text);
+                model.LIMITE_CREDITO = numericLimiteCredito.Value;
                 model.ID_TIPO_CLIENTE = Convert.ToInt32(cmbTipoCliente.SelectedValue);
                 model.ESTADO = Convert.ToBoolean(cbEstado.Checked);
                 model.FECHA_CREACION = Convert.ToDateTime(lblFechaHoy.Text);
@@ -133,12 +134,13 @@ namespace ProyectoPropietaria.Cliente
                     txtNombres.Text = model.NOMBRES;
                     txtApellidos.Text = model.APELLIDOS;
                     txtCedula.Text = Convert.ToString(model.CEDULA);
+                    txtEmail.Text = model.EMAIL;
                     txtTelefono.Text = model.TELEFONO;
                     txtTarjetaCredito.Text = Convert.ToString(model.TARJETA_CREDITO);
-                    txtLimiteCredito.Text = Convert.ToString(model.LIMITE_CREDITO);
+                    numericLimiteCredito.Value = model.LIMITE_CREDITO;
                     cmbTipoCliente.SelectedValue = model.ID_TIPO_CLIENTE;
-                    model.ESTADO = Convert.ToBoolean(cbEstado.Checked);
-                    model.FECHA_CREACION = Convert.ToDateTime(lblFechaHoy.Text);
+                    cbEstado.Checked = Convert.ToBoolean(model.ESTADO);
+                    lblFechaHoy.Text = model.FECHA_CREACION.ToString();
                 }
                 btnCrear.Text = "Actualizar";
                 button2.Enabled = true;
@@ -156,6 +158,7 @@ namespace ProyectoPropietaria.Cliente
                     x.APELLIDOS,
                     x.CEDULA,
                     x.EMAIL,
+                    x.TELEFONO,
                     x.TARJETA_CREDITO,
                     x.LIMITE_CREDITO,
                     TIPO_CLIENTE = x.TIPO_CLIENTE.DESCRIPCION,
@@ -164,6 +167,7 @@ namespace ProyectoPropietaria.Cliente
                 }).ToList();
                 dgvClientes.DataSource = data;
             }
+            
         }
         private void getTipoCliente()
         {
@@ -180,8 +184,11 @@ namespace ProyectoPropietaria.Cliente
             txtApellidos.Text = "";
             txtCedula.Text = "";
             txtEmail.Text = "";
+            model.ID = 0;
             txtTarjetaCredito.Text = "";
-            txtLimiteCredito.Text = "";
+            btnCrear.Text = "Crear";
+            txtTelefono.Text = "";
+            numericLimiteCredito.Value = 0;
             cbEstado.Checked = false;
             button2.Enabled = false;
 
@@ -198,6 +205,11 @@ namespace ProyectoPropietaria.Cliente
                 cbEstado.Text = "No disponible";
 
             }
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

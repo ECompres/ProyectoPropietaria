@@ -39,6 +39,8 @@
     <EntitySetMapping Name="EMPLEADO">
       <EntityTypeMapping TypeName="RentaCarModel.EMPLEADO">
         <MappingFragment StoreEntitySet="EMPLEADO">
+          <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
           <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />

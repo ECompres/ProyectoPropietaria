@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RentaCarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RentaCarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CANTIDAD_COMBUSTIBLE">
           <Key>
             <PropertyRef Name="ID" />
@@ -51,6 +51,8 @@
           <Property Name="ESTADO" Type="bit" />
           <Property Name="CLAVE" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="ID_TIPO_EMPLEADO" Type="int" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="20" />
+          <Property Name="CEDULA" Type="varchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="ESTADO_INSPECCION">
           <Key>
@@ -454,8 +456,7 @@
             <End Role="VEHICULO" EntitySet="VEHICULO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RentaCarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -514,6 +515,8 @@
           <NavigationProperty Name="TIPO_EMPLEADO" Relationship="Self.FK__EMPLEADO__ID_TIP__75A278F5" FromRole="EMPLEADO" ToRole="TIPO_EMPLEADO" />
           <NavigationProperty Name="INSPECCION" Relationship="Self.FK__INSPECCIO__ID_EM__787EE5A0" FromRole="EMPLEADO" ToRole="INSPECCION" />
           <NavigationProperty Name="RENTA" Relationship="Self.FK__RENTA__ID_EMPLEA__7C4F7684" FromRole="EMPLEADO" ToRole="RENTA" />
+          <Property Name="EMAIL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CEDULA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ESTADO_INSPECCION">
           <Key>
@@ -986,6 +989,8 @@
           <EntitySetMapping Name="EMPLEADO">
             <EntityTypeMapping TypeName="RentaCarModel.EMPLEADO">
               <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
                 <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />

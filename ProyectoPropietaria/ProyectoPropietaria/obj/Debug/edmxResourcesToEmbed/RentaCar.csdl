@@ -55,6 +55,8 @@
     <NavigationProperty Name="TIPO_EMPLEADO" Relationship="Self.FK__EMPLEADO__ID_TIP__75A278F5" FromRole="EMPLEADO" ToRole="TIPO_EMPLEADO" />
     <NavigationProperty Name="INSPECCION" Relationship="Self.FK__INSPECCIO__ID_EM__787EE5A0" FromRole="EMPLEADO" ToRole="INSPECCION" />
     <NavigationProperty Name="RENTA" Relationship="Self.FK__RENTA__ID_EMPLEA__7C4F7684" FromRole="EMPLEADO" ToRole="RENTA" />
+    <Property Name="EMAIL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CEDULA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="ESTADO_INSPECCION">
     <Key>

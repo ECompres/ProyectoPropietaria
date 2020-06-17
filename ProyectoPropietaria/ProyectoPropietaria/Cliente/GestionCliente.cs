@@ -211,5 +211,11 @@ namespace ProyectoPropietaria.Cliente
         {
 
         }
+
+        private void GestionCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var frm = new formularioCliente();
+            frm.Show();
+        }
     }
 }

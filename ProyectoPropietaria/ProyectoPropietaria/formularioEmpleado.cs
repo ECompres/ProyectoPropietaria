@@ -38,5 +38,11 @@ namespace ProyectoPropietaria
             this.Hide();
             frm.Show();
         }
+
+        private void formularioEmpleado_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var frm = new Inicio();
+            frm.Show();
+        }
     }
 }

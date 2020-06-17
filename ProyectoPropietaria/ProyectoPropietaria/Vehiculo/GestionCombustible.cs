@@ -21,7 +21,8 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void GestionCombustible_Load(object sender, EventArgs e)
         {
-
+            getCombustibles();
+            Limpiar();
         }
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
         {

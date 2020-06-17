@@ -157,11 +157,23 @@
     <Compile Include="VEHICULO.cs">
       <DependentUpon>RentaCar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Vehiculo\GestionCantidadCombustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculo\GestionCantidadCombustible.Designer.cs">
+      <DependentUpon>GestionCantidadCombustible.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehiculo\GestionCombustible.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vehiculo\GestionCombustible.Designer.cs">
       <DependentUpon>GestionCombustible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculo\GestionEstadoInspeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculo\GestionEstadoInspeccion.Designer.cs">
+      <DependentUpon>GestionEstadoInspeccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Vehiculo\GestionMarcaVehiculo.cs">
       <SubType>Form</SubType>
@@ -222,8 +234,14 @@
     <EmbeddedResource Include="formularioVehiculo.resx">
       <DependentUpon>formularioVehiculo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculo\GestionCantidadCombustible.resx">
+      <DependentUpon>GestionCantidadCombustible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vehiculo\GestionCombustible.resx">
       <DependentUpon>GestionCombustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculo\GestionEstadoInspeccion.resx">
+      <DependentUpon>GestionEstadoInspeccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehiculo\GestionMarcaVehiculo.resx">
       <DependentUpon>GestionMarcaVehiculo.cs</DependentUpon>

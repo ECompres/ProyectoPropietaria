@@ -73,6 +73,7 @@
             this.Controls.Add(this.button1);
             this.Name = "formularioEmpleado";
             this.Text = "formularioEmpleado";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formularioEmpleado_FormClosed);
             this.ResumeLayout(false);
 
         }

@@ -30,7 +30,6 @@ namespace ProyectoPropietaria.Vehiculo
         {
             formularioVehiculo frm = new formularioVehiculo();
             frm.Show();
-            this.Hide();
 
         }
 

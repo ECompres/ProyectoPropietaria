@@ -52,16 +52,16 @@
             this.cmbTipoCliente = new System.Windows.Forms.ComboBox();
             this.numericLimiteCredito = new System.Windows.Forms.NumericUpDown();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIPOCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LIMITE_CREDITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TARJETA_CREDITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEDULA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEDULA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TARJETA_CREDITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LIMITE_CREDITO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIPOCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericLimiteCredito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -316,61 +316,13 @@
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.DoubleClick += new System.EventHandler(this.dgvClientes_DoubleClick);
             // 
-            // ESTADO
+            // ID
             // 
-            this.ESTADO.DataPropertyName = "ESTADO";
-            this.ESTADO.HeaderText = "Estado";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
-            // 
-            // TIPOCLIENTE
-            // 
-            this.TIPOCLIENTE.DataPropertyName = "TIPO_CLIENTE";
-            this.TIPOCLIENTE.HeaderText = "Tipo de cliente";
-            this.TIPOCLIENTE.Name = "TIPOCLIENTE";
-            this.TIPOCLIENTE.ReadOnly = true;
-            // 
-            // LIMITE_CREDITO
-            // 
-            this.LIMITE_CREDITO.DataPropertyName = "LIMITE_CREDITO";
-            this.LIMITE_CREDITO.HeaderText = "Limite de credito";
-            this.LIMITE_CREDITO.Name = "LIMITE_CREDITO";
-            this.LIMITE_CREDITO.ReadOnly = true;
-            // 
-            // TARJETA_CREDITO
-            // 
-            this.TARJETA_CREDITO.DataPropertyName = "TARJETA_CREDITO";
-            this.TARJETA_CREDITO.HeaderText = "Tarjeta de credito";
-            this.TARJETA_CREDITO.Name = "TARJETA_CREDITO";
-            this.TARJETA_CREDITO.ReadOnly = true;
-            // 
-            // TELEFONO
-            // 
-            this.TELEFONO.DataPropertyName = "TELEFONO";
-            this.TELEFONO.HeaderText = "Telefono";
-            this.TELEFONO.Name = "TELEFONO";
-            this.TELEFONO.ReadOnly = true;
-            // 
-            // EMAIL
-            // 
-            this.EMAIL.DataPropertyName = "EMAIL";
-            this.EMAIL.HeaderText = "Email";
-            this.EMAIL.Name = "EMAIL";
-            this.EMAIL.ReadOnly = true;
-            // 
-            // CEDULA
-            // 
-            this.CEDULA.DataPropertyName = "CEDULA";
-            this.CEDULA.HeaderText = "Cedula";
-            this.CEDULA.Name = "CEDULA";
-            this.CEDULA.ReadOnly = true;
-            // 
-            // APELLIDOS
-            // 
-            this.APELLIDOS.DataPropertyName = "APELLIDOS";
-            this.APELLIDOS.HeaderText = "Apellidos";
-            this.APELLIDOS.Name = "APELLIDOS";
-            this.APELLIDOS.ReadOnly = true;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             // 
             // NOMBRES
             // 
@@ -379,13 +331,61 @@
             this.NOMBRES.Name = "NOMBRES";
             this.NOMBRES.ReadOnly = true;
             // 
-            // ID
+            // APELLIDOS
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
+            this.APELLIDOS.DataPropertyName = "APELLIDOS";
+            this.APELLIDOS.HeaderText = "Apellidos";
+            this.APELLIDOS.Name = "APELLIDOS";
+            this.APELLIDOS.ReadOnly = true;
+            // 
+            // CEDULA
+            // 
+            this.CEDULA.DataPropertyName = "CEDULA";
+            this.CEDULA.HeaderText = "Cedula";
+            this.CEDULA.Name = "CEDULA";
+            this.CEDULA.ReadOnly = true;
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.DataPropertyName = "EMAIL";
+            this.EMAIL.HeaderText = "Email";
+            this.EMAIL.Name = "EMAIL";
+            this.EMAIL.ReadOnly = true;
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.DataPropertyName = "TELEFONO";
+            this.TELEFONO.HeaderText = "Telefono";
+            this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
+            // 
+            // TARJETA_CREDITO
+            // 
+            this.TARJETA_CREDITO.DataPropertyName = "TARJETA_CREDITO";
+            this.TARJETA_CREDITO.HeaderText = "Tarjeta de credito";
+            this.TARJETA_CREDITO.Name = "TARJETA_CREDITO";
+            this.TARJETA_CREDITO.ReadOnly = true;
+            // 
+            // LIMITE_CREDITO
+            // 
+            this.LIMITE_CREDITO.DataPropertyName = "LIMITE_CREDITO";
+            this.LIMITE_CREDITO.HeaderText = "Limite de credito";
+            this.LIMITE_CREDITO.Name = "LIMITE_CREDITO";
+            this.LIMITE_CREDITO.ReadOnly = true;
+            // 
+            // TIPOCLIENTE
+            // 
+            this.TIPOCLIENTE.DataPropertyName = "TIPO_CLIENTE";
+            this.TIPOCLIENTE.HeaderText = "Tipo de cliente";
+            this.TIPOCLIENTE.Name = "TIPOCLIENTE";
+            this.TIPOCLIENTE.ReadOnly = true;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "ESTADO";
+            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
             // 
             // GestionCliente
             // 
@@ -418,6 +418,7 @@
             this.Controls.Add(this.label1);
             this.Name = "GestionCliente";
             this.Text = "GestionCliente";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionCliente_FormClosed);
             this.Load += new System.EventHandler(this.GestionCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericLimiteCredito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();

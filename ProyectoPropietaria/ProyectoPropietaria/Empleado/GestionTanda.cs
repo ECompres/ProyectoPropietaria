@@ -117,7 +117,7 @@ namespace ProyectoPropietaria.Empleado
 
         private void GestionTanda_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formularioVehiculo frm = new formularioVehiculo();
+            var frm = new formularioEmpleado();
             frm.Show();
         }
     }

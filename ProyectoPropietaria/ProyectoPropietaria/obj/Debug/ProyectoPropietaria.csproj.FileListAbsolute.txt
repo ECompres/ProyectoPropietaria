@@ -26,3 +26,5 @@ C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropiet
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Cliente.GestionTipoCliente.resources
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.formularioCliente.resources
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Cliente.GestionCliente.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Vehiculo.GestionCantidadCombustible.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Vehiculo.GestionEstadoInspeccion.resources

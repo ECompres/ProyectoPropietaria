@@ -21,7 +21,7 @@ namespace ProyectoPropietaria
 
         private void GestionEmpleado_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Inicio frm = new Inicio();
+            var frm = new formularioEmpleado();
             frm.Show();
         }
 

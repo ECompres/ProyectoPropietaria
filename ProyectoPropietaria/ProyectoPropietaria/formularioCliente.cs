@@ -28,7 +28,7 @@ namespace ProyectoPropietaria
         private void formularioCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
             var frm = new Inicio();
-            this.Hide();
+            
             frm.Show();
         }
 

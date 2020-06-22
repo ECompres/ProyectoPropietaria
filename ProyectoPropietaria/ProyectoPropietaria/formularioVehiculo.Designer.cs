@@ -35,6 +35,7 @@
             this.btnCombustible = new System.Windows.Forms.Button();
             this.btnCantidadCombustible = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -79,7 +80,7 @@
             // 
             // btnCombustible
             // 
-            this.btnCombustible.Location = new System.Drawing.Point(14, 209);
+            this.btnCombustible.Location = new System.Drawing.Point(14, 217);
             this.btnCombustible.Name = "btnCombustible";
             this.btnCombustible.Size = new System.Drawing.Size(129, 23);
             this.btnCombustible.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             // btnCantidadCombustible
             // 
-            this.btnCantidadCombustible.Location = new System.Drawing.Point(13, 238);
+            this.btnCantidadCombustible.Location = new System.Drawing.Point(13, 246);
             this.btnCantidadCombustible.Name = "btnCantidadCombustible";
             this.btnCantidadCombustible.Size = new System.Drawing.Size(130, 23);
             this.btnCantidadCombustible.TabIndex = 5;
@@ -107,11 +108,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(14, 188);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(129, 23);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Gestión inspección";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // formularioVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnCantidadCombustible);
             this.Controls.Add(this.btnCombustible);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Button btnCombustible;
         private System.Windows.Forms.Button btnCantidadCombustible;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

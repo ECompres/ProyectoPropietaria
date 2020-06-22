@@ -45,7 +45,7 @@ namespace ProyectoPropietaria
                     x.NUMERO_MOTOR,
                     x.NUMERO_PLACA,
                     TIPOVEHICULO = x.TIPO_VEHICULO.NOMBRE,
-                    MODELO = x.MODELO_VEHICULO.NOMBRE,
+                    MODELO = x.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE + " - " + x.MODELO_VEHICULO.NOMBRE,
                     COMBUSTIBLE = x.COMBUSTIBLE_VEHICULO.NOMBRE,
                     ESTADO = x.ESTADO == true ? "Disponible" : "No disponible",
                     x.FECHA_CREACION

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,7 +40,6 @@ namespace ProyectoPropietaria
             model.APELLIDOS = txtApellidos.Text;
             model.EMAIL = txtEmail.Text;
             model.CLAVE = txtClave.Text;
-            model.CEDULA = txtCedula.Text;
             model.ID_TANDA = Convert.ToInt32(cmbTanda.SelectedValue);
             model.PORCIENTO_COMISION = Convert.ToInt32(numericComision.Value);
             model.FECHA_INGRESO = datePicker.Value;
@@ -96,7 +96,6 @@ namespace ProyectoPropietaria
                     x.ID,
                     x.NOMBRES,
                     x.APELLIDOS,
-                    x.CEDULA,
                     x.EMAIL,
                     x.CLAVE,
                     TANDA = x.TANDA.DESCRIPCION,
@@ -126,7 +125,6 @@ namespace ProyectoPropietaria
         {
             txtNombres.Text = "";
             txtApellidos.Text = "";
-            txtCedula.Text = "";
             txtEmail.Text = "";
             txtClave.Text = "";
             model.ID = 0;
@@ -146,16 +144,20 @@ namespace ProyectoPropietaria
                     model = db.EMPLEADO.Where(x => x.ID == model.ID).FirstOrDefault();
                     txtNombres.Text = model.NOMBRES;
                     txtApellidos.Text = model.APELLIDOS;
-                    txtCedula.Text = model.CEDULA;
                     txtEmail.Text = model.EMAIL;
                     txtClave.Text = model.CLAVE;
                     cmbTanda.SelectedValue = Convert.ToInt32(model.ID_TANDA);
                     numericComision.Value = model.PORCIENTO_COMISION;
-
+                    lblFechaHoy.Text = model.FECHA_CREACION.ToString();
                 }
                 button2.Enabled = true;
                 btnCrear.Text = "Actualizar";
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

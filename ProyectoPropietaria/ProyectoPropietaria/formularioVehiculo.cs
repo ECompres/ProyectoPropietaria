@@ -73,5 +73,12 @@ namespace ProyectoPropietaria
             this.Hide();
             frm.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var frm = new GestionInspeccion();
+            this.Hide();
+            frm.Show();
+        }
     }
 }

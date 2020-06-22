@@ -29,9 +29,7 @@ namespace ProyectoPropietaria
         public virtual DbSet<CLIENTE> CLIENTE { get; set; }
         public virtual DbSet<COMBUSTIBLE_VEHICULO> COMBUSTIBLE_VEHICULO { get; set; }
         public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
-        public virtual DbSet<ESTADO_INSPECCION> ESTADO_INSPECCION { get; set; }
         public virtual DbSet<INSPECCION> INSPECCION { get; set; }
-        public virtual DbSet<INSPECCION_GOMAS> INSPECCION_GOMAS { get; set; }
         public virtual DbSet<MARCA_VEHICULO> MARCA_VEHICULO { get; set; }
         public virtual DbSet<MODELO_VEHICULO> MODELO_VEHICULO { get; set; }
         public virtual DbSet<RENTA> RENTA { get; set; }

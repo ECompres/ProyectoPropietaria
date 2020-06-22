@@ -17,13 +17,13 @@ namespace ProyectoPropietaria
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EMPLEADO()
         {
-            this.INSPECCION = new HashSet<INSPECCION>();
             this.RENTA = new HashSet<RENTA>();
         }
     
         public int ID { get; set; }
         public string NOMBRES { get; set; }
         public string APELLIDOS { get; set; }
+        public string EMAIL { get; set; }
         public Nullable<int> ID_TANDA { get; set; }
         public decimal PORCIENTO_COMISION { get; set; }
         public System.DateTime FECHA_INGRESO { get; set; }
@@ -31,13 +31,9 @@ namespace ProyectoPropietaria
         public Nullable<bool> ESTADO { get; set; }
         public string CLAVE { get; set; }
         public Nullable<int> ID_TIPO_EMPLEADO { get; set; }
-        public string EMAIL { get; set; }
-        public string CEDULA { get; set; }
     
         public virtual TANDA TANDA { get; set; }
         public virtual TIPO_EMPLEADO TIPO_EMPLEADO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<INSPECCION> INSPECCION { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RENTA> RENTA { get; set; }
     }

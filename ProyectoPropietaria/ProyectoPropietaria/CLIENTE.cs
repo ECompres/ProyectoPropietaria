@@ -17,25 +17,22 @@ namespace ProyectoPropietaria
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CLIENTE()
         {
-            this.INSPECCION = new HashSet<INSPECCION>();
             this.RENTA = new HashSet<RENTA>();
         }
     
         public int ID { get; set; }
         public string NOMBRES { get; set; }
         public string APELLIDOS { get; set; }
-        public int CEDULA { get; set; }
+        public string CEDULA { get; set; }
         public string EMAIL { get; set; }
         public string TELEFONO { get; set; }
-        public int TARJETA_CREDITO { get; set; }
+        public string TARJETA_CREDITO { get; set; }
         public decimal LIMITE_CREDITO { get; set; }
         public Nullable<int> ID_TIPO_CLIENTE { get; set; }
         public Nullable<bool> ESTADO { get; set; }
         public System.DateTime FECHA_CREACION { get; set; }
     
         public virtual TIPO_CLIENTE TIPO_CLIENTE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<INSPECCION> INSPECCION { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RENTA> RENTA { get; set; }
     }

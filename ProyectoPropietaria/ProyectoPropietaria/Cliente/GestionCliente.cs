@@ -106,20 +106,18 @@ namespace ProyectoPropietaria.Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea borrar este cliente?", "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            string Preg = (model.ESTADO == true) ? "Desea desactivar a este cliente?" : "Desea activar a este cliente?";
+            if (MessageBox.Show(Preg, "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                model.ESTADO = !model.ESTADO;
                 using (RentaCarEntities db = new RentaCarEntities())
                 {
-                    var entry = db.Entry(model);
-                    if (entry.State == EntityState.Detached)
-                    {
-                        db.CLIENTE.Attach(model);
-                    }
-                    db.CLIENTE.Remove(model);
+                    db.Entry(model).State = EntityState.Modified;
+                    MessageBox.Show("Estado modificado");
                     db.SaveChanges();
-                    Limpiar();
-                    getClientes();
                 }
+                Limpiar();
+                getClientes();
             }
         }
 
@@ -141,6 +139,14 @@ namespace ProyectoPropietaria.Cliente
                     cmbTipoCliente.SelectedValue = model.ID_TIPO_CLIENTE;
                     cbEstado.Checked = Convert.ToBoolean(model.ESTADO);
                     lblFechaHoy.Text = model.FECHA_CREACION.ToString();
+                }
+                if(cbEstado.Checked == true)
+                {
+                    button2.Text = "Desactivar";
+                }
+                else
+                {
+                    button2.Text = "Activar";
                 }
                 btnCrear.Text = "Actualizar";
                 button2.Enabled = true;

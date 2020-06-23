@@ -165,6 +165,14 @@ namespace ProyectoPropietaria
                     lblFechaValor.Text = model.FECHA_CREACION.ToString();
                     cbEstado.Checked = Convert.ToBoolean(model.ESTADO);
                 }
+                if (cbEstado.Checked == true)
+                {
+                    btnBorrar.Text = "Desactivar";
+                }
+                else
+                {
+                    btnBorrar.Text = "Activar";
+                }
                 btnCrear.Text = "Actualizar";
                 btnBorrar.Enabled = true;
             }
@@ -172,20 +180,18 @@ namespace ProyectoPropietaria
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Desea borrar este vehículo?","Mensaje",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            string Preg = (model.ESTADO == true) ? "Desea desactivar a este vehiculo?" : "Desea activar a este vehiculo?";
+            if (MessageBox.Show(Preg, "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                model.ESTADO = !model.ESTADO;
                 using (RentaCarEntities db = new RentaCarEntities())
                 {
-                    var entry = db.Entry(model);
-                    if(entry.State == EntityState.Detached)
-                    {
-                        db.VEHICULO.Attach(model);
-                    }
-                    db.VEHICULO.Remove(model);
+                    db.Entry(model).State = EntityState.Modified;
+                    MessageBox.Show("Estado modificado");
                     db.SaveChanges();
-                    Limpiar();
-                    getVehiculos();
                 }
+                Limpiar();
+                getVehiculos();
             }
         }
     }

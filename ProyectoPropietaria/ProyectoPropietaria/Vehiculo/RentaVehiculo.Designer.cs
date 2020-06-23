@@ -63,6 +63,11 @@
             this.gomaDD = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.dgvRenta = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEHICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.dpDevolucion = new System.Windows.Forms.DateTimePicker();
@@ -70,11 +75,10 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblDias = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VEHICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericCostePorDia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenta)).BeginInit();
             this.SuspendLayout();
@@ -468,11 +472,48 @@
             this.CLIENTE,
             this.CODIGO,
             this.ESTADO});
-            this.dgvRenta.Location = new System.Drawing.Point(312, 206);
+            this.dgvRenta.Location = new System.Drawing.Point(312, 232);
             this.dgvRenta.Name = "dgvRenta";
             this.dgvRenta.ReadOnly = true;
-            this.dgvRenta.Size = new System.Drawing.Size(624, 309);
+            this.dgvRenta.Size = new System.Drawing.Size(624, 283);
             this.dgvRenta.TabIndex = 104;
+            this.dgvRenta.DoubleClick += new System.EventHandler(this.dgvRenta_DoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // VEHICULO
+            // 
+            this.VEHICULO.DataPropertyName = "VEHICULO";
+            this.VEHICULO.HeaderText = "Vehiculo";
+            this.VEHICULO.Name = "VEHICULO";
+            this.VEHICULO.ReadOnly = true;
+            // 
+            // CLIENTE
+            // 
+            this.CLIENTE.DataPropertyName = "CLIENTE";
+            this.CLIENTE.HeaderText = "Cliente";
+            this.CLIENTE.Name = "CLIENTE";
+            this.CLIENTE.ReadOnly = true;
+            // 
+            // CODIGO
+            // 
+            this.CODIGO.DataPropertyName = "CODIGO";
+            this.CODIGO.HeaderText = "Codigo";
+            this.CODIGO.Name = "CODIGO";
+            this.CODIGO.ReadOnly = true;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "ESTADO";
+            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
             // 
             // btnBorrar
             // 
@@ -482,10 +523,11 @@
             this.btnBorrar.TabIndex = 105;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(840, 177);
+            this.btnCrear.Location = new System.Drawing.Point(840, 203);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(96, 23);
             this.btnCrear.TabIndex = 106;
@@ -548,47 +590,56 @@
             this.label12.TabIndex = 110;
             this.label12.Text = "Dias";
             // 
-            // ID
+            // label19
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label19.Location = new System.Drawing.Point(680, 177);
+            this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(64, 21);
+            this.label19.TabIndex = 111;
+            this.label19.Text = "Codigo:";
             // 
-            // VEHICULO
+            // lblCodigo
             // 
-            this.VEHICULO.DataPropertyName = "VEHICULO";
-            this.VEHICULO.HeaderText = "Vehiculo";
-            this.VEHICULO.Name = "VEHICULO";
-            this.VEHICULO.ReadOnly = true;
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.lblCodigo.Location = new System.Drawing.Point(793, 174);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(0, 21);
+            this.lblCodigo.TabIndex = 112;
             // 
-            // CLIENTE
+            // button1
             // 
-            this.CLIENTE.DataPropertyName = "CLIENTE";
-            this.CLIENTE.HeaderText = "Cliente";
-            this.CLIENTE.Name = "CLIENTE";
-            this.CLIENTE.ReadOnly = true;
+            this.button1.Location = new System.Drawing.Point(684, 203);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 23);
+            this.button1.TabIndex = 113;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // CODIGO
+            // btnExportar
             // 
-            this.CODIGO.DataPropertyName = "CODIGO";
-            this.CODIGO.HeaderText = "Codigo";
-            this.CODIGO.Name = "CODIGO";
-            this.CODIGO.ReadOnly = true;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.DataPropertyName = "ESTADO";
-            this.ESTADO.HeaderText = "Estado";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
+            this.btnExportar.Location = new System.Drawing.Point(683, 521);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(96, 23);
+            this.btnExportar.TabIndex = 114;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // RentaVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 545);
+            this.Controls.Add(this.btnExportar);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblDias);
             this.Controls.Add(this.lblTotal);
@@ -691,5 +742,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

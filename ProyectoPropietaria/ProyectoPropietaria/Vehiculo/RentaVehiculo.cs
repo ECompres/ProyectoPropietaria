@@ -24,9 +24,9 @@ namespace ProyectoPropietaria.Vehiculo
         {
             getRentas();
             comboBoxes();
-            dpRenta.MinDate = DateTime.Now;
             Limpiar();
-            dpDevolucion.MinDate = DateTime.Now;
+            diasRenta();
+            dpRenta.Value = DateTime.Now;
         }
 
         private void rayaduras_CheckedChanged(object sender, EventArgs e)
@@ -278,8 +278,9 @@ namespace ProyectoPropietaria.Vehiculo
             txtDescripcion.Text = "";
             lblDias.Text = "0";
             numericCostePorDia.Value = 0;
-
+            lblCodigo.Text = "";
             //btn
+            btnCrear.Text = "Crear";
             btnBorrar.Enabled = false;
             renta.ID = 0;
             inspeccion.ID = 0;
@@ -294,6 +295,11 @@ namespace ProyectoPropietaria.Vehiculo
             if(model.ID_INSPECCION != 0)
             {
                 MessageBox.Show("Debe crear inspección");
+                return false;
+            }
+            if(numericCostePorDia.Value == 0)
+            {
+                MessageBox.Show("El coste por día no puede ser igual a 0");
                 return false;
             }
             return true;
@@ -331,6 +337,77 @@ namespace ProyectoPropietaria.Vehiculo
             {
                 dpDevolucion.Value = dpRenta.Value;
             }
+        }
+
+        private void dgvRenta_DoubleClick(object sender, EventArgs e)
+        {
+            if(dgvRenta.CurrentRow.Index != -1)
+            {
+                renta.ID = Convert.ToInt32(dgvRenta.CurrentRow.Cells["ID"].Value);
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    renta = db.RENTA.Where(x => x.ID == renta.ID).FirstOrDefault();
+                    cmbCliente.SelectedValue = Convert.ToInt32(renta.ID_CLIENTE);
+                    cmbVehiculo.SelectedValue = Convert.ToInt32(renta.ID_VEHICULO);
+                    dpRenta.Value = Convert.ToDateTime(renta.FECHA_RENTA);
+                    dpDevolucion.Value = Convert.ToDateTime(renta.FECHA_DEVOLUCION);
+                    lblDias.Text = Convert.ToString(renta.CANTIDAD_DIAS);
+                    numericCostePorDia.Value = Convert.ToDecimal(renta.MONTO_DIA);
+                    txtDescripcion.Text = renta.DESCRIPCION;
+                    lblCodigo.Text = renta.CODIGO;
+                    cbEstado.Checked = renta.ESTADO;
+                    renta.ID_EMPLEADO = 2;
+
+                    //Renta
+                    inspeccion = db.INSPECCION.Where(x => x.ID == renta.ID_INSPECCION).FirstOrDefault();
+                    cmbCantidadCombustible.SelectedValue = Convert.ToInt32(inspeccion.ID_CANTIDAD_COMBUSTIBLE);
+                    rayaduras.Checked = Convert.ToBoolean(inspeccion.TIENE_RAYADURAS);
+                    cristalesRotos.Checked = Convert.ToBoolean(inspeccion.TIENE_ROTURA_CRISTAL);
+                    gato.Checked = Convert.ToBoolean(inspeccion.TIENE_GATO);
+                    gomaRepuesto.Checked = Convert.ToBoolean(inspeccion.GOMA_REPUESTO);
+                    gomaDD.Checked=Convert.ToBoolean(inspeccion.GOMA_DELANTERA_DERECHA);
+                    gomaDD.Checked=Convert.ToBoolean(inspeccion.GOMA_DELANTERA_IZQUIERDA);
+                    gomaDD.Checked=Convert.ToBoolean(inspeccion.GOMA_TRASERA_DERECHA);
+                    gomaDD.Checked=Convert.ToBoolean(inspeccion.GOMA_TRASERA_IZQUIERDA);                    
+                }
+                if (cbEstado.Checked == true)
+                {
+                    btnBorrar.Text = "No entregar";
+                }
+                else
+                {
+                    btnBorrar.Text = "Entregar";
+                }
+                btnCrear.Text = "Actualizar";
+                btnBorrar.Enabled = true;
+
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            string Preg = (renta.ESTADO == true) ? "Desea desactivar a esta Renta?" : "Desea activar a esta renta?";
+            if (MessageBox.Show(Preg, "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                renta.ESTADO = !renta.ESTADO;
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    db.Entry(renta).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                Limpiar();
+                getRentas();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -66,20 +66,18 @@ namespace ProyectoPropietaria
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea borrar este cliente?", "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            string Preg = (model.ESTADO == true) ? "Desea desactivar a este Empleado?" : "Desea activar a este Empleado?";
+            if (MessageBox.Show(Preg, "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                model.ESTADO = !model.ESTADO;
                 using (RentaCarEntities db = new RentaCarEntities())
                 {
-                    var entry = db.Entry(model);
-                    if(entry.State == EntityState.Detached)
-                    {
-                        db.EMPLEADO.Attach(model);
-                    }
-                    db.EMPLEADO.Remove(model);
+                    db.Entry(model).State = EntityState.Modified;
+                    MessageBox.Show("Estado modificado");
                     db.SaveChanges();
-                    getEmpleados();
-                    Limpiar();
                 }
+                Limpiar();
+                getEmpleados();
             }
         }
 

@@ -47,7 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericDias = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.numericCostePorDia = new System.Windows.Forms.NumericUpDown();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -63,13 +62,21 @@
             this.label17 = new System.Windows.Forms.Label();
             this.gomaDD = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRenta = new System.Windows.Forms.DataGridView();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.dpDevolucion = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.numericDias)).BeginInit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblDias = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEHICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericCostePorDia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRenta)).BeginInit();
             this.SuspendLayout();
             // 
             // cristalesRotos
@@ -156,7 +163,6 @@
             // cmbCliente
             // 
             this.cmbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cmbCliente.FormattingEnabled = true;
             this.cmbCliente.Location = new System.Drawing.Point(150, 62);
             this.cmbCliente.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbCliente.Name = "cmbCliente";
@@ -177,7 +183,6 @@
             // cmbCantidadCombustible
             // 
             this.cmbCantidadCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cmbCantidadCombustible.FormattingEnabled = true;
             this.cmbCantidadCombustible.Location = new System.Drawing.Point(200, 374);
             this.cmbCantidadCombustible.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbCantidadCombustible.Name = "cmbCantidadCombustible";
@@ -221,7 +226,6 @@
             // cmbVehiculo
             // 
             this.cmbVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cmbVehiculo.FormattingEnabled = true;
             this.cmbVehiculo.Location = new System.Drawing.Point(150, 102);
             this.cmbVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbVehiculo.Name = "cmbVehiculo";
@@ -248,6 +252,7 @@
             this.dpRenta.Size = new System.Drawing.Size(120, 26);
             this.dpRenta.TabIndex = 79;
             this.dpRenta.Value = new System.DateTime(2020, 6, 15, 0, 0, 0, 0);
+            this.dpRenta.ValueChanged += new System.EventHandler(this.dpRenta_ValueChanged);
             // 
             // label7
             // 
@@ -282,19 +287,11 @@
             this.label9.TabIndex = 85;
             this.label9.Text = "Días a rentar:";
             // 
-            // numericDias
-            // 
-            this.numericDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.numericDias.Location = new System.Drawing.Point(534, 136);
-            this.numericDias.Name = "numericDias";
-            this.numericDias.Size = new System.Drawing.Size(120, 26);
-            this.numericDias.TabIndex = 86;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
-            this.label10.Location = new System.Drawing.Point(680, 67);
+            this.label10.Location = new System.Drawing.Point(373, 170);
             this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 21);
@@ -303,11 +300,18 @@
             // 
             // numericCostePorDia
             // 
+            this.numericCostePorDia.DecimalPlaces = 2;
             this.numericCostePorDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.numericCostePorDia.Location = new System.Drawing.Point(797, 65);
+            this.numericCostePorDia.Location = new System.Drawing.Point(534, 168);
+            this.numericCostePorDia.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numericCostePorDia.Name = "numericCostePorDia";
             this.numericCostePorDia.Size = new System.Drawing.Size(120, 26);
             this.numericCostePorDia.TabIndex = 88;
+            this.numericCostePorDia.ValueChanged += new System.EventHandler(this.numericCostePorDia_ValueChanged);
             // 
             // txtDescripcion
             // 
@@ -453,13 +457,22 @@
             this.label18.TabIndex = 96;
             this.label18.Text = "Goma delantera derecha:";
             // 
-            // dataGridView1
+            // dgvRenta
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(312, 206);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(624, 309);
-            this.dataGridView1.TabIndex = 104;
+            this.dgvRenta.AllowUserToAddRows = false;
+            this.dgvRenta.AllowUserToDeleteRows = false;
+            this.dgvRenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.VEHICULO,
+            this.CLIENTE,
+            this.CODIGO,
+            this.ESTADO});
+            this.dgvRenta.Location = new System.Drawing.Point(312, 206);
+            this.dgvRenta.Name = "dgvRenta";
+            this.dgvRenta.ReadOnly = true;
+            this.dgvRenta.Size = new System.Drawing.Size(624, 309);
+            this.dgvRenta.TabIndex = 104;
             // 
             // btnBorrar
             // 
@@ -489,15 +502,100 @@
             this.dpDevolucion.Size = new System.Drawing.Size(120, 26);
             this.dpDevolucion.TabIndex = 83;
             this.dpDevolucion.Value = new System.DateTime(2020, 6, 15, 0, 0, 0, 0);
+            this.dpDevolucion.ValueChanged += new System.EventHandler(this.dpDevolucion_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label6.Location = new System.Drawing.Point(680, 62);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 21);
+            this.label6.TabIndex = 107;
+            this.label6.Text = "Total:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.lblTotal.Location = new System.Drawing.Point(793, 62);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(44, 21);
+            this.lblTotal.TabIndex = 108;
+            this.lblTotal.Text = "0.00";
+            // 
+            // lblDias
+            // 
+            this.lblDias.AutoSize = true;
+            this.lblDias.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.lblDias.Location = new System.Drawing.Point(549, 141);
+            this.lblDias.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblDias.Name = "lblDias";
+            this.lblDias.Size = new System.Drawing.Size(20, 21);
+            this.lblDias.TabIndex = 109;
+            this.lblDias.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label12.Location = new System.Drawing.Point(612, 141);
+            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 21);
+            this.label12.TabIndex = 110;
+            this.label12.Text = "Dias";
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // VEHICULO
+            // 
+            this.VEHICULO.DataPropertyName = "VEHICULO";
+            this.VEHICULO.HeaderText = "Vehiculo";
+            this.VEHICULO.Name = "VEHICULO";
+            this.VEHICULO.ReadOnly = true;
+            // 
+            // CLIENTE
+            // 
+            this.CLIENTE.DataPropertyName = "CLIENTE";
+            this.CLIENTE.HeaderText = "Cliente";
+            this.CLIENTE.Name = "CLIENTE";
+            this.CLIENTE.ReadOnly = true;
+            // 
+            // CODIGO
+            // 
+            this.CODIGO.DataPropertyName = "CODIGO";
+            this.CODIGO.HeaderText = "Codigo";
+            this.CODIGO.Name = "CODIGO";
+            this.CODIGO.ReadOnly = true;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "ESTADO";
+            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
             // 
             // RentaVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 545);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.lblDias);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvRenta);
             this.Controls.Add(this.gomaTI);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.gomaTD);
@@ -513,7 +611,6 @@
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.numericCostePorDia);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.numericDias);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dpDevolucion);
@@ -536,10 +633,10 @@
             this.Controls.Add(this.lblNumeroChasis);
             this.Name = "RentaVehiculo";
             this.Text = "RentaVehiculo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RentaVehiculo_FormClosed);
             this.Load += new System.EventHandler(this.RentaVehiculo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericDias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCostePorDia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -566,7 +663,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericDias;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown numericCostePorDia;
         private System.Windows.Forms.TextBox txtDescripcion;
@@ -582,9 +678,18 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.CheckBox gomaDD;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRenta;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.DateTimePicker dpDevolucion;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblDias;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VEHICULO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
     }
 }

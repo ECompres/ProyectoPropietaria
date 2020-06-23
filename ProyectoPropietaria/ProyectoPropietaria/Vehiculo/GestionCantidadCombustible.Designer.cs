@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.CheckBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dgwCantidadCombustible = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,30 +36,8 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgwCantidadCombustible)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(13, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Estado";
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.AutoSize = true;
-            this.cbEstado.Location = new System.Drawing.Point(127, 69);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(90, 17);
-            this.cbEstado.TabIndex = 15;
-            this.cbEstado.Text = "No disponible";
-            this.cbEstado.UseVisualStyleBackColor = true;
-            this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
             // btnBorrar
             // 
@@ -80,8 +56,7 @@
             this.dgwCantidadCombustible.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwCantidadCombustible.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.DESCRIPCION,
-            this.ESTADO});
+            this.DESCRIPCION});
             this.dgwCantidadCombustible.Location = new System.Drawing.Point(12, 101);
             this.dgwCantidadCombustible.Name = "dgwCantidadCombustible";
             this.dgwCantidadCombustible.ReadOnly = true;
@@ -144,20 +119,11 @@
             this.DESCRIPCION.Name = "DESCRIPCION";
             this.DESCRIPCION.ReadOnly = true;
             // 
-            // ESTADO
-            // 
-            this.ESTADO.DataPropertyName = "ESTADO";
-            this.ESTADO.HeaderText = "Disponibilidad";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
-            // 
             // GestionCantidadCombustible
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 300);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.dgwCantidadCombustible);
             this.Controls.Add(this.label2);
@@ -175,9 +141,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.DataGridView dgwCantidadCombustible;
         private System.Windows.Forms.Label label2;
@@ -186,6 +149,5 @@
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPCION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
     }
 }

@@ -203,7 +203,6 @@
             // cmbTipoVehiculo
             // 
             this.cmbTipoVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cmbTipoVehiculo.FormattingEnabled = true;
             this.cmbTipoVehiculo.Location = new System.Drawing.Point(617, 58);
             this.cmbTipoVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbTipoVehiculo.Name = "cmbTipoVehiculo";
@@ -213,7 +212,6 @@
             // cmbModeloVehiculo
             // 
             this.cmbModeloVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cmbModeloVehiculo.FormattingEnabled = true;
             this.cmbModeloVehiculo.Location = new System.Drawing.Point(617, 121);
             this.cmbModeloVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbModeloVehiculo.Name = "cmbModeloVehiculo";
@@ -223,7 +221,6 @@
             // cmbCombustible
             // 
             this.cmbCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cmbCombustible.FormattingEnabled = true;
             this.cmbCombustible.Location = new System.Drawing.Point(617, 195);
             this.cmbCombustible.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbCombustible.Name = "cmbCombustible";

@@ -80,5 +80,12 @@ namespace ProyectoPropietaria
             this.Hide();
             frm.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var frm = new RentaVehiculo();
+            this.Hide();
+            frm.Show();
+        }
     }
 }

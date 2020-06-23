@@ -278,7 +278,6 @@
             // cmbTipoCliente
             // 
             this.cmbTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.cmbTipoCliente.FormattingEnabled = true;
             this.cmbTipoCliente.Location = new System.Drawing.Point(416, 160);
             this.cmbTipoCliente.Name = "cmbTipoCliente";
             this.cmbTipoCliente.Size = new System.Drawing.Size(178, 28);

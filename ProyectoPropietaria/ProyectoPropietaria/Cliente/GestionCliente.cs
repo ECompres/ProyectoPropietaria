@@ -77,10 +77,10 @@ namespace ProyectoPropietaria.Cliente
             {
                 model.NOMBRES = txtNombres.Text;
                 model.APELLIDOS = txtApellidos.Text;
-                model.CEDULA = Convert.ToInt32(txtCedula.Text);
+                model.CEDULA = txtCedula.Text;
                 model.TELEFONO = txtTelefono.Text;
                 model.EMAIL = txtEmail.Text;
-                model.TARJETA_CREDITO = Convert.ToInt32(txtTarjetaCredito.Text);
+                model.TARJETA_CREDITO = txtTarjetaCredito.Text;
                 model.LIMITE_CREDITO = numericLimiteCredito.Value;
                 model.ID_TIPO_CLIENTE = Convert.ToInt32(cmbTipoCliente.SelectedValue);
                 model.ESTADO = Convert.ToBoolean(cbEstado.Checked);

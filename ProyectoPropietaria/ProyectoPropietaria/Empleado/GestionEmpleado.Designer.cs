@@ -199,7 +199,6 @@
             // cmbTanda
             // 
             this.cmbTanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.cmbTanda.FormattingEnabled = true;
             this.cmbTanda.Location = new System.Drawing.Point(418, 48);
             this.cmbTanda.Name = "cmbTanda";
             this.cmbTanda.Size = new System.Drawing.Size(178, 28);
@@ -276,7 +275,6 @@
             // cmbTipoEmpleado
             // 
             this.cmbTipoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.cmbTipoEmpleado.FormattingEnabled = true;
             this.cmbTipoEmpleado.Location = new System.Drawing.Point(418, 162);
             this.cmbTipoEmpleado.Name = "cmbTipoEmpleado";
             this.cmbTipoEmpleado.Size = new System.Drawing.Size(178, 28);

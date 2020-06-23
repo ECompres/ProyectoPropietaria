@@ -27,21 +27,12 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbEstado.Checked == true)
-            {
-                cbEstado.Text = "Disponible";
-            }
-            else
-            {
-                cbEstado.Text = "No disponible";
-
-            }
+            
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
             model.DESCRIPCION = txtCantidadCombustible.Text;
-            model.ESTADO = cbEstado.Checked;
             using (RentaCarEntities db = new RentaCarEntities())
             {
                 if(model.ID == 0)
@@ -86,7 +77,6 @@ namespace ProyectoPropietaria.Vehiculo
                 {
                     x.ID,
                     x.DESCRIPCION,
-                    ESTADO = x.ESTADO == true ? "Disponible" : "No disponible"
                 }).ToList();
                 dgwCantidadCombustible.DataSource = data;
             }
@@ -94,7 +84,7 @@ namespace ProyectoPropietaria.Vehiculo
         private void Limpiar()
         {
             txtCantidadCombustible.Text = "";
-            cbEstado.Checked = false;
+            
             model.ID = 0;
             btnCrear.Text = "Crear";
             btnBorrar.Enabled = false;
@@ -109,7 +99,6 @@ namespace ProyectoPropietaria.Vehiculo
                 {
                     model = db.CANTIDAD_COMBUSTIBLE.Where(x => x.ID == model.ID).FirstOrDefault();
                     txtCantidadCombustible.Text = model.DESCRIPCION;
-                    cbEstado.Checked = Convert.ToBoolean(model.ESTADO);
                 }
                 btnCrear.Text = "Actualizar";
                 btnBorrar.Enabled = true;

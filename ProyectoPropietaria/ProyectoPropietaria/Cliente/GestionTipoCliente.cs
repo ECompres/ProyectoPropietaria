@@ -21,6 +21,7 @@ namespace ProyectoPropietaria.Cliente
 
         private void GestionTipoCliente_Load(object sender, EventArgs e)
         {
+            Limpiar();
             getTipoClientes();
         }
 
@@ -48,7 +49,7 @@ namespace ProyectoPropietaria.Cliente
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if(txtTipoCliente.Text == "")
+            if(txtTipoCliente.Text != "")
             {
                 model.DESCRIPCION = txtTipoCliente.Text.Trim();
                 using (RentaCarEntities db = new RentaCarEntities())

@@ -136,24 +136,6 @@
     <Compile Include="Empleado\GestionTipoEmpleado.Designer.cs">
       <DependentUpon>GestionTipoEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularioCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularioCliente.Designer.cs">
-      <DependentUpon>formularioCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formularioEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularioEmpleado.Designer.cs">
-      <DependentUpon>formularioEmpleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formularioVehiculo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularioVehiculo.Designer.cs">
-      <DependentUpon>formularioVehiculo.cs</DependentUpon>
-    </Compile>
     <Compile Include="INSPECCION.cs">
       <DependentUpon>RentaCar.tt</DependentUpon>
     </Compile>
@@ -214,18 +196,6 @@
     <Compile Include="Vehiculo\GestionCombustible.Designer.cs">
       <DependentUpon>GestionCombustible.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vehiculo\GestionEstadoInspeccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vehiculo\GestionEstadoInspeccion.Designer.cs">
-      <DependentUpon>GestionEstadoInspeccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vehiculo\GestionInspeccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vehiculo\GestionInspeccion.Designer.cs">
-      <DependentUpon>GestionInspeccion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vehiculo\GestionMarcaVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,15 +252,6 @@
     <EmbeddedResource Include="Empleado\GestionTipoEmpleado.resx">
       <DependentUpon>GestionTipoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularioCliente.resx">
-      <DependentUpon>formularioCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formularioEmpleado.resx">
-      <DependentUpon>formularioEmpleado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formularioVehiculo.resx">
-      <DependentUpon>formularioVehiculo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,12 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vehiculo\GestionCombustible.resx">
       <DependentUpon>GestionCombustible.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vehiculo\GestionEstadoInspeccion.resx">
-      <DependentUpon>GestionEstadoInspeccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vehiculo\GestionInspeccion.resx">
-      <DependentUpon>GestionInspeccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehiculo\GestionMarcaVehiculo.resx">
       <DependentUpon>GestionMarcaVehiculo.cs</DependentUpon>
@@ -332,6 +287,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vehiculo\RentaVehiculo.resx">
       <DependentUpon>RentaVehiculo.cs</DependentUpon>
@@ -374,6 +330,14 @@
       <DependentUpon>RentaCar.edmx</DependentUpon>
       <LastGenOutput>RentaCar.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\carretera.jpg" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\pngwing.com.png" />
+    <None Include="Resources\log in1.png" />
+    <None Include="Resources\log in.png" />
+    <None Include="Resources\candado1.png" />
+    <None Include="Resources\candado.png" />
+    <None Include="Resources\usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

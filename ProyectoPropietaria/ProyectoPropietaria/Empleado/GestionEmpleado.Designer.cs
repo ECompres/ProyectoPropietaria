@@ -63,28 +63,33 @@
             this.FECHA_CREACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPO_EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericComision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(862, 415);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button2.Location = new System.Drawing.Point(867, 510);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 73;
-            this.button2.Text = "Borrar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "Deshabilitar";
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnCrear
             // 
+            this.btnCrear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnCrear.Location = new System.Drawing.Point(862, 167);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 72;
             this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // cbEstado
@@ -198,6 +203,7 @@
             // 
             // cmbTanda
             // 
+            this.cmbTanda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.cmbTanda.Location = new System.Drawing.Point(418, 48);
             this.cmbTanda.Name = "cmbTanda";
@@ -274,6 +280,7 @@
             // 
             // cmbTipoEmpleado
             // 
+            this.cmbTipoEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.cmbTipoEmpleado.Location = new System.Drawing.Point(418, 162);
             this.cmbTipoEmpleado.Name = "cmbTipoEmpleado";
@@ -292,6 +299,10 @@
             // 
             this.dgvEmpleado.AllowUserToAddRows = false;
             this.dgvEmpleado.AllowUserToDeleteRows = false;
+            this.dgvEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -305,10 +316,10 @@
             this.FECHA_CREACION,
             this.TIPO_EMPLEADO,
             this.ESTADO});
-            this.dgvEmpleado.Location = new System.Drawing.Point(10, 200);
+            this.dgvEmpleado.Location = new System.Drawing.Point(12, 213);
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.ReadOnly = true;
-            this.dgvEmpleado.Size = new System.Drawing.Size(927, 209);
+            this.dgvEmpleado.Size = new System.Drawing.Size(927, 291);
             this.dgvEmpleado.TabIndex = 85;
             this.dgvEmpleado.DoubleClick += new System.EventHandler(this.dgvEmpleado_DoubleClick);
             // 
@@ -390,11 +401,25 @@
             this.ESTADO.Name = "ESTADO";
             this.ESTADO.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 24);
+            this.button1.TabIndex = 86;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GestionEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ClientSize = new System.Drawing.Size(954, 545);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvEmpleado);
             this.Controls.Add(this.numericComision);
             this.Controls.Add(this.cmbTipoEmpleado);
@@ -419,6 +444,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.LightGray;
+            this.MinimumSize = new System.Drawing.Size(970, 584);
             this.Name = "GestionEmpleado";
             this.Text = "Gestion Empleado";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionEmpleado_FormClosed);
@@ -467,5 +494,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_CREACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO_EMPLEADO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.Button button1;
     }
 }

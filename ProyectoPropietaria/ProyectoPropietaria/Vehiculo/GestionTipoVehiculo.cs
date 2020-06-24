@@ -97,8 +97,7 @@ namespace ProyectoPropietaria
 
         private void GestionTipoVehiculo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formularioVehiculo frm = new formularioVehiculo();
-            frm.Show();
+    
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -136,6 +135,11 @@ namespace ProyectoPropietaria
                 btnBorrar.Enabled = true;
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

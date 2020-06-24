@@ -107,8 +107,12 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void GestionCantidadCombustible_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var frm = new formularioVehiculo();
-            frm.Show();
+   
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

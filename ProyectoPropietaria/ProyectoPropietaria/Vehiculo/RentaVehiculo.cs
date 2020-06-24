@@ -12,8 +12,10 @@ namespace ProyectoPropietaria.Vehiculo
 {
     public partial class RentaVehiculo : Form
     {
-        public RentaVehiculo()
+        private EMPLEADO empleado = null;
+        public RentaVehiculo(EMPLEADO Empleado =null)
         {
+            empleado = Empleado;
             InitializeComponent();
         }
         public EMPLEADO Empleado;
@@ -206,7 +208,7 @@ namespace ProyectoPropietaria.Vehiculo
                         //Renta
                         renta.ID_INSPECCION = inspeccion.ID;
                         renta.ID_CLIENTE = Convert.ToInt32(cmbCliente.SelectedValue);
-                        renta.ID_EMPLEADO = Empleado.ID;
+                        renta.ID_EMPLEADO = empleado.ID;
                         renta.ID_VEHICULO = Convert.ToInt32(cmbVehiculo.SelectedValue);
                         renta.FECHA_RENTA = dpRenta.Value;
                         renta.FECHA_DEVOLUCION = dpDevolucion.Value;
@@ -310,9 +312,6 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void RentaVehiculo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var frm = new formularioVehiculo();
-            frm.Empleado = Empleado;
-            frm.Show();
         }
 
         private void numericDias_ValueChanged(object sender, EventArgs e)
@@ -348,10 +347,11 @@ namespace ProyectoPropietaria.Vehiculo
             if(dgvRenta.CurrentRow.Index != -1)
             {
                 renta.ID = Convert.ToInt32(dgvRenta.CurrentRow.Cells["ID"].Value);
-                inspeccion.ID = Convert.ToInt32(dgvRenta.CurrentRow.Cells["ID_INSPECCION"].Value);
+                
                 using (RentaCarEntities db = new RentaCarEntities())
                 {
                     renta = db.RENTA.Where(x => x.ID == renta.ID).FirstOrDefault();
+                    inspeccion = db.INSPECCION.Where(x => x.ID == renta.ID_INSPECCION).FirstOrDefault();
                     cmbCliente.SelectedValue = Convert.ToInt32(renta.ID_CLIENTE);
                     cmbVehiculo.SelectedValue = Convert.ToInt32(renta.ID_VEHICULO);
                     dpRenta.Value = Convert.ToDateTime(renta.FECHA_RENTA);
@@ -361,7 +361,18 @@ namespace ProyectoPropietaria.Vehiculo
                     txtDescripcion.Text = renta.DESCRIPCION;
                     lblCodigo.Text = renta.CODIGO;
                     cbEstado.Checked = renta.ESTADO;
-                    renta.ID_EMPLEADO = Empleado.ID;
+                    renta.ID_EMPLEADO = empleado.ID;
+
+                    rayaduras.Checked = Convert.ToBoolean(inspeccion.TIENE_RAYADURAS);
+                    gomaRepuesto.Checked = Convert.ToBoolean(inspeccion.GOMA_REPUESTO);
+                    gato.Checked = Convert.ToBoolean(inspeccion.TIENE_GATO);
+                    cristalesRotos.Checked = Convert.ToBoolean(inspeccion.TIENE_ROTURA_CRISTAL);
+                    gomaDD.Checked = Convert.ToBoolean(inspeccion.GOMA_DELANTERA_DERECHA);
+                    gomaDI.Checked = Convert.ToBoolean(inspeccion.GOMA_DELANTERA_IZQUIERDA);
+                    gomaTD.Checked = Convert.ToBoolean(inspeccion.GOMA_TRASERA_DERECHA);
+                    gomaTI.Checked = Convert.ToBoolean(inspeccion.GOMA_TRASERA_IZQUIERDA);
+                    cmbCantidadCombustible.SelectedValue = Convert.ToInt32(inspeccion.ID_CANTIDAD_COMBUSTIBLE);
+
 
                 }
                 if (cbEstado.Checked == true)
@@ -426,6 +437,11 @@ namespace ProyectoPropietaria.Vehiculo
             {
                 cbEstado.Text = "No entregado";
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

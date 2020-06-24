@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cristalesRotos = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gato = new System.Windows.Forms.CheckBox();
@@ -63,6 +65,13 @@
             this.gomaDD = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.dgvRenta = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_INSPECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEHICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.dpDevolucion = new System.Windows.Forms.DateTimePicker();
@@ -74,13 +83,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_INSPECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VEHICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericCostePorDia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenta)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +92,7 @@
             // 
             this.cristalesRotos.AutoSize = true;
             this.cristalesRotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cristalesRotos.ForeColor = System.Drawing.Color.LightGray;
             this.cristalesRotos.Location = new System.Drawing.Point(153, 341);
             this.cristalesRotos.Name = "cristalesRotos";
             this.cristalesRotos.Size = new System.Drawing.Size(49, 24);
@@ -101,6 +105,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
             this.label4.Location = new System.Drawing.Point(20, 341);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
@@ -112,6 +117,7 @@
             // 
             this.gato.AutoSize = true;
             this.gato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.gato.ForeColor = System.Drawing.Color.LightGray;
             this.gato.Location = new System.Drawing.Point(153, 311);
             this.gato.Name = "gato";
             this.gato.Size = new System.Drawing.Size(49, 24);
@@ -124,6 +130,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
             this.label3.Location = new System.Drawing.Point(20, 312);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
@@ -135,6 +142,7 @@
             // 
             this.gomaRepuesto.AutoSize = true;
             this.gomaRepuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.gomaRepuesto.ForeColor = System.Drawing.Color.LightGray;
             this.gomaRepuesto.Location = new System.Drawing.Point(153, 281);
             this.gomaRepuesto.Name = "gomaRepuesto";
             this.gomaRepuesto.Size = new System.Drawing.Size(49, 24);
@@ -147,6 +155,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
             this.label2.Location = new System.Drawing.Point(20, 284);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
@@ -158,6 +167,7 @@
             // 
             this.rayaduras.AutoSize = true;
             this.rayaduras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.rayaduras.ForeColor = System.Drawing.Color.LightGray;
             this.rayaduras.Location = new System.Drawing.Point(153, 251);
             this.rayaduras.Name = "rayaduras";
             this.rayaduras.Size = new System.Drawing.Size(49, 24);
@@ -168,6 +178,7 @@
             // 
             // cmbCliente
             // 
+            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cmbCliente.Location = new System.Drawing.Point(150, 62);
             this.cmbCliente.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -188,7 +199,9 @@
             // 
             // cmbCantidadCombustible
             // 
+            this.cmbCantidadCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCantidadCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cmbCantidadCombustible.ForeColor = System.Drawing.Color.LightGray;
             this.cmbCantidadCombustible.Location = new System.Drawing.Point(200, 374);
             this.cmbCantidadCombustible.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.cmbCantidadCombustible.Name = "cmbCantidadCombustible";
@@ -200,6 +213,7 @@
             // 
             this.lblTipoVehiculo.AutoSize = true;
             this.lblTipoVehiculo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.lblTipoVehiculo.ForeColor = System.Drawing.Color.LightGray;
             this.lblTipoVehiculo.Location = new System.Drawing.Point(20, 377);
             this.lblTipoVehiculo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
@@ -211,6 +225,7 @@
             // 
             this.lblNumeroPlaca.AutoSize = true;
             this.lblNumeroPlaca.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.lblNumeroPlaca.ForeColor = System.Drawing.Color.LightGray;
             this.lblNumeroPlaca.Location = new System.Drawing.Point(20, 254);
             this.lblNumeroPlaca.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNumeroPlaca.Name = "lblNumeroPlaca";
@@ -231,6 +246,7 @@
             // 
             // cmbVehiculo
             // 
+            this.cmbVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cmbVehiculo.Location = new System.Drawing.Point(150, 102);
             this.cmbVehiculo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -365,6 +381,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.LightGray;
             this.label14.Location = new System.Drawing.Point(20, 206);
             this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label14.Name = "label14";
@@ -376,6 +393,7 @@
             // 
             this.gomaTI.AutoSize = true;
             this.gomaTI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.gomaTI.ForeColor = System.Drawing.Color.LightGray;
             this.gomaTI.Location = new System.Drawing.Point(234, 494);
             this.gomaTI.Name = "gomaTI";
             this.gomaTI.Size = new System.Drawing.Size(49, 24);
@@ -388,6 +406,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label15.ForeColor = System.Drawing.Color.LightGray;
             this.label15.Location = new System.Drawing.Point(20, 494);
             this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label15.Name = "label15";
@@ -399,6 +418,7 @@
             // 
             this.gomaTD.AutoSize = true;
             this.gomaTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.gomaTD.ForeColor = System.Drawing.Color.LightGray;
             this.gomaTD.Location = new System.Drawing.Point(234, 464);
             this.gomaTD.Name = "gomaTD";
             this.gomaTD.Size = new System.Drawing.Size(49, 24);
@@ -411,6 +431,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label16.ForeColor = System.Drawing.Color.LightGray;
             this.label16.Location = new System.Drawing.Point(20, 465);
             this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label16.Name = "label16";
@@ -422,6 +443,7 @@
             // 
             this.gomaDI.AutoSize = true;
             this.gomaDI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.gomaDI.ForeColor = System.Drawing.Color.LightGray;
             this.gomaDI.Location = new System.Drawing.Point(234, 434);
             this.gomaDI.Name = "gomaDI";
             this.gomaDI.Size = new System.Drawing.Size(49, 24);
@@ -434,6 +456,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label17.ForeColor = System.Drawing.Color.LightGray;
             this.label17.Location = new System.Drawing.Point(20, 437);
             this.label17.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label17.Name = "label17";
@@ -445,6 +468,7 @@
             // 
             this.gomaDD.AutoSize = true;
             this.gomaDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.gomaDD.ForeColor = System.Drawing.Color.LightGray;
             this.gomaDD.Location = new System.Drawing.Point(234, 404);
             this.gomaDD.Name = "gomaDD";
             this.gomaDD.Size = new System.Drawing.Size(49, 24);
@@ -457,6 +481,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
+            this.label18.ForeColor = System.Drawing.Color.LightGray;
             this.label18.Location = new System.Drawing.Point(20, 407);
             this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label18.Name = "label18";
@@ -468,6 +493,14 @@
             // 
             this.dgvRenta.AllowUserToAddRows = false;
             this.dgvRenta.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumBlue;
+            this.dgvRenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -480,28 +513,88 @@
             this.dgvRenta.Location = new System.Drawing.Point(312, 232);
             this.dgvRenta.Name = "dgvRenta";
             this.dgvRenta.ReadOnly = true;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvRenta.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRenta.Size = new System.Drawing.Size(624, 283);
             this.dgvRenta.TabIndex = 104;
             this.dgvRenta.DoubleClick += new System.EventHandler(this.dgvRenta_DoubleClick);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // ID_INSPECCION
+            // 
+            this.ID_INSPECCION.DataPropertyName = "ID_INSPECCION";
+            this.ID_INSPECCION.HeaderText = "ID_INSPECCION";
+            this.ID_INSPECCION.Name = "ID_INSPECCION";
+            this.ID_INSPECCION.ReadOnly = true;
+            this.ID_INSPECCION.Visible = false;
+            // 
+            // VEHICULO
+            // 
+            this.VEHICULO.DataPropertyName = "VEHICULO";
+            this.VEHICULO.HeaderText = "Vehiculo";
+            this.VEHICULO.Name = "VEHICULO";
+            this.VEHICULO.ReadOnly = true;
+            // 
+            // CLIENTE
+            // 
+            this.CLIENTE.DataPropertyName = "CLIENTE";
+            this.CLIENTE.HeaderText = "Cliente";
+            this.CLIENTE.Name = "CLIENTE";
+            this.CLIENTE.ReadOnly = true;
+            // 
+            // ID_EMPLEADO
+            // 
+            this.ID_EMPLEADO.DataPropertyName = "EMPLEADO";
+            this.ID_EMPLEADO.HeaderText = "A cargo de";
+            this.ID_EMPLEADO.Name = "ID_EMPLEADO";
+            this.ID_EMPLEADO.ReadOnly = true;
+            // 
+            // CODIGO
+            // 
+            this.CODIGO.DataPropertyName = "CODIGO";
+            this.CODIGO.HeaderText = "Codigo";
+            this.CODIGO.Name = "CODIGO";
+            this.CODIGO.ReadOnly = true;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "ESTADO";
+            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            // 
             // btnBorrar
             // 
+            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Location = new System.Drawing.Point(840, 521);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(96, 23);
             this.btnBorrar.TabIndex = 105;
             this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnCrear
             // 
+            this.btnCrear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.Location = new System.Drawing.Point(840, 203);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(96, 23);
             this.btnCrear.TabIndex = 106;
             this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // dpDevolucion
@@ -582,80 +675,51 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(684, 203);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 23);
             this.button1.TabIndex = 113;
             this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnExportar
             // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportar.Location = new System.Drawing.Point(683, 521);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(96, 23);
             this.btnExportar.TabIndex = 114;
             this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
-            // ID
+            // button2
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // ID_INSPECCION
-            // 
-            this.ID_INSPECCION.DataPropertyName = "ID_INSPECCION";
-            this.ID_INSPECCION.HeaderText = "ID_INSPECCION";
-            this.ID_INSPECCION.Name = "ID_INSPECCION";
-            this.ID_INSPECCION.ReadOnly = true;
-            this.ID_INSPECCION.Visible = false;
-            // 
-            // VEHICULO
-            // 
-            this.VEHICULO.DataPropertyName = "VEHICULO";
-            this.VEHICULO.HeaderText = "Vehiculo";
-            this.VEHICULO.Name = "VEHICULO";
-            this.VEHICULO.ReadOnly = true;
-            // 
-            // CLIENTE
-            // 
-            this.CLIENTE.DataPropertyName = "CLIENTE";
-            this.CLIENTE.HeaderText = "Cliente";
-            this.CLIENTE.Name = "CLIENTE";
-            this.CLIENTE.ReadOnly = true;
-            // 
-            // ID_EMPLEADO
-            // 
-            this.ID_EMPLEADO.DataPropertyName = "EMPLEADO";
-            this.ID_EMPLEADO.HeaderText = "A cargo de";
-            this.ID_EMPLEADO.Name = "ID_EMPLEADO";
-            this.ID_EMPLEADO.ReadOnly = true;
-            // 
-            // CODIGO
-            // 
-            this.CODIGO.DataPropertyName = "CODIGO";
-            this.CODIGO.HeaderText = "Codigo";
-            this.CODIGO.Name = "CODIGO";
-            this.CODIGO.ReadOnly = true;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.DataPropertyName = "ESTADO";
-            this.ESTADO.HeaderText = "Estado";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(12, 11);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(38, 30);
+            this.button2.TabIndex = 115;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // RentaVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 545);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ClientSize = new System.Drawing.Size(954, 545);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCodigo);
@@ -702,6 +766,8 @@
             this.Controls.Add(this.lblTipoVehiculo);
             this.Controls.Add(this.lblNumeroPlaca);
             this.Controls.Add(this.lblNumeroChasis);
+            this.ForeColor = System.Drawing.Color.LightGray;
+            this.MinimumSize = new System.Drawing.Size(970, 584);
             this.Name = "RentaVehiculo";
             this.Text = "RentaVehiculo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RentaVehiculo_FormClosed);
@@ -768,5 +834,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_EMPLEADO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.Button button2;
     }
 }

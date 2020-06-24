@@ -31,7 +31,7 @@ namespace ProyectoPropietaria
                     {
                         
                         Inicio frm = new Inicio();
-                        frm.Empleado = empleado;
+                        frm.EMPLEADO = empleado;
                         frm.Show();
                         this.Hide();
                     }
@@ -50,6 +50,16 @@ namespace ProyectoPropietaria
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+             
         }
     }
 }

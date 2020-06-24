@@ -106,8 +106,12 @@ namespace ProyectoPropietaria.Empleado
 
         private void GestionTipoEmpleado_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var frm = new formularioEmpleado();
-            frm.Show();
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

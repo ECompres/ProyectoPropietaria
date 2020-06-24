@@ -107,8 +107,7 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void GestionCombustible_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formularioVehiculo frm = new formularioVehiculo();
-            frm.Show();
+          
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -129,6 +128,11 @@ namespace ProyectoPropietaria.Vehiculo
                     getCombustibles();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -22,8 +22,7 @@ namespace ProyectoPropietaria
 
         private void GestionEmpleado_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var frm = new formularioEmpleado();
-            frm.Show();
+        
         }
 
         private void GestionEmpleado_Load(object sender, EventArgs e)
@@ -156,6 +155,11 @@ namespace ProyectoPropietaria
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

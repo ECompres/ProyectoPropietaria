@@ -28,8 +28,7 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void GestionModeloVehiculo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formularioVehiculo frm = new formularioVehiculo();
-            frm.Show();
+      
 
         }
 
@@ -174,6 +173,11 @@ namespace ProyectoPropietaria.Vehiculo
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

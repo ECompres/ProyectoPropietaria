@@ -108,8 +108,12 @@ namespace ProyectoPropietaria.Cliente
 
         private void GestionTipoCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var frm = new formularioCliente();
-            frm.Show();
+         
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

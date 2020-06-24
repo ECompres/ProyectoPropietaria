@@ -57,3 +57,10 @@ C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropiet
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\itext.styledxmlparser.xml
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\itext.svg.xml
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\obj\Debug\ProyectoPropietaria.Login.resources
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\Reportes\ReportesRenta.cshtml
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\NReco.PdfGenerator.dll
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\RazorEngine.dll
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\System.Web.Razor.dll
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\NReco.PdfGenerator.xml
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\RazorEngine.xml
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\System.Web.Razor.xml

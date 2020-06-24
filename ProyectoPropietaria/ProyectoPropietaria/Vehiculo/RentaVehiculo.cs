@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using NReco.PdfGenerator;
+using RazorEngine;
+using RazorEngine.Templating;
+using System;
 using System.Data;
 using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoPropietaria.Vehiculo
@@ -25,7 +22,7 @@ namespace ProyectoPropietaria.Vehiculo
         private INSPECCION inspeccion = new INSPECCION();
         private void RentaVehiculo_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("" + Empleado.ID);
+     
             getRentas();
             comboBoxes();
             Limpiar();
@@ -246,7 +243,7 @@ namespace ProyectoPropietaria.Vehiculo
             dgvRenta.AutoGenerateColumns = false;
             using (RentaCarEntities db = new RentaCarEntities())
             {
-                var data = db.RENTA.Where(x=>x.ID_EMPLEADO==Empleado.ID).Select(x => new
+                var data = db.RENTA.Select(x => new
                 {
                     x.ID,
                     x.ID_INSPECCION,
@@ -404,55 +401,31 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-//            using (RentaCarEntities db = new RentaCarEntities())
-//            {
-//                var data = db.RENTA.ToList();
-//                string path = "C:\\Reportes";
-//                if (Directory.Exists(path) == false)
-//                {
-//                Directory.CreateDirectory(path);
-//                string content = "<html>" +
-//                "<title>Reportes</title>" +
-//                "<head>" +
-//                "<link rel = \"stylesheet\" href = \"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity = \"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin = \"anonymous\">"+
-//                "<script src = \"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\" integrity = \"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI\" crossorigin = \"anonymous\"></script>"+
-//                "</head>" +
-//                "<body>" +
-//                "<table class=\"table\">" +
-//                "<thead class=\"thead-dark\">" +
-//                "<tr>" +
-//                "<th scope = \"col\">#</th>" +
-//                "<th scope = \"col\">"+data+"</th>" +
-//                "<th scope = \"col\"> Last </th>" +
-//                "<th scope = \"col\"> Handle </th>" +
-//                "</tr>" +
-//                "</thead>" +
-//                "<tbody>" +
-//                "<tr>" +
-//                "<th scope = \"row\"> 1 </th>" +
-//                "<td> Mark </td>" +
-//                "<td> Otto </td>" +
-//                "<td> @mdo </td>" +
-//                "</tr>" +
-//                "<tr>" +
-//                "<th scope = \"row\"> 2 </th>" +
-//                "<td> Jacob </td>" +
-//                "<td> Thornton </td>" +
-//                "<td> @fat </td>" +
-//                "</tr>" +
-//                "<tr>" +
-//                "<th scope = \"row\"> 3 </th>" +
-//                "<td> Larry </td>" +
-//                "<td> the Bird </td>" +
-//                "<td> @twitter </td>" +
-//                "</tr>" +
-//                "</tbody>" +
-//                "</table> " +
-//                "</body>" +
-//                "</html>";
-//File.WriteAllText("C:\\Reportes\\Reportes.html", content);
-//              }
-//            }
+            using (RentaCarEntities db = new RentaCarEntities())
+            {
+                
+                var items = db.RENTA.ToList();
+                var file = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"Reportes\\ReportesRenta.cshtml");
+                var html = Engine.Razor.RunCompile(file, Guid.NewGuid().ToString(), null, items, null);
+                var htmlToPDF = new NReco.PdfGenerator.HtmlToPdfConverter();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.FileName = "Rentas";
+                saveFileDialog.DefaultExt = "pdf";
+                saveFileDialog.ShowDialog();
+                htmlToPDF.GeneratePdf(html, null, saveFileDialog.FileName + ".pdf");
+            }
+        }
+
+        private void cbEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbEstado.Checked)
+            {
+                cbEstado.Text = "Entregado";
+            }
+            else
+            {
+                cbEstado.Text = "No entregado";
+            }
         }
     }
 }

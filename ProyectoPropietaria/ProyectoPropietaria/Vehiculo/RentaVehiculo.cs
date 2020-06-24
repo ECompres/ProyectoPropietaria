@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +19,13 @@ namespace ProyectoPropietaria.Vehiculo
         {
             InitializeComponent();
         }
+        public EMPLEADO Empleado;
         RENTA model = new RENTA();
         private RENTA renta = new RENTA();
         private INSPECCION inspeccion = new INSPECCION();
         private void RentaVehiculo_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("" + Empleado.ID);
             getRentas();
             comboBoxes();
             Limpiar();
@@ -205,7 +209,7 @@ namespace ProyectoPropietaria.Vehiculo
                         //Renta
                         renta.ID_INSPECCION = inspeccion.ID;
                         renta.ID_CLIENTE = Convert.ToInt32(cmbCliente.SelectedValue);
-                        renta.ID_EMPLEADO = 2;
+                        renta.ID_EMPLEADO = Empleado.ID;
                         renta.ID_VEHICULO = Convert.ToInt32(cmbVehiculo.SelectedValue);
                         renta.FECHA_RENTA = dpRenta.Value;
                         renta.FECHA_DEVOLUCION = dpDevolucion.Value;
@@ -242,11 +246,13 @@ namespace ProyectoPropietaria.Vehiculo
             dgvRenta.AutoGenerateColumns = false;
             using (RentaCarEntities db = new RentaCarEntities())
             {
-                var data = db.RENTA.Select(x => new
+                var data = db.RENTA.Where(x=>x.ID_EMPLEADO==Empleado.ID).Select(x => new
                 {
                     x.ID,
+                    x.ID_INSPECCION,
                     VEHICULO = x.VEHICULO.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE + " - " + x.VEHICULO.MODELO_VEHICULO.NOMBRE,
                     CLIENTE = x.CLIENTE.NOMBRES + " " + x.CLIENTE.APELLIDOS,
+                    EMPLEADO = x.EMPLEADO.NOMBRES + " " + x.EMPLEADO.APELLIDOS,
                     x.CODIGO,
                     ESTADO = x.ESTADO == true ? "Entregado" : "No entregado"
                 }).ToList();
@@ -308,6 +314,7 @@ namespace ProyectoPropietaria.Vehiculo
         private void RentaVehiculo_FormClosed(object sender, FormClosedEventArgs e)
         {
             var frm = new formularioVehiculo();
+            frm.Empleado = Empleado;
             frm.Show();
         }
 
@@ -344,6 +351,7 @@ namespace ProyectoPropietaria.Vehiculo
             if(dgvRenta.CurrentRow.Index != -1)
             {
                 renta.ID = Convert.ToInt32(dgvRenta.CurrentRow.Cells["ID"].Value);
+                inspeccion.ID = Convert.ToInt32(dgvRenta.CurrentRow.Cells["ID_INSPECCION"].Value);
                 using (RentaCarEntities db = new RentaCarEntities())
                 {
                     renta = db.RENTA.Where(x => x.ID == renta.ID).FirstOrDefault();
@@ -356,19 +364,8 @@ namespace ProyectoPropietaria.Vehiculo
                     txtDescripcion.Text = renta.DESCRIPCION;
                     lblCodigo.Text = renta.CODIGO;
                     cbEstado.Checked = renta.ESTADO;
-                    renta.ID_EMPLEADO = 2;
+                    renta.ID_EMPLEADO = Empleado.ID;
 
-                    //Renta
-                    inspeccion = db.INSPECCION.Where(x => x.ID == renta.ID_INSPECCION).FirstOrDefault();
-                    cmbCantidadCombustible.SelectedValue = Convert.ToInt32(inspeccion.ID_CANTIDAD_COMBUSTIBLE);
-                    rayaduras.Checked = Convert.ToBoolean(inspeccion.TIENE_RAYADURAS);
-                    cristalesRotos.Checked = Convert.ToBoolean(inspeccion.TIENE_ROTURA_CRISTAL);
-                    gato.Checked = Convert.ToBoolean(inspeccion.TIENE_GATO);
-                    gomaRepuesto.Checked = Convert.ToBoolean(inspeccion.GOMA_REPUESTO);
-                    gomaDD.Checked=Convert.ToBoolean(inspeccion.GOMA_DELANTERA_DERECHA);
-                    gomaDD.Checked=Convert.ToBoolean(inspeccion.GOMA_DELANTERA_IZQUIERDA);
-                    gomaDD.Checked=Convert.ToBoolean(inspeccion.GOMA_TRASERA_DERECHA);
-                    gomaDD.Checked=Convert.ToBoolean(inspeccion.GOMA_TRASERA_IZQUIERDA);                    
                 }
                 if (cbEstado.Checked == true)
                 {
@@ -407,7 +404,55 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-
+//            using (RentaCarEntities db = new RentaCarEntities())
+//            {
+//                var data = db.RENTA.ToList();
+//                string path = "C:\\Reportes";
+//                if (Directory.Exists(path) == false)
+//                {
+//                Directory.CreateDirectory(path);
+//                string content = "<html>" +
+//                "<title>Reportes</title>" +
+//                "<head>" +
+//                "<link rel = \"stylesheet\" href = \"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity = \"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin = \"anonymous\">"+
+//                "<script src = \"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\" integrity = \"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI\" crossorigin = \"anonymous\"></script>"+
+//                "</head>" +
+//                "<body>" +
+//                "<table class=\"table\">" +
+//                "<thead class=\"thead-dark\">" +
+//                "<tr>" +
+//                "<th scope = \"col\">#</th>" +
+//                "<th scope = \"col\">"+data+"</th>" +
+//                "<th scope = \"col\"> Last </th>" +
+//                "<th scope = \"col\"> Handle </th>" +
+//                "</tr>" +
+//                "</thead>" +
+//                "<tbody>" +
+//                "<tr>" +
+//                "<th scope = \"row\"> 1 </th>" +
+//                "<td> Mark </td>" +
+//                "<td> Otto </td>" +
+//                "<td> @mdo </td>" +
+//                "</tr>" +
+//                "<tr>" +
+//                "<th scope = \"row\"> 2 </th>" +
+//                "<td> Jacob </td>" +
+//                "<td> Thornton </td>" +
+//                "<td> @fat </td>" +
+//                "</tr>" +
+//                "<tr>" +
+//                "<th scope = \"row\"> 3 </th>" +
+//                "<td> Larry </td>" +
+//                "<td> the Bird </td>" +
+//                "<td> @twitter </td>" +
+//                "</tr>" +
+//                "</tbody>" +
+//                "</table> " +
+//                "</body>" +
+//                "</html>";
+//File.WriteAllText("C:\\Reportes\\Reportes.html", content);
+//              }
+//            }
         }
     }
 }

@@ -74,6 +74,7 @@
             this.Name = "formularioEmpleado";
             this.Text = "formularioEmpleado";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formularioEmpleado_FormClosed);
+            this.Load += new System.EventHandler(this.formularioEmpleado_Load);
             this.ResumeLayout(false);
 
         }

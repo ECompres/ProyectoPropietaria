@@ -146,6 +146,7 @@
             this.Name = "formularioVehiculo";
             this.Text = "formularioVehiculo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formularioVehiculo_FormClosed);
+            this.Load += new System.EventHandler(this.formularioVehiculo_Load);
             this.ResumeLayout(false);
 
         }

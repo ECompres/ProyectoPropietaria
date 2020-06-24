@@ -63,11 +63,6 @@
             this.gomaDD = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.dgvRenta = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VEHICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.dpDevolucion = new System.Windows.Forms.DateTimePicker();
@@ -79,6 +74,13 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_INSPECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEHICULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericCostePorDia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenta)).BeginInit();
             this.SuspendLayout();
@@ -357,6 +359,7 @@
             this.cbEstado.TabIndex = 94;
             this.cbEstado.Text = "No disponible";
             this.cbEstado.UseVisualStyleBackColor = true;
+            this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
             // label14
             // 
@@ -468,8 +471,10 @@
             this.dgvRenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.ID_INSPECCION,
             this.VEHICULO,
             this.CLIENTE,
+            this.ID_EMPLEADO,
             this.CODIGO,
             this.ESTADO});
             this.dgvRenta.Location = new System.Drawing.Point(312, 232);
@@ -478,42 +483,6 @@
             this.dgvRenta.Size = new System.Drawing.Size(624, 283);
             this.dgvRenta.TabIndex = 104;
             this.dgvRenta.DoubleClick += new System.EventHandler(this.dgvRenta_DoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // VEHICULO
-            // 
-            this.VEHICULO.DataPropertyName = "VEHICULO";
-            this.VEHICULO.HeaderText = "Vehiculo";
-            this.VEHICULO.Name = "VEHICULO";
-            this.VEHICULO.ReadOnly = true;
-            // 
-            // CLIENTE
-            // 
-            this.CLIENTE.DataPropertyName = "CLIENTE";
-            this.CLIENTE.HeaderText = "Cliente";
-            this.CLIENTE.Name = "CLIENTE";
-            this.CLIENTE.ReadOnly = true;
-            // 
-            // CODIGO
-            // 
-            this.CODIGO.DataPropertyName = "CODIGO";
-            this.CODIGO.HeaderText = "Codigo";
-            this.CODIGO.Name = "CODIGO";
-            this.CODIGO.ReadOnly = true;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.DataPropertyName = "ESTADO";
-            this.ESTADO.HeaderText = "Estado";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
             // 
             // btnBorrar
             // 
@@ -631,6 +600,57 @@
             this.btnExportar.UseVisualStyleBackColor = true;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // ID_INSPECCION
+            // 
+            this.ID_INSPECCION.DataPropertyName = "ID_INSPECCION";
+            this.ID_INSPECCION.HeaderText = "ID_INSPECCION";
+            this.ID_INSPECCION.Name = "ID_INSPECCION";
+            this.ID_INSPECCION.ReadOnly = true;
+            this.ID_INSPECCION.Visible = false;
+            // 
+            // VEHICULO
+            // 
+            this.VEHICULO.DataPropertyName = "VEHICULO";
+            this.VEHICULO.HeaderText = "Vehiculo";
+            this.VEHICULO.Name = "VEHICULO";
+            this.VEHICULO.ReadOnly = true;
+            // 
+            // CLIENTE
+            // 
+            this.CLIENTE.DataPropertyName = "CLIENTE";
+            this.CLIENTE.HeaderText = "Cliente";
+            this.CLIENTE.Name = "CLIENTE";
+            this.CLIENTE.ReadOnly = true;
+            // 
+            // ID_EMPLEADO
+            // 
+            this.ID_EMPLEADO.DataPropertyName = "EMPLEADO";
+            this.ID_EMPLEADO.HeaderText = "A cargo de";
+            this.ID_EMPLEADO.Name = "ID_EMPLEADO";
+            this.ID_EMPLEADO.ReadOnly = true;
+            // 
+            // CODIGO
+            // 
+            this.CODIGO.DataPropertyName = "CODIGO";
+            this.CODIGO.HeaderText = "Codigo";
+            this.CODIGO.Name = "CODIGO";
+            this.CODIGO.ReadOnly = true;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.DataPropertyName = "ESTADO";
+            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.ReadOnly = true;
+            // 
             // RentaVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -737,14 +757,16 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblDias;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VEHICULO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_INSPECCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VEHICULO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_EMPLEADO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
     }
 }

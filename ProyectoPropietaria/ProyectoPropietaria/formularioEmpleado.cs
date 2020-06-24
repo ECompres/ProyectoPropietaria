@@ -44,5 +44,10 @@ namespace ProyectoPropietaria
             var frm = new Inicio();
             frm.Show();
         }
+
+        private void formularioEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

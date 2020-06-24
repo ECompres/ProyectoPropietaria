@@ -14,6 +14,7 @@ namespace ProyectoPropietaria
 {
     public partial class formularioVehiculo : Form
     {
+        public EMPLEADO Empleado;
         public formularioVehiculo()
         {
             InitializeComponent();
@@ -84,8 +85,14 @@ namespace ProyectoPropietaria
         private void button7_Click(object sender, EventArgs e)
         {
             var frm = new RentaVehiculo();
+            frm.Empleado = Empleado;
             this.Hide();
             frm.Show();
+        }
+
+        private void formularioVehiculo_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(""+Empleado.ID);
         }
     }
 }

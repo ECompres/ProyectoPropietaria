@@ -47,6 +47,11 @@ namespace ProyectoPropietaria.Empleado
         {
             model.DESCRIPCION = textBox1.Text.Trim();
             model.ESTADO = checkBox1.Checked;
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Llene los campos");
+            }
+            else { 
             using (RentaCarEntities db = new RentaCarEntities())
             {
                 if (model.ID == 0)
@@ -64,7 +69,7 @@ namespace ProyectoPropietaria.Empleado
             Limpiar();
             getTandas();
         }
-
+       }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if(checkBox1.Checked == true)
@@ -123,6 +128,15 @@ namespace ProyectoPropietaria.Empleado
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

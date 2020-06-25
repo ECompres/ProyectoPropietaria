@@ -34,7 +34,7 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if (cmbMarca.SelectedValue.ToString() != "0" && txtModelo.Text !="") { 
+            if (cmbMarca.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtModelo.Text)){ 
             model.ID_MARCA_VEHICULO = int.Parse(cmbMarca.SelectedValue.ToString());
             model.NOMBRE = txtModelo.Text;
             model.ESTADO = cbEstado.Checked;
@@ -178,6 +178,11 @@ namespace ProyectoPropietaria.Vehiculo
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtModelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

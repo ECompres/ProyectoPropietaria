@@ -31,16 +31,12 @@ namespace ProyectoPropietaria
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var emp = new formularioCliente();
-            emp.Show();
-            this.Hide();
+          
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var emp = new formularioEmpleado();
-            emp.Show();
-            this.Hide();
+            
         }
 
         private void Inicio_Load(object sender, EventArgs e)

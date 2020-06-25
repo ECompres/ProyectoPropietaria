@@ -104,6 +104,14 @@ namespace ProyectoPropietaria
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(txtDescripcion.Text)||string.IsNullOrWhiteSpace(txtNumeroChasis.Text)||string.IsNullOrWhiteSpace(txtNumeroMotor.Text)||string.IsNullOrWhiteSpace(txtNumeroPlaca.Text)||cmbTipoVehiculo.SelectedIndex==-1||cmbModeloVehiculo.SelectedIndex == -1||cmbCombustible.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe rellenar correctamente todos los campos");
+            }
+            else
+            {
+
+            
             model.DESCRIPCION = txtDescripcion.Text.Trim();
             model.NUMERO_CHASIS = txtNumeroChasis.Text.Trim();
             model.NUMERO_MOTOR = txtNumeroMotor.Text.Trim();
@@ -130,7 +138,7 @@ namespace ProyectoPropietaria
             getVehiculos();
             Limpiar();
         }
-
+        }
         private void lblFechaValor_Click(object sender, EventArgs e)
         {
 
@@ -197,6 +205,51 @@ namespace ProyectoPropietaria
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNumeroChasis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                     
+                    var items = db.VEHICULO
+                        .Where(x =>
+                            x.DESCRIPCION.Contains(textBox1.Text.Trim()) ||
+                            x.NUMERO_CHASIS.Contains(textBox1.Text.Trim()) ||
+                            x.NUMERO_MOTOR.Contains(textBox1.Text.Trim()) ||
+                            x.NUMERO_PLACA.Contains(textBox1.Text.Trim()) ||
+                            x.TIPO_VEHICULO.NOMBRE.Contains(textBox1.Text.Trim())||
+                            x.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE.Contains(textBox1.Text.Trim()) ||
+                            x.MODELO_VEHICULO.NOMBRE.Contains(textBox1.Text.Trim())
+                            ).Select(
+                        x => new
+                        {
+                            x.ID,
+                            x.DESCRIPCION,
+                            x.NUMERO_CHASIS,
+                            x.NUMERO_MOTOR,
+                            x.NUMERO_PLACA,
+                            TIPOVEHICULO = x.TIPO_VEHICULO.NOMBRE,
+                            MODELO = x.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE + " - " + x.MODELO_VEHICULO.NOMBRE,
+                            COMBUSTIBLE = x.COMBUSTIBLE_VEHICULO.NOMBRE,
+                            ESTADO = x.ESTADO == true ? "Disponible" : "No disponible",
+                            x.FECHA_CREACION
+                        })
+                        .ToList();
+                    dgwVehiculos.DataSource = items;
+                }
+            }
+            else
+            {
+                getVehiculos();
+            }
         }
     }
 }

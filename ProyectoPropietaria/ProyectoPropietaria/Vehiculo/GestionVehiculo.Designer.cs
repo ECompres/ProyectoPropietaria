@@ -61,6 +61,8 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,6 +172,7 @@
             this.txtNumeroChasis.Name = "txtNumeroChasis";
             this.txtNumeroChasis.Size = new System.Drawing.Size(182, 26);
             this.txtNumeroChasis.TabIndex = 10;
+            this.txtNumeroChasis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroChasis_KeyPress);
             // 
             // txtNumeroMotor
             // 
@@ -179,6 +182,7 @@
             this.txtNumeroMotor.Name = "txtNumeroMotor";
             this.txtNumeroMotor.Size = new System.Drawing.Size(182, 26);
             this.txtNumeroMotor.TabIndex = 11;
+            this.txtNumeroMotor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroChasis_KeyPress);
             // 
             // txtNumeroPlaca
             // 
@@ -188,6 +192,7 @@
             this.txtNumeroPlaca.Name = "txtNumeroPlaca";
             this.txtNumeroPlaca.Size = new System.Drawing.Size(182, 26);
             this.txtNumeroPlaca.TabIndex = 12;
+            this.txtNumeroPlaca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroChasis_KeyPress);
             // 
             // lblFecha
             // 
@@ -274,11 +279,11 @@
             this.COMBUSTIBLE,
             this.FECHA_CREACION,
             this.ESTADO});
-            this.dgwVehiculos.Location = new System.Drawing.Point(8, 224);
+            this.dgwVehiculos.Location = new System.Drawing.Point(8, 255);
             this.dgwVehiculos.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dgwVehiculos.Name = "dgwVehiculos";
             this.dgwVehiculos.ReadOnly = true;
-            this.dgwVehiculos.Size = new System.Drawing.Size(946, 270);
+            this.dgwVehiculos.Size = new System.Drawing.Size(946, 239);
             this.dgwVehiculos.TabIndex = 21;
             this.dgwVehiculos.DoubleClick += new System.EventHandler(this.dgwVehiculos_DoubleClick);
             // 
@@ -380,7 +385,7 @@
             this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.Font = new System.Drawing.Font("Franklin Gothic Medium", 12.25F, System.Drawing.FontStyle.Italic);
-            this.btnCrear.Location = new System.Drawing.Point(821, 191);
+            this.btnCrear.Location = new System.Drawing.Point(821, 206);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(121, 28);
             this.btnCrear.TabIndex = 22;
@@ -416,12 +421,33 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(14, 229);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(70, 20);
+            this.label12.TabIndex = 118;
+            this.label12.Text = "Buscar:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(127, 226);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(221, 26);
+            this.textBox1.TabIndex = 117;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // GestionVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(954, 545);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnCrear);
@@ -494,5 +520,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_CREACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

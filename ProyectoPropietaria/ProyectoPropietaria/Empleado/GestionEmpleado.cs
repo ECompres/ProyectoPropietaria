@@ -35,34 +35,48 @@ namespace ProyectoPropietaria
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            model.NOMBRES = txtNombres.Text;
-            model.APELLIDOS = txtApellidos.Text;
-            model.EMAIL = txtEmail.Text;
-            model.CLAVE = txtClave.Text;
-            model.ID_TANDA = Convert.ToInt32(cmbTanda.SelectedValue);
-            model.PORCIENTO_COMISION = Convert.ToInt32(numericComision.Value);
-            model.FECHA_INGRESO = datePicker.Value;
-            model.FECHA_CREACION = Convert.ToDateTime(lblFechaHoy.Text);
-            model.ID_TIPO_EMPLEADO = Convert.ToInt32(cmbTipoEmpleado.SelectedValue);
-            model.ESTADO = cbEstado.Checked;
-            using (RentaCarEntities db = new RentaCarEntities())
+            if (string.IsNullOrWhiteSpace(txtNombres.Text)||
+                string.IsNullOrWhiteSpace(txtApellidos.Text)||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtClave.Text) || 
+                cmbTanda.SelectedIndex == -1|| 
+                numericComision.Value == 0 || 
+                cmbTipoEmpleado.SelectedIndex == -1)
             {
-                if(model.ID == 0)
+                MessageBox.Show("Ingrese datos validos");
+            }
+            else
+            {
+
+
+                model.NOMBRES = txtNombres.Text;
+                model.APELLIDOS = txtApellidos.Text;
+                model.EMAIL = txtEmail.Text;
+                model.CLAVE = txtClave.Text;
+                model.ID_TANDA = Convert.ToInt32(cmbTanda.SelectedValue);
+                model.PORCIENTO_COMISION = Convert.ToInt32(numericComision.Value);
+                model.FECHA_INGRESO = datePicker.Value;
+                model.FECHA_CREACION = Convert.ToDateTime(lblFechaHoy.Text);
+                model.ID_TIPO_EMPLEADO = Convert.ToInt32(cmbTipoEmpleado.SelectedValue);
+                model.ESTADO = cbEstado.Checked;
+                using (RentaCarEntities db = new RentaCarEntities())
                 {
-                    db.EMPLEADO.Add(model);
-                    MessageBox.Show("Empleado agregado");
+                    if (model.ID == 0)
+                    {
+                        db.EMPLEADO.Add(model);
+                        MessageBox.Show("Empleado agregado");
+                    }
+                    else
+                    {
+                        db.Entry(model).State = EntityState.Modified;
+                        MessageBox.Show("Empleado actualizado");
+                    }
+                    db.SaveChanges();
+                    getEmpleados();
+                    Limpiar();
                 }
-                else
-                {
-                    db.Entry(model).State = EntityState.Modified;
-                    MessageBox.Show("Empleado actualizado");
-                }
-                db.SaveChanges();
-                getEmpleados();
-                Limpiar();
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             string Preg = (model.ESTADO == true) ? "Desea desactivar a este Empleado?" : "Desea activar a este Empleado?";
@@ -160,6 +174,24 @@ namespace ProyectoPropietaria
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

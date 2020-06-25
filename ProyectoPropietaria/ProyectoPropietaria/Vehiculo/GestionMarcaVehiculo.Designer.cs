@@ -75,6 +75,7 @@
             this.txtMarcaVehiculo.Name = "txtMarcaVehiculo";
             this.txtMarcaVehiculo.Size = new System.Drawing.Size(121, 20);
             this.txtMarcaVehiculo.TabIndex = 2;
+            this.txtMarcaVehiculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarcaVehiculo_KeyPress);
             // 
             // label2
             // 

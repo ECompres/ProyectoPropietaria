@@ -134,5 +134,14 @@ namespace ProyectoPropietaria.Vehiculo
         {
             this.Close();
         }
+
+        private void txtCombustible_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -33,6 +33,10 @@ namespace ProyectoPropietaria
         {
             model.NOMBRE = txtTipoVehiculo.Text.Trim();
             model.ESTADO = cbEstado.Checked;
+            if (string.IsNullOrWhiteSpace(txtTipoVehiculo.Text){
+                MessageBox.Show("Llene los campos");
+            }
+            else { 
             using (RentaCarEntities  db = new RentaCarEntities ())
             {
                 if (model.ID == 0)
@@ -51,6 +55,7 @@ namespace ProyectoPropietaria
             }
             LimpiarCampos();
             getTipoVehiculos();
+        }
         }
         private void LimpiarCampos()
         {

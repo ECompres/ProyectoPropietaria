@@ -129,6 +129,7 @@
             this.txtCombustible.Name = "txtCombustible";
             this.txtCombustible.Size = new System.Drawing.Size(121, 20);
             this.txtCombustible.TabIndex = 15;
+            this.txtCombustible.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCombustible_KeyPress);
             // 
             // label4
             // 

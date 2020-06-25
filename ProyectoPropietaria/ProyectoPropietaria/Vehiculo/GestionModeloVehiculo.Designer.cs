@@ -108,6 +108,7 @@
             this.txtModelo.Size = new System.Drawing.Size(121, 20);
             this.txtModelo.TabIndex = 7;
             this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
+            this.txtModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModelo_KeyPress);
             // 
             // cbEstado
             // 

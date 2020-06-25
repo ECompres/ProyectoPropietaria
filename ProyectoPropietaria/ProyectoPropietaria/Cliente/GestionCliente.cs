@@ -69,7 +69,14 @@ namespace ProyectoPropietaria.Cliente
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if (txtNombres.Text == "" || txtApellidos.Text == "" || txtCedula.Text == "" || txtTelefono.Text == "" || txtTarjetaCredito.Text == "")
+            if (string.IsNullOrWhiteSpace(txtNombres.Text) ||
+                string.IsNullOrWhiteSpace(txtApellidos.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                string.IsNullOrWhiteSpace(txtTarjetaCredito.Text)||
+                cmbTipoCliente.SelectedIndex==-1||
+                numericLimiteCredito.Value==0)
             {
                 MessageBox.Show("Rellene todos los campos");
             }
@@ -221,6 +228,93 @@ namespace ProyectoPropietaria.Cliente
         private void GestionCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    var items = db.CLIENTE
+                        .Where(x =>
+                            x.NOMBRES.Contains(textBox1.Text.Trim()) ||
+                            x.APELLIDOS.Contains(textBox1.Text.Trim()) ||
+                            x.CEDULA.Contains(textBox1.Text.Trim()) ||
+                            x.EMAIL.Contains(textBox1.Text.Trim()) ||
+                            x.TELEFONO.Contains(textBox1.Text.Trim())).Select(
+                        x => new
+                        {
+                            x.ID,
+                            x.NOMBRES,
+                            x.APELLIDOS,
+                            x.CEDULA,
+                            x.EMAIL,
+                            x.TELEFONO,
+                            x.TARJETA_CREDITO,
+                            x.LIMITE_CREDITO,
+                            TIPO_CLIENTE = x.TIPO_CLIENTE.DESCRIPCION,
+                            ESTADO = x.ESTADO == true ? "Disponible" : "No disponible",
+                            x.FECHA_CREACION
+                        })
+                        .ToList();
+                   dgvClientes.DataSource = items;
+                }
+            }
+            else
+            {
+                getClientes();
+            }
+        }
+
+        private void txtTarjetaCredito_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {                
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+           {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

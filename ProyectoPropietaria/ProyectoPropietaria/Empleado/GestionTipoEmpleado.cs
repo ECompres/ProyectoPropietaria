@@ -113,5 +113,14 @@ namespace ProyectoPropietaria.Empleado
         {
             this.Close();
         }
+
+        private void txtTipoEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

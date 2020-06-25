@@ -118,6 +118,7 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(147, 26);
             this.txtApellidos.TabIndex = 63;
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // txtNombres
             // 
@@ -126,6 +127,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(147, 26);
             this.txtNombres.TabIndex = 62;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // label9
             // 

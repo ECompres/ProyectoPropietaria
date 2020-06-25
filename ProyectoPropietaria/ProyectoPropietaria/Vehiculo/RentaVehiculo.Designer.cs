@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cristalesRotos = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gato = new System.Windows.Forms.CheckBox();
@@ -84,6 +84,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericCostePorDia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenta)).BeginInit();
             this.SuspendLayout();
@@ -334,6 +336,8 @@
             this.numericCostePorDia.Size = new System.Drawing.Size(120, 26);
             this.numericCostePorDia.TabIndex = 88;
             this.numericCostePorDia.ValueChanged += new System.EventHandler(this.numericCostePorDia_ValueChanged);
+            this.numericCostePorDia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numericCostePorDia_KeyDown);
+            this.numericCostePorDia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numericCostePorDia_KeyUp);
             // 
             // txtDescripcion
             // 
@@ -493,10 +497,10 @@
             // 
             this.dgvRenta.AllowUserToAddRows = false;
             this.dgvRenta.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumBlue;
-            this.dgvRenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MediumBlue;
+            this.dgvRenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvRenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -513,9 +517,9 @@
             this.dgvRenta.Location = new System.Drawing.Point(312, 232);
             this.dgvRenta.Name = "dgvRenta";
             this.dgvRenta.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
-            this.dgvRenta.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvRenta.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvRenta.Size = new System.Drawing.Size(624, 283);
             this.dgvRenta.TabIndex = 104;
             this.dgvRenta.DoubleClick += new System.EventHandler(this.dgvRenta_DoubleClick);
@@ -713,12 +717,33 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(308, 206);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(70, 20);
+            this.label20.TabIndex = 117;
+            this.label20.Text = "Buscar:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(399, 202);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(221, 26);
+            this.textBox1.TabIndex = 116;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // RentaVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(954, 545);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.button1);
@@ -835,5 +860,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

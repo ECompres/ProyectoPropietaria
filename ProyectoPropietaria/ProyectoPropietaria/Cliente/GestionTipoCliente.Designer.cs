@@ -106,6 +106,7 @@
             this.txtTipoCliente.Name = "txtTipoCliente";
             this.txtTipoCliente.Size = new System.Drawing.Size(121, 20);
             this.txtTipoCliente.TabIndex = 28;
+            this.txtTipoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipoCliente_KeyPress);
             // 
             // label3
             // 

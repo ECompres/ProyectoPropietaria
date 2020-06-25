@@ -292,7 +292,7 @@ namespace ProyectoPropietaria.Vehiculo
         }
         private bool validarData()
         {
-            if (cmbVehiculo.SelectedIndex == -1 || cmbCliente.SelectedIndex == -1 || cmbCantidadCombustible.SelectedIndex == -1)
+            if (cmbVehiculo.SelectedIndex == -1 || cmbCliente.SelectedIndex == -1 || cmbCantidadCombustible.SelectedIndex == -1||string.IsNullOrWhiteSpace(txtDescripcion.Text))
             {
                 MessageBox.Show("Debe llenar los campos");
                 return false;
@@ -442,6 +442,55 @@ namespace ProyectoPropietaria.Vehiculo
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void numericCostePorDia_KeyUp(object sender, KeyEventArgs e)
+        {
+            Total();
+        }
+
+        private void numericCostePorDia_KeyDown(object sender, KeyEventArgs e)
+        {
+            Total();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    /*
+                    
+                     */
+                    var items = db.RENTA
+                        .Where(x =>
+                            x.VEHICULO.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE.Contains(textBox1.Text.Trim()) ||
+                            x.VEHICULO.MODELO_VEHICULO.NOMBRE.Contains(textBox1.Text.Trim()) ||
+                            x.CLIENTE.NOMBRES.Contains(textBox1.Text.Trim()) ||
+                            x.CLIENTE.APELLIDOS.Contains(textBox1.Text.Trim()) ||
+                            x.EMPLEADO.NOMBRES.Contains(textBox1.Text.Trim())||
+                            x.EMPLEADO.APELLIDOS.Contains(textBox1.Text.Trim()) ||
+                            x.CODIGO.Contains(textBox1.Text.Trim())
+                            ).Select(
+                        x => new
+                        {
+                            x.ID,
+                            x.ID_INSPECCION,
+                            VEHICULO = x.VEHICULO.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE + " - " + x.VEHICULO.MODELO_VEHICULO.NOMBRE,
+                            CLIENTE = x.CLIENTE.NOMBRES + " " + x.CLIENTE.APELLIDOS,
+                            EMPLEADO = x.EMPLEADO.NOMBRES + " " + x.EMPLEADO.APELLIDOS,
+                            x.CODIGO,
+                            ESTADO = x.ESTADO == true ? "Entregado" : "No entregado"
+                        })
+                        .ToList();
+                    dgvRenta.DataSource = items;
+                }
+            }
+            else
+            {
+                getRentas();
+            }
         }
     }
 }

@@ -33,6 +33,12 @@ namespace ProyectoPropietaria
         {
             model.NOMBRE = txtMarcaVehiculo.Text.Trim();
             model.ESTADO = cbEstado.Checked;
+            if (string.IsNullOrWhiteSpace(txtMarcaVehiculo.Text))
+            {
+                MessageBox.Show("Llene los campos");
+            }
+            else
+            {
             using (RentaCarEntities db = new RentaCarEntities())
             {
                 if (model.ID == 0)
@@ -51,6 +57,7 @@ namespace ProyectoPropietaria
             }
             LimpiarCampos();
             getMarcaVehiculos();
+            }
         }
         private void LimpiarCampos()
         {
@@ -138,6 +145,15 @@ namespace ProyectoPropietaria
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtMarcaVehiculo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

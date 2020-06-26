@@ -33,7 +33,7 @@ namespace ProyectoPropietaria
         {
             model.NOMBRE = txtTipoVehiculo.Text.Trim();
             model.ESTADO = cbEstado.Checked;
-            if (string.IsNullOrWhiteSpace(txtTipoVehiculo.Text){
+            if (string.IsNullOrWhiteSpace(txtTipoVehiculo.Text)){
                 MessageBox.Show("Llene los campos");
             }
             else { 

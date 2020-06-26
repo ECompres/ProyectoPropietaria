@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu = new System.Windows.Forms.Panel();
@@ -50,12 +51,16 @@
             this.btnGestionTipoVehiculo = new System.Windows.Forms.Button();
             this.btnVehiculos = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSideMenu.SuspendLayout();
             this.panelClientes.SuspendLayout();
             this.panelEmpleado.SuspendLayout();
             this.panelVehiculos.SuspendLayout();
+            this.panelLogo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelChildForm
@@ -85,6 +90,7 @@
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelSideMenu.BackgroundImage = global::ProyectoPropietaria.Properties.Resources.carretera;
             this.panelSideMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelSideMenu.Controls.Add(this.button1);
             this.panelSideMenu.Controls.Add(this.panelClientes);
             this.panelSideMenu.Controls.Add(this.btnClientes);
             this.panelSideMenu.Controls.Add(this.panelEmpleado);
@@ -113,6 +119,7 @@
             // btnGestionClientes
             // 
             this.btnGestionClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(65)))), ((int)(((byte)(112)))));
+            this.btnGestionClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionClientes.FlatAppearance.BorderSize = 0;
             this.btnGestionClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionClientes.ForeColor = System.Drawing.Color.LightGray;
@@ -129,6 +136,7 @@
             // btnGestionTipoClientes
             // 
             this.btnGestionTipoClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(65)))), ((int)(((byte)(112)))));
+            this.btnGestionTipoClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionTipoClientes.FlatAppearance.BorderSize = 0;
             this.btnGestionTipoClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionTipoClientes.ForeColor = System.Drawing.Color.LightGray;
@@ -145,6 +153,7 @@
             // btnClientes
             // 
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(81)))), ((int)(((byte)(173)))));
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -175,6 +184,7 @@
             // btnGestionEmpleados
             // 
             this.btnGestionEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(112)))), ((int)(((byte)(65)))));
+            this.btnGestionEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionEmpleados.FlatAppearance.BorderSize = 0;
             this.btnGestionEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionEmpleados.ForeColor = System.Drawing.Color.LightGray;
@@ -191,6 +201,7 @@
             // btnGestionTipoEmpleados
             // 
             this.btnGestionTipoEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(112)))), ((int)(((byte)(65)))));
+            this.btnGestionTipoEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionTipoEmpleados.FlatAppearance.BorderSize = 0;
             this.btnGestionTipoEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionTipoEmpleados.ForeColor = System.Drawing.Color.LightGray;
@@ -207,6 +218,7 @@
             // btnGestionTanda
             // 
             this.btnGestionTanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(112)))), ((int)(((byte)(65)))));
+            this.btnGestionTanda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionTanda.FlatAppearance.BorderSize = 0;
             this.btnGestionTanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionTanda.ForeColor = System.Drawing.Color.LightGray;
@@ -223,6 +235,7 @@
             // btnEmpleados
             // 
             this.btnEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(173)))), ((int)(((byte)(81)))));
+            this.btnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEmpleados.FlatAppearance.BorderSize = 0;
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -256,6 +269,7 @@
             // btnRentasVehiculo
             // 
             this.btnRentasVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
+            this.btnRentasVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRentasVehiculo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRentasVehiculo.FlatAppearance.BorderSize = 0;
             this.btnRentasVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -273,6 +287,7 @@
             // btnGestionCombustibles
             // 
             this.btnGestionCombustibles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
+            this.btnGestionCombustibles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionCombustibles.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGestionCombustibles.FlatAppearance.BorderSize = 0;
             this.btnGestionCombustibles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -290,6 +305,7 @@
             // btnCantidadCombustible
             // 
             this.btnCantidadCombustible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
+            this.btnCantidadCombustible.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCantidadCombustible.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCantidadCombustible.FlatAppearance.BorderSize = 0;
             this.btnCantidadCombustible.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -307,6 +323,7 @@
             // btnGestionVehiculo
             // 
             this.btnGestionVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
+            this.btnGestionVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionVehiculo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGestionVehiculo.FlatAppearance.BorderSize = 0;
             this.btnGestionVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -324,6 +341,7 @@
             // btnGestionModeloVehiculo
             // 
             this.btnGestionModeloVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
+            this.btnGestionModeloVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionModeloVehiculo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGestionModeloVehiculo.FlatAppearance.BorderSize = 0;
             this.btnGestionModeloVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -341,6 +359,7 @@
             // btnGestionMarcaVehiculo
             // 
             this.btnGestionMarcaVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
+            this.btnGestionMarcaVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionMarcaVehiculo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGestionMarcaVehiculo.FlatAppearance.BorderSize = 0;
             this.btnGestionMarcaVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -358,6 +377,7 @@
             // btnGestionTipoVehiculo
             // 
             this.btnGestionTipoVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
+            this.btnGestionTipoVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionTipoVehiculo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGestionTipoVehiculo.FlatAppearance.BorderSize = 0;
             this.btnGestionTipoVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -375,6 +395,7 @@
             // btnVehiculos
             // 
             this.btnVehiculos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(38)))), ((int)(((byte)(81)))));
+            this.btnVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVehiculos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVehiculos.FlatAppearance.BorderSize = 0;
             this.btnVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -391,11 +412,48 @@
             // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.label4);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(207, 48);
             this.panelLogo.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(69, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "asdfasd";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(0, 685);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(207, 45);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Cerrar sesión";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // Inicio
             // 
@@ -415,6 +473,8 @@
             this.panelClientes.ResumeLayout(false);
             this.panelEmpleado.ResumeLayout(false);
             this.panelVehiculos.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            this.panelLogo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -443,5 +503,8 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

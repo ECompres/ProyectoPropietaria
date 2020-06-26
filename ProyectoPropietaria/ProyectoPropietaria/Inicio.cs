@@ -200,5 +200,28 @@ namespace ProyectoPropietaria
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            var frm = new Login();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToLongTimeString();
+
+        }
     }
 }

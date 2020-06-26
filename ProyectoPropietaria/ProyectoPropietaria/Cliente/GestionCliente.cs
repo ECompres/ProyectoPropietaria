@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -80,6 +81,10 @@ namespace ProyectoPropietaria.Cliente
             {
                 MessageBox.Show("Rellene todos los campos");
             }
+            if (IsValidDrCedula(txtCedula.Text) == false)
+            {
+                MessageBox.Show("Por favor ingrese una cédula válida");
+            }
             else
             {
                 model.NOMBRES = txtNombres.Text;
@@ -92,6 +97,7 @@ namespace ProyectoPropietaria.Cliente
                 model.ID_TIPO_CLIENTE = Convert.ToInt32(cmbTipoCliente.SelectedValue);
                 model.ESTADO = Convert.ToBoolean(cbEstado.Checked);
                 model.FECHA_CREACION = Convert.ToDateTime(lblFechaHoy.Text);
+
                 using (RentaCarEntities db = new RentaCarEntities())
                 {
                     if (model.ID == 0)
@@ -315,6 +321,38 @@ namespace ProyectoPropietaria.Cliente
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public static bool IsValidDrCedula(string drCedula)
+        {
+            // Valid format?
+            if (drCedula.Equals(null))
+            {
+                return false;
+            }
+            else
+            {
+                drCedula = Regex.Replace(drCedula, "[^0-9]", string.Empty); // Only keep #s.
+                if (drCedula.Equals(null) || !drCedula.Length.Equals(11) || long.Parse(drCedula).Equals(0))
+                {
+                    return false;
+                }
+            }
+
+            // Validate.
+            int sum = 0;
+            for (int i = 0; i < 10; ++i)
+            {
+                int n = ((i + 1) % 2 != 0 ? 1 : 2) * int.Parse(drCedula.Substring(i, 1));
+                sum += (n <= 9 ? n : n % 10 + 1);
+            }
+            int dig = ((10 - sum % 10) % 10);
+            MessageBox.Show(dig.Equals(int.Parse(drCedula.Substring(10, 1))) ? "La cédula existe" : "La cédula no existe");
+            return (dig.Equals(int.Parse(drCedula.Substring(10, 1))) ? true : false);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

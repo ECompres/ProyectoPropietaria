@@ -330,6 +330,7 @@
       <DependentUpon>RentaCar.edmx</DependentUpon>
       <LastGenOutput>RentaCar.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\personal-driver-service12.jpg" />
     <None Include="Resources\carretera.jpg" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\pngwing.com.png" />

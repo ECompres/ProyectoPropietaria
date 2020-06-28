@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.CheckBox();
@@ -67,6 +67,8 @@
             this.TIPO_EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericComision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -304,9 +306,9 @@
             // 
             this.dgvEmpleado.AllowUserToAddRows = false;
             this.dgvEmpleado.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
-            this.dgvEmpleado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvEmpleado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -324,20 +326,20 @@
             this.FECHA_CREACION,
             this.TIPO_EMPLEADO,
             this.ESTADO});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpleado.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEmpleado.Location = new System.Drawing.Point(12, 213);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpleado.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvEmpleado.Location = new System.Drawing.Point(12, 239);
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.ReadOnly = true;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgvEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEmpleado.Size = new System.Drawing.Size(927, 291);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvEmpleado.Size = new System.Drawing.Size(927, 265);
             this.dgvEmpleado.TabIndex = 85;
             this.dgvEmpleado.DoubleClick += new System.EventHandler(this.dgvEmpleado_DoubleClick);
             // 
@@ -431,12 +433,33 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(8, 210);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 20);
+            this.label11.TabIndex = 92;
+            this.label11.Text = "Buscar:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(106, 207);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(221, 26);
+            this.textBox1.TabIndex = 91;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // GestionEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(954, 545);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvEmpleado);
             this.Controls.Add(this.numericComision);
@@ -513,5 +536,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO_EMPLEADO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

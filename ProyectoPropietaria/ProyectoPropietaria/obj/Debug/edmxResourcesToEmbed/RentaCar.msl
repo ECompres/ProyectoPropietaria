@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rentacarModelStoreContainer" CdmEntityContainer="RentaCarEntities">
+    <EntitySetMapping Name="CANTIDAD_COMBUSTIBLE">
+      <EntityTypeMapping TypeName="rentacarModel.CANTIDAD_COMBUSTIBLE">
+        <MappingFragment StoreEntitySet="CANTIDAD_COMBUSTIBLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="rentacarModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="TARJETA_CREDITO" ColumnName="TARJETA_CREDITO" />
+          <ScalarProperty Name="LIMITE_CREDITO" ColumnName="LIMITE_CREDITO" />
+          <ScalarProperty Name="ID_TIPO_CLIENTE" ColumnName="ID_TIPO_CLIENTE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMBUSTIBLE_VEHICULO">
+      <EntityTypeMapping TypeName="rentacarModel.COMBUSTIBLE_VEHICULO">
+        <MappingFragment StoreEntitySet="COMBUSTIBLE_VEHICULO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADO">
+      <EntityTypeMapping TypeName="rentacarModel.EMPLEADO">
+        <MappingFragment StoreEntitySet="EMPLEADO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ID_TANDA" ColumnName="ID_TANDA" />
+          <ScalarProperty Name="PORCIENTO_COMISION" ColumnName="PORCIENTO_COMISION" />
+          <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="CLAVE" ColumnName="CLAVE" />
+          <ScalarProperty Name="ID_TIPO_EMPLEADO" ColumnName="ID_TIPO_EMPLEADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INSPECCION">
+      <EntityTypeMapping TypeName="rentacarModel.INSPECCION">
+        <MappingFragment StoreEntitySet="INSPECCION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="ID_VEHICULO" ColumnName="ID_VEHICULO" />
+          <ScalarProperty Name="TIENE_RAYADURAS" ColumnName="TIENE_RAYADURAS" />
+          <ScalarProperty Name="ID_CANTIDAD_COMBUSTIBLE" ColumnName="ID_CANTIDAD_COMBUSTIBLE" />
+          <ScalarProperty Name="TIENE_GATO" ColumnName="TIENE_GATO" />
+          <ScalarProperty Name="TIENE_ROTURA_CRISTAL" ColumnName="TIENE_ROTURA_CRISTAL" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="GOMA_TRASERA_DERECHA" ColumnName="GOMA_TRASERA_DERECHA" />
+          <ScalarProperty Name="GOMA_TRASERA_IZQUIERDA" ColumnName="GOMA_TRASERA_IZQUIERDA" />
+          <ScalarProperty Name="GOMA_DELANTERA_DERECHA" ColumnName="GOMA_DELANTERA_DERECHA" />
+          <ScalarProperty Name="GOMA_DELANTERA_IZQUIERDA" ColumnName="GOMA_DELANTERA_IZQUIERDA" />
+          <ScalarProperty Name="GOMA_REPUESTO" ColumnName="GOMA_REPUESTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MARCA_VEHICULO">
+      <EntityTypeMapping TypeName="rentacarModel.MARCA_VEHICULO">
+        <MappingFragment StoreEntitySet="MARCA_VEHICULO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MODELO_VEHICULO">
+      <EntityTypeMapping TypeName="rentacarModel.MODELO_VEHICULO">
+        <MappingFragment StoreEntitySet="MODELO_VEHICULO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_MARCA_VEHICULO" ColumnName="ID_MARCA_VEHICULO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RENTA">
+      <EntityTypeMapping TypeName="rentacarModel.RENTA">
+        <MappingFragment StoreEntitySet="RENTA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="ID_VEHICULO" ColumnName="ID_VEHICULO" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_INSPECCION" ColumnName="ID_INSPECCION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="FECHA_RENTA" ColumnName="FECHA_RENTA" />
+          <ScalarProperty Name="FECHA_DEVOLUCION" ColumnName="FECHA_DEVOLUCION" />
+          <ScalarProperty Name="CANTIDAD_DIAS" ColumnName="CANTIDAD_DIAS" />
+          <ScalarProperty Name="MONTO_DIA" ColumnName="MONTO_DIA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TANDA">
+      <EntityTypeMapping TypeName="rentacarModel.TANDA">
+        <MappingFragment StoreEntitySet="TANDA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_CLIENTE">
+      <EntityTypeMapping TypeName="rentacarModel.TIPO_CLIENTE">
+        <MappingFragment StoreEntitySet="TIPO_CLIENTE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_EMPLEADO">
+      <EntityTypeMapping TypeName="rentacarModel.TIPO_EMPLEADO">
+        <MappingFragment StoreEntitySet="TIPO_EMPLEADO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_VEHICULO">
+      <EntityTypeMapping TypeName="rentacarModel.TIPO_VEHICULO">
+        <MappingFragment StoreEntitySet="TIPO_VEHICULO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEHICULO">
+      <EntityTypeMapping TypeName="rentacarModel.VEHICULO">
+        <MappingFragment StoreEntitySet="VEHICULO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="NUMERO_CHASIS" ColumnName="NUMERO_CHASIS" />
+          <ScalarProperty Name="NUMERO_MOTOR" ColumnName="NUMERO_MOTOR" />
+          <ScalarProperty Name="NUMERO_PLACA" ColumnName="NUMERO_PLACA" />
+          <ScalarProperty Name="ID_TIPO_VEHICULO" ColumnName="ID_TIPO_VEHICULO" />
+          <ScalarProperty Name="ID_MODELO_VEHICULO" ColumnName="ID_MODELO_VEHICULO" />
+          <ScalarProperty Name="ID_TIPO_COMBUSTIBLE" ColumnName="ID_TIPO_COMBUSTIBLE" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

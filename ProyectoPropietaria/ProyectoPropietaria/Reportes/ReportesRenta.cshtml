@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProyectoPropietaria.RENTA>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reporte de Rentas</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="title">Rent car</div>
+            <div class="det">
+                @* <span><strong>Fecha: </strong> @DateTime.Now.ToString("dd/MM/yyyy HH:mm") </span> *@
+            </div>
+        </div>
+        <div class="section">
+            <h3 class="header">Reporte de Rentas</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Empleado</th>
+                        <th>Fecha Renta</th>
+                        <th>Fecha Devolucion</th>
+                        <th>Vehiculo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model)
+                    {
+                        <tr>
+                            <td>@row.CLIENTE.NOMBRES @row.CLIENTE.APELLIDOS</td>
+                            <td>@row.EMPLEADO.NOMBRES @row.EMPLEADO.APELLIDOS</td>
+                            <td>@row.FECHA_RENTA</td>
+                            <td>@row.FECHA_DEVOLUCION</td>
+                            <td>@row.VEHICULO.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE - @row.VEHICULO.MODELO_VEHICULO.NOMBRE </td>
+                            
+                        </tr>
+
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+</html>

@@ -59,3 +59,4 @@ C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropiet
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\NReco.PdfGenerator.xml
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\RazorEngine.xml
 C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\System.Web.Razor.xml
+C:\Users\usuario\Desktop\ProyectoPropietaria\ProyectoPropietaria\ProyectoPropietaria\bin\Debug\Reportes\ReportesVehiculo.cshtml

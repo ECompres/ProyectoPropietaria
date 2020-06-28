@@ -42,7 +42,7 @@ namespace ProyectoPropietaria
                 {
                     if (empleado.CLAVE == password)
                     {
-
+                        button1.Text = "Iniciando sesión";
                         Inicio frm = new Inicio();
                         frm.EMPLEADO = empleado;
                         frm.Show();

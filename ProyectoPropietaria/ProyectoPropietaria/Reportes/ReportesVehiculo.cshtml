@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ProyectoPropietaria.VEHICULO>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reporte de Rentas</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="title">Rent car</div>
+            <div class="det">
+                @* <span><strong>Fecha: </strong> @DateTime.Now.ToString("dd/MM/yyyy HH:mm") </span> *@
+            </div>
+        </div>
+        <div class="section">
+            <h3 class="header">Reporte de Rentas</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Chasis</th>
+                        <th>Motor</th>
+                        <th>Placa</th>
+                        <th>Tipo vehiculo</th>
+                        <th>Modelo</th>
+                        <th>Fecha creación </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model)
+                    {
+                        @*
+                                        x.ID,
+                                x.DESCRIPCION,
+                                x.NUMERO_CHASIS,
+                                x.NUMERO_MOTOR,
+                                x.NUMERO_PLACA,
+                                TIPOVEHICULO = x.TIPO_VEHICULO.NOMBRE,
+                                MODELO = x.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE + " - " + x.MODELO_VEHICULO.NOMBRE,
+                                COMBUSTIBLE = x.COMBUSTIBLE_VEHICULO.NOMBRE,
+                                ESTADO = x.ESTADO == true ? "Disponible" : "No disponible",
+                                x.FECHA_CREACION
+                            *@
+                                    <tr>
+                                        <td>@row.DESCRIPCION</td>
+                                        <td>@row.NUMERO_CHASIS</td>
+                                        <td>@row.NUMERO_MOTOR</td>
+                                        <td>@row.NUMERO_PLACA</td>
+                                        <td>@row.TIPO_VEHICULO.NOMBRE</td>
+                                        <td>@row.MODELO_VEHICULO.MARCA_VEHICULO.NOMBRE @row.MODELO_VEHICULO.NOMBRE</td>
+                                        <td>@row.FECHA_CREACION</td>
+                                    </tr>
+
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </body>
+
+            </html>

@@ -309,6 +309,9 @@
     <None Include="RentaCar.edmx.diagram">
       <DependentUpon>RentaCar.edmx</DependentUpon>
     </None>
+    <None Include="Reportes\ReportesVehiculo.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Reportes\ReportesRenta.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

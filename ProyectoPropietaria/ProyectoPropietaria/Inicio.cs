@@ -42,6 +42,14 @@ namespace ProyectoPropietaria
         private void Inicio_Load(object sender, EventArgs e)
         {
             CustomizeDesign();
+            if (EMPLEADO.ID_TIPO_EMPLEADO == 1)
+            {
+                btnEmpleados.Enabled = true;
+                btnEmpleados.Visible = true;
+            } else {
+                btnEmpleados.Enabled = false;
+                btnEmpleados.Visible = false;
+            }
         }
         private void CustomizeDesign()
         {

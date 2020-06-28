@@ -253,7 +253,7 @@ namespace ProyectoPropietaria.Vehiculo
                     CLIENTE = x.CLIENTE.NOMBRES + " " + x.CLIENTE.APELLIDOS,
                     EMPLEADO = x.EMPLEADO.NOMBRES + " " + x.EMPLEADO.APELLIDOS,
                     x.CODIGO,
-                    ESTADO = x.ESTADO == true ? "Entregado" : "No entregado"
+                    ESTADO = x.ESTADO == true ? "Activo" : "Inactivo"
                 }).ToList();
                 dgvRenta.DataSource = data;
             }
@@ -307,6 +307,31 @@ namespace ProyectoPropietaria.Vehiculo
                 MessageBox.Show("El coste por día no puede ser igual a 0");
                 return false;            
             }
+            if (renta.ID == 0)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    int ID_VEHICULO = Convert.ToInt32(cmbVehiculo.SelectedValue);
+                    DateTime StartDate = dpRenta.Value;
+                    DateTime EndDate = dpDevolucion.Value;
+
+                    int VehicleIsRented = db.RENTA
+                        .Where(x =>
+                            x.ID_VEHICULO == ID_VEHICULO &&
+                            (
+                                (StartDate >= x.FECHA_RENTA && StartDate <= x.FECHA_DEVOLUCION)
+                                ||
+                                (EndDate >= x.FECHA_RENTA && EndDate <= x.FECHA_DEVOLUCION)
+                            )
+                        )
+                        .Count();
+                    if (VehicleIsRented > 0)
+                    {
+                        MessageBox.Show("El vehiculo está rentado.");
+                        return false;
+                    }
+                }
+            }
             return true;
         }
 
@@ -327,6 +352,7 @@ namespace ProyectoPropietaria.Vehiculo
         private void dpRenta_ValueChanged(object sender, EventArgs e)
         {
             diasRenta();
+            Total();
             if (dpDevolucion.Value < dpRenta.Value)
             {
                 dpDevolucion.Value = dpRenta.Value;
@@ -336,7 +362,8 @@ namespace ProyectoPropietaria.Vehiculo
         private void dpDevolucion_ValueChanged(object sender, EventArgs e)
         {
             diasRenta();
-            if(dpDevolucion.Value < dpRenta.Value)
+            Total();
+            if (dpDevolucion.Value < dpRenta.Value)
             {
                 dpDevolucion.Value = dpRenta.Value;
             }

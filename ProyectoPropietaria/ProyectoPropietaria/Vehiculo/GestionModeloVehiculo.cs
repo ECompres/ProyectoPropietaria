@@ -34,7 +34,7 @@ namespace ProyectoPropietaria.Vehiculo
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if (cmbMarca.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtModelo.Text)){ 
+            if (cmbMarca.SelectedIndex != -1 || !string.IsNullOrWhiteSpace(txtModelo.Text)){ 
             model.ID_MARCA_VEHICULO = int.Parse(cmbMarca.SelectedValue.ToString());
             model.NOMBRE = txtModelo.Text;
             model.ESTADO = cbEstado.Checked;

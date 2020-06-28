@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using NReco.PdfGenerator;
+using RazorEngine;
+using RazorEngine.Templating;
+using System;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ProyectoPropietaria
 {
@@ -278,6 +278,23 @@ namespace ProyectoPropietaria
             else
             {
                 getVehiculos();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (RentaCarEntities db = new RentaCarEntities())
+            {
+
+                var items = db.VEHICULO.ToList();
+                var file = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"Reportes\\ReportesVehiculo.cshtml");
+                var html = Engine.Razor.RunCompile(file, Guid.NewGuid().ToString(), null, items, null);
+                var htmlToPDF = new NReco.PdfGenerator.HtmlToPdfConverter();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.FileName = "Vehiculos";
+                saveFileDialog.DefaultExt = "pdf";
+                saveFileDialog.ShowDialog();
+                htmlToPDF.GeneratePdf(html, null, saveFileDialog.FileName + ".pdf");
             }
         }
     }

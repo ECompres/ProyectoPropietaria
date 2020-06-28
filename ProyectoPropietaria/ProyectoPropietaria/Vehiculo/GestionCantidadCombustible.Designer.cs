@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dgwCantidadCombustible = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +58,9 @@
             // 
             this.dgwCantidadCombustible.AllowUserToAddRows = false;
             this.dgwCantidadCombustible.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            this.dgwCantidadCombustible.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwCantidadCombustible.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,6 +72,8 @@
             this.dgwCantidadCombustible.Location = new System.Drawing.Point(12, 101);
             this.dgwCantidadCombustible.Name = "dgwCantidadCombustible";
             this.dgwCantidadCombustible.ReadOnly = true;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgwCantidadCombustible.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgwCantidadCombustible.Size = new System.Drawing.Size(386, 154);
             this.dgwCantidadCombustible.TabIndex = 13;
             this.dgwCantidadCombustible.DoubleClick += new System.EventHandler(this.dgwCantidadCombustible_DoubleClick);

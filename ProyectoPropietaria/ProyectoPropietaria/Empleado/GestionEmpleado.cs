@@ -32,20 +32,37 @@ namespace ProyectoPropietaria
             lblFechaHoy.Text = DateTime.Today.ToString().Replace(" 12:00:00 a. m.", "");
             button2.Enabled = false;
         }
-
-        private void btnCrear_Click(object sender, EventArgs e)
+        public bool ValidarData()
         {
-            if (string.IsNullOrWhiteSpace(txtNombres.Text)||
-                string.IsNullOrWhiteSpace(txtApellidos.Text)||
+            if (string.IsNullOrWhiteSpace(txtNombres.Text) ||
+                string.IsNullOrWhiteSpace(txtApellidos.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtClave.Text) || 
-                cmbTanda.SelectedIndex == -1|| 
-                numericComision.Value == 0 || 
+                string.IsNullOrWhiteSpace(txtClave.Text) ||
+                cmbTanda.SelectedIndex == -1 ||
+                numericComision.Value == 0 ||
                 cmbTipoEmpleado.SelectedIndex == -1)
             {
                 MessageBox.Show("Ingrese datos validos");
+                return false;
             }
-            else
+            if (model.ID == 0)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    var cliente = db.EMPLEADO.Where(x => x.EMAIL == txtEmail.Text).Count();
+                    if (cliente > 0)
+                    {
+                        MessageBox.Show("Ya existe un empleado con este Email");
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            
+            if(ValidarData())
             {
 
 

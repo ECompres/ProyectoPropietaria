@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.dgvTiposClientes = new System.Windows.Forms.DataGridView();
@@ -70,6 +72,9 @@
             // 
             this.dgvTiposClientes.AllowUserToAddRows = false;
             this.dgvTiposClientes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvTiposClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTiposClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -81,6 +86,8 @@
             this.dgvTiposClientes.Location = new System.Drawing.Point(12, 96);
             this.dgvTiposClientes.Name = "dgvTiposClientes";
             this.dgvTiposClientes.ReadOnly = true;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgvTiposClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTiposClientes.Size = new System.Drawing.Size(352, 150);
             this.dgvTiposClientes.TabIndex = 29;
             this.dgvTiposClientes.DoubleClick += new System.EventHandler(this.dgvTiposClientes_DoubleClick);

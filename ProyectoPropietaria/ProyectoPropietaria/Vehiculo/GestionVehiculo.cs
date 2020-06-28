@@ -101,14 +101,43 @@ namespace ProyectoPropietaria
 
             }
         }
-
-        private void btnCrear_Click(object sender, EventArgs e)
+        public bool ValidarData()
         {
-            if(string.IsNullOrWhiteSpace(txtDescripcion.Text)||string.IsNullOrWhiteSpace(txtNumeroChasis.Text)||string.IsNullOrWhiteSpace(txtNumeroMotor.Text)||string.IsNullOrWhiteSpace(txtNumeroPlaca.Text)||cmbTipoVehiculo.SelectedIndex==-1||cmbModeloVehiculo.SelectedIndex == -1||cmbCombustible.SelectedIndex == -1)
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text) || string.IsNullOrWhiteSpace(txtNumeroChasis.Text) || string.IsNullOrWhiteSpace(txtNumeroMotor.Text) || string.IsNullOrWhiteSpace(txtNumeroPlaca.Text) || cmbTipoVehiculo.SelectedIndex == -1 || cmbModeloVehiculo.SelectedIndex == -1 || cmbCombustible.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe rellenar correctamente todos los campos");
+                return false;
             }
-            else
+            if (model.ID == 0)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    var cliente = db.VEHICULO.Where(x => x.NUMERO_CHASIS == txtNumeroChasis.Text).Count();
+                    var cliente2 = db.VEHICULO.Where(x => x.NUMERO_MOTOR == txtNumeroMotor.Text).Count();
+                    var cliente3 = db.VEHICULO.Where(x => x.NUMERO_PLACA == txtNumeroPlaca.Text).Count();
+                    if (cliente > 0)
+                    {
+                        MessageBox.Show("Ya existe un vehiculo con este numero de Chasis");
+                        return false;
+                    }
+                    else if (cliente2 > 0)
+                    {
+                        MessageBox.Show("Ya existe un vehiculo con este numero de motor");
+                        return false;
+                    }
+                    else if (cliente3 > 0)
+                    {
+                        MessageBox.Show("Ya existe un vehiculo con este numero de placa");
+                        return false;
+                    }
+                }
+            }
+            return true;
+
+        }
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            if(ValidarData())
             {
 
             

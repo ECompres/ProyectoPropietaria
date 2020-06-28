@@ -305,7 +305,7 @@ namespace ProyectoPropietaria.Vehiculo
             if(numericCostePorDia.Value == 0)
             {
                 MessageBox.Show("El coste por día no puede ser igual a 0");
-                return false;
+                return false;            
             }
             return true;
         }

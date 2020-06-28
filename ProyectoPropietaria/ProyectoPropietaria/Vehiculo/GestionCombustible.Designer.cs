@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.dgwCombustible = new System.Windows.Forms.DataGridView();
@@ -73,6 +75,9 @@
             // 
             this.dgwCombustible.AllowUserToAddRows = false;
             this.dgwCombustible.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            this.dgwCombustible.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwCombustible.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -85,6 +90,8 @@
             this.dgwCombustible.Location = new System.Drawing.Point(12, 131);
             this.dgwCombustible.Name = "dgwCombustible";
             this.dgwCombustible.ReadOnly = true;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgwCombustible.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgwCombustible.Size = new System.Drawing.Size(359, 150);
             this.dgwCombustible.TabIndex = 17;
             this.dgwCombustible.DoubleClick += new System.EventHandler(this.dgwCombustible_DoubleClick);

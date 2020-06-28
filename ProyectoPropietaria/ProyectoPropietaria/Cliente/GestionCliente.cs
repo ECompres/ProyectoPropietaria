@@ -70,22 +70,8 @@ namespace ProyectoPropietaria.Cliente
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombres.Text) ||
-                string.IsNullOrWhiteSpace(txtApellidos.Text) ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtCedula.Text) ||
-                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
-                string.IsNullOrWhiteSpace(txtTarjetaCredito.Text)||
-                cmbTipoCliente.SelectedIndex==-1||
-                numericLimiteCredito.Value==0)
-            {
-                MessageBox.Show("Rellene todos los campos");
-            }
-            if (IsValidDrCedula(txtCedula.Text) == false)
-            {
-                MessageBox.Show("Por favor ingrese una cédula válida");
-            }
-            else
+            
+            if(cedulaValidate())
             {
                 model.NOMBRES = txtNombres.Text;
                 model.APELLIDOS = txtApellidos.Text;
@@ -187,6 +173,48 @@ namespace ProyectoPropietaria.Cliente
                 dgvClientes.DataSource = data;
             }
             
+        }
+        private bool cedulaValidate()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombres.Text) ||
+                string.IsNullOrWhiteSpace(txtApellidos.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                string.IsNullOrWhiteSpace(txtTarjetaCredito.Text) ||
+                cmbTipoCliente.SelectedIndex == -1 ||
+                numericLimiteCredito.Value == 0)
+            {
+                MessageBox.Show("Rellene todos los campos");
+                return false;
+            }
+            if (txtTarjetaCredito.TextLength != 16)
+            {
+                MessageBox.Show("Por favor ingrese una tarjeta de crédito válida");
+                return false;
+            }
+            if (txtTelefono.TextLength != 10)
+            {
+                MessageBox.Show("Por favor ingrese un teléfono válido");
+                return false;
+            }
+            if (IsValidDrCedula(txtCedula.Text) == false || txtCedula.TextLength != 11)
+            {
+                MessageBox.Show("Por favor ingrese una cédula válida");
+                return false;
+            }
+            if (model.ID == 0) { 
+            using (RentaCarEntities db = new RentaCarEntities())
+            {
+                var cliente = db.CLIENTE.Where(x => x.CEDULA == txtCedula.Text).Count();
+                if (cliente>0)
+                {
+                    MessageBox.Show("Ya existe un cliente con esta cedula");
+                    return false;
+                }
+            }
+            }
+            return true;
         }
         private void getTipoCliente()
         {
@@ -346,7 +374,6 @@ namespace ProyectoPropietaria.Cliente
                 sum += (n <= 9 ? n : n % 10 + 1);
             }
             int dig = ((10 - sum % 10) % 10);
-            MessageBox.Show(dig.Equals(int.Parse(drCedula.Substring(10, 1))) ? "La cédula existe" : "La cédula no existe");
             return (dig.Equals(int.Parse(drCedula.Substring(10, 1))) ? true : false);
         }
 

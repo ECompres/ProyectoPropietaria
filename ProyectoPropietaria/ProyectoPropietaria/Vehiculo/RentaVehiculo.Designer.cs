@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cristalesRotos = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gato = new System.Windows.Forms.CheckBox();
@@ -497,10 +497,10 @@
             // 
             this.dgvRenta.AllowUserToAddRows = false;
             this.dgvRenta.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MediumBlue;
-            this.dgvRenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumBlue;
+            this.dgvRenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -517,9 +517,9 @@
             this.dgvRenta.Location = new System.Drawing.Point(312, 232);
             this.dgvRenta.Name = "dgvRenta";
             this.dgvRenta.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.LightGray;
-            this.dgvRenta.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvRenta.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRenta.Size = new System.Drawing.Size(624, 283);
             this.dgvRenta.TabIndex = 104;
             this.dgvRenta.DoubleClick += new System.EventHandler(this.dgvRenta_DoubleClick);
@@ -705,7 +705,6 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCrear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMarcaVehiculo = new System.Windows.Forms.TextBox();
@@ -91,6 +93,9 @@
             // 
             this.dgwMarcaVehiculo.AllowUserToAddRows = false;
             this.dgwMarcaVehiculo.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            this.dgwMarcaVehiculo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwMarcaVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -103,6 +108,9 @@
             this.dgwMarcaVehiculo.Location = new System.Drawing.Point(13, 107);
             this.dgwMarcaVehiculo.Name = "dgwMarcaVehiculo";
             this.dgwMarcaVehiculo.ReadOnly = true;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgwMarcaVehiculo.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgwMarcaVehiculo.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgwMarcaVehiculo.Size = new System.Drawing.Size(386, 165);
             this.dgwMarcaVehiculo.TabIndex = 4;
             this.dgwMarcaVehiculo.DoubleClick += new System.EventHandler(this.dgwTipoVehiculo_DoubleClick);
@@ -165,7 +173,6 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

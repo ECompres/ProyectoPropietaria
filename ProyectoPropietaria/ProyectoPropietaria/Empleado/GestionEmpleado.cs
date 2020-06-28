@@ -210,5 +210,45 @@ namespace ProyectoPropietaria
                 e.Handled = true;
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 0)
+            {
+                using (RentaCarEntities db = new RentaCarEntities())
+                {
+                    /*
+                    
+                     */
+                    var items = db.EMPLEADO
+                        .Where(x =>
+                            x.NOMBRES.Contains(textBox1.Text)||
+                            x.APELLIDOS.Contains(textBox1.Text)||
+                            x.EMAIL.Contains(textBox1.Text)||
+                            x.TANDA.DESCRIPCION.Contains(textBox1.Text)||
+                            x.TIPO_EMPLEADO.DESCRIPCION.Contains(textBox1.Text)).Select(
+                        x => new
+                        {
+                            x.ID,
+                            x.NOMBRES,
+                            x.APELLIDOS,
+                            x.EMAIL,
+                            x.CLAVE,
+                            TANDA = x.TANDA.DESCRIPCION,
+                            x.PORCIENTO_COMISION,
+                            x.FECHA_INGRESO,
+                            x.FECHA_CREACION,
+                            TIPO_EMPLEADO = x.TIPO_EMPLEADO.DESCRIPCION,
+                            ESTADO = x.ESTADO == true ? "Disponible" : "No disponible"
+                        })
+                        .ToList();
+                    dgvEmpleado.DataSource = items;
+                }
+            }
+            else
+            {
+                getEmpleados();
+            }
+        }
     }
 }
